@@ -190,7 +190,7 @@ D'autre part on introduit la terminologie suivante : si $P\left( C_{t+1} | C_t  
 
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[width=\textwidth]{Images/Models/HMM/ChaineMarkov.png}
+		\includegraphics[width= 0.6 \textwidth]{Images/Models/HMM/ChaineMarkov.png}
 		\caption{Représentation graphique d'une chaîne de Markov. Figure inspirée de \cite{zucchini_hidden_2017}.}
 		\label{fig::HMM:MarkovChain}
 	\end{center}
@@ -226,7 +226,7 @@ P\left( X_t | \bm{X} , C_1,C_2,...,C_T \right) = P(X_t | C_t)
 
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[width=\textwidth]{Images/Models/HMM/HMM.png}
+		\includegraphics[width= 0.6 \textwidth]{Images/Models/HMM/HMM.png}
 		\caption{Représentation graphique d'un modèle de Markov caché. Les flèches représentent les dépendances. Les carrés représentent les observations et les cercles le processus caché. Figure inspirée de \cite{zucchini_hidden_2017}.}
 		\label{fig::HMM:HMM_Graph}
 	\end{center}
@@ -286,7 +286,7 @@ On obtient donc l'algorithme récursif suivant dont le coût calculatoire n'est 
 
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[width=\textwidth]{Images/Models/HMM/Forward.png}
+		\includegraphics[width= 0.8 \textwidth]{Images/Models/HMM/Forward.png}
 		\caption{Schéma du forward algorithm inspiré de \cite{jurafsky_speech_2017} }
 		\label{fig::HMM:ForwardAlgo}
 	\end{center}
@@ -307,7 +307,7 @@ La séquence recherchée qui maximise la probabilité de réaliser l'observation
 
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[width=\textwidth]{Images/Models/HMM/Viterbi.png}
+		\includegraphics[width= 0.8 \textwidth]{Images/Models/HMM/Viterbi.png}
 		\caption{Représentation du parcours du treillis par l'algorithme de Viterbi. Les cercles à fond blanc représentent les probabilités initiales ; les cercles à fond bleu les états et les carrés les observations. Les $v$ sont les probabilitées de Viterbi. Un maximum arbitraire à chaque $t$ est représenté en rouge pour illustrer le cheminement de la séquence la plus probable. Schéma inspiré de \cite{jurafsky_speech_2017}.}
 		\label{fig::HMM:ViterbiAlgo}
 	\end{center}
@@ -397,7 +397,7 @@ D'après le schéma \ref{fig::HMM:HMM_Graph}, l'utilisation d'un HMM pour repré
 
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[width=\textwidth]{Images/Models/HMM/MSAR.png}
+		\includegraphics[width=0.6 \textwidth]{Images/Models/HMM/MSAR.png}
 		\caption{Représentation des dépendances d'un modèle de type MSAR avec des modèles auto-régressifs d'ordre 2. Ici l'observation $X_{t+1}$ est générée à partir du modèle pointé par l'état caché $C_{t+1}$ qui prend en entrée les observations $X_t$ et $X_{t-1}$.}
 		\label{fig::HMM:MSAR}
 	\end{center}
@@ -439,12 +439,16 @@ Dans le cas présent, j'ai fait appel à la routine R \texttt{Kmeans}, qui cherc
 \label{sec:Model_GMM}
 Le modèle de mélange de mélange gaussien est un modèle statistique qui tente d'expliquer une une distribution statistique comme étant une somme de sous distributions gaussiennes. La figure \ref{fig:GMM_ToyEx} présente un cas d'application idéaliste d'un tel modèle. 
 
+\todo{Changer ou supprimer la figure}
+
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.5\linewidth]{Images/Models/GMM/GMM_toyexemple}
-\label{fig:fig:GMM_ToyEx}
 \caption{Exemple d'application d'un GMM dans un cas idéaliste }
+\label{fig:fig:GMM_ToyEx}
 \end{figure}
+
+
 
 Ce modèle cherche donc à identifier, pour chaque gaussienne, sa variance, sa moyenne et les proportions. La gestion des problèmes en haute dimension avec ce modèle peut s'avérer difficile car il est sujet à la malédiction de la dimension. En effet, si $d$ est la dimension de l'espace et $m$ le nombre de clusters, alors le nombre de paramètres à identifier est :
 
@@ -804,15 +808,15 @@ Utiliser ce modèle pour faire de la correction au cours de la journée n'apport
 \begin{figure}[h]
 	\begin{center}
 		
-		\begin{subfigure}[b]{0.85\linewidth}
+		\begin{subfigure}[b]{0.5\linewidth}
 			\centering
 			\includegraphics[width = 0.95 \linewidth]{Images/PV/HMM/HMM_ForwardProb_ACP_TrainDataset.pdf}
 			\caption{Espace réduit}
 			\label{fig:PV_HMM_ForwardReduct}
 			%\vspace{4ex}
 		\end{subfigure}%%
-		
-		\begin{subfigure}[b]{0.85\linewidth}
+		~
+		\begin{subfigure}[b]{0.5\linewidth}
 			\centering
 			\includegraphics[width = 0.95 \linewidth]{Images/PV/HMM/HMM_ForwardProb_Reconstructed_TrainDataset.pdf}
 			\caption{Espace original}
@@ -821,7 +825,7 @@ Utiliser ce modèle pour faire de la correction au cours de la journée n'apport
 		\end{subfigure}
 	\end{center}
 	
-	\caption{Probabilités d'appartenance de 6 jours consécutifs}
+	\caption{Probabilités d'appartenance de 6 jours consécutifs aux états du modèle présenté dans la figure \ref{fig:PV_GMM_MeanVar_OrigACP}}
 	\label{fig:PV_HMM_Forward} 
 \end{figure}
 

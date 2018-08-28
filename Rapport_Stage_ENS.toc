@@ -2,32 +2,32 @@
 \contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}
 \contentsline {section}{\numberline {1.1}Pr\IeC {\'e}sentation du Laboratoire}{3}{section.1.1}
 \contentsline {section}{\numberline {1.2}Contexte}{3}{section.1.2}
-\contentsline {chapter}{\numberline {2}Pr\IeC {\'e}sentation des donn\IeC {\'e}es}{6}{chapter.2}
-\contentsline {section}{\numberline {2.1}Production \IeC {\'E}olienne}{6}{section.2.1}
+\contentsline {chapter}{\numberline {2}Pr\IeC {\'e}sentation des donn\IeC {\'e}es}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Production \IeC {\'E}olienne}{5}{section.2.1}
 \contentsline {section}{\numberline {2.2}Production Photovolta\IeC {\"\i }ques}{6}{section.2.2}
-\contentsline {chapter}{\numberline {3}Mod\IeC {\`e}les et m\IeC {\'e}triques}{10}{chapter.3}
-\contentsline {section}{\numberline {3.1}Mod\IeC {\`e}les de Markov cach\IeC {\'e}s}{10}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Cha\IeC {\^\i }ne de Markov}{10}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Mod\IeC {\`e}le de Markov cach\IeC {\'e}s}{11}{subsection.3.1.2}
-\contentsline {subsubsection}{Probabilit\IeC {\'e} d\IeC {\textquoteright }observation d\IeC {\textquoteright }une s\IeC {\'e}quence}{12}{equation.3.1.3}
-\contentsline {subsubsection}{Recherche de la s\IeC {\'e}quence la plus probable}{13}{figure.caption.12}
-\contentsline {subsubsection}{Apprentissage}{14}{figure.caption.13}
-\contentsline {subsection}{\numberline {3.1.3}Mod\IeC {\`e}les Markov Switching Auto-Regressive}{16}{subsection.3.1.3}
-\contentsline {section}{\numberline {3.2}Mod\IeC {\`e}les GARCH}{17}{section.3.2}
-\contentsline {section}{\numberline {3.3}K-moyennes (Kmeans)}{17}{section.3.3}
-\contentsline {section}{\numberline {3.4}Mod\IeC {\`e}le de m\IeC {\'e}lange gaussien (GMM)}{17}{section.3.4}
-\contentsline {section}{\numberline {3.5}Analyse par Composante Principale}{18}{section.3.5}
-\contentsline {section}{\numberline {3.6}M\IeC {\'e}triques}{18}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}BIC}{18}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}Erreur moyenne absolue (MAE)}{19}{subsection.3.6.2}
-\contentsline {subsection}{\numberline {3.6.3}Erreur quadratique moyenne (RMSE)}{19}{subsection.3.6.3}
-\contentsline {chapter}{\numberline {4}Erreurs de pr\IeC {\'e}vision \IeC {\'e}olienne}{20}{chapter.4}
-\contentsline {chapter}{\numberline {5}Erreurs de pr\IeC {\'e}vision photovolta\IeC {\"\i }que}{21}{chapter.5}
-\contentsline {section}{\numberline {5.1}M\IeC {\'e}thode des plus proches voisins}{21}{section.5.1}
-\contentsline {section}{\numberline {5.2}R\IeC {\'e}sulats avec un GMM}{24}{section.5.2}
-\contentsline {section}{\numberline {5.3}R\IeC {\'e}sultats avec un HMM}{26}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}D\IeC {\'e}termination du mod\IeC {\`e}le}{26}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Caract\IeC {\'e}risation statistique du mod\IeC {\`e}le}{29}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Applications du mod\IeC {\`e}le}{31}{subsection.5.3.3}
-\contentsline {chapter}{\numberline {6}Conclusion et perspectives}{33}{chapter.6}
-\contentsline {chapter}{\numberline {A}Premi\IeC {\`e}re version de la publication concernant les erreurs de pr\IeC {\'e}visions \IeC {\'e}oliennes}{34}{appendix.A}
+\contentsline {chapter}{\numberline {3}Mod\IeC {\`e}les et m\IeC {\'e}triques}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Mod\IeC {\`e}les de Markov cach\IeC {\'e}s}{9}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Cha\IeC {\^\i }ne de Markov}{9}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Mod\IeC {\`e}le de Markov cach\IeC {\'e}s}{10}{subsection.3.1.2}
+\contentsline {subsubsection}{Probabilit\IeC {\'e} d\IeC {\textquoteright }observation d\IeC {\textquoteright }une s\IeC {\'e}quence}{11}{equation.3.1.3}
+\contentsline {subsubsection}{Recherche de la s\IeC {\'e}quence la plus probable}{12}{figure.caption.12}
+\contentsline {subsubsection}{Apprentissage}{13}{figure.caption.13}
+\contentsline {subsection}{\numberline {3.1.3}Mod\IeC {\`e}les Markov Switching Auto-Regressive}{14}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Mod\IeC {\`e}les GARCH}{15}{section.3.2}
+\contentsline {section}{\numberline {3.3}K-moyennes (Kmeans)}{15}{section.3.3}
+\contentsline {section}{\numberline {3.4}Mod\IeC {\`e}le de m\IeC {\'e}lange gaussien (GMM)}{16}{section.3.4}
+\contentsline {section}{\numberline {3.5}Analyse par Composante Principale}{17}{section.3.5}
+\contentsline {section}{\numberline {3.6}M\IeC {\'e}triques}{17}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}BIC}{17}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Erreur moyenne absolue (MAE)}{17}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}Erreur quadratique moyenne (RMSE)}{17}{subsection.3.6.3}
+\contentsline {chapter}{\numberline {4}Erreurs de pr\IeC {\'e}vision \IeC {\'e}olienne}{18}{chapter.4}
+\contentsline {chapter}{\numberline {5}Erreurs de pr\IeC {\'e}vision photovolta\IeC {\"\i }que}{19}{chapter.5}
+\contentsline {section}{\numberline {5.1}M\IeC {\'e}thode des plus proches voisins}{19}{section.5.1}
+\contentsline {section}{\numberline {5.2}R\IeC {\'e}sulats avec un GMM}{22}{section.5.2}
+\contentsline {section}{\numberline {5.3}R\IeC {\'e}sultats avec un HMM}{24}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}D\IeC {\'e}termination du mod\IeC {\`e}le}{24}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Caract\IeC {\'e}risation statistique du mod\IeC {\`e}le}{27}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Applications du mod\IeC {\`e}le}{29}{subsection.5.3.3}
+\contentsline {chapter}{\numberline {6}Conclusion et perspectives}{30}{chapter.6}
+\contentsline {chapter}{\numberline {A}Premi\IeC {\`e}re version de la publication concernant les erreurs de pr\IeC {\'e}visions \IeC {\'e}oliennes}{31}{appendix.A}

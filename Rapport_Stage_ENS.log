@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730) (preloaded format=pdflatex 2018.7.26)  28 AUG 2018 18:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730) (preloaded format=pdflatex 2018.7.26)  28 AUG 2018 19:00
 entering extended mode
 **./Rapport_Stage_ENS.tex
 (Rapport_Stage_ENS.tex
@@ -1112,19 +1112,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4 <./Images/Intro/Primary_production_of_energy_1990-2016.png>]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 24.64995pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[5]
 Chapitre 2.
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 58.
 (/home/enzo/.miktex/texmfs/install/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-<Images/Data/Eolien/BPA/Normalize.pdf, id=208, 526.96875pt x 325.215pt>
+<Images/Data/Eolien/BPA/Normalize.pdf, id=204, 526.96875pt x 325.215pt>
 File: Images/Data/Eolien/BPA/Normalize.pdf Graphic file (type pdf)
 <use Images/Data/Eolien/BPA/Normalize.pdf>
 Package pdftex.def Info: Images/Data/Eolien/BPA/Normalize.pdf  used on input li
@@ -1135,7 +1128,7 @@ Underfull \hbox (badness 5288) in paragraph at lines 69--69
 []\T1/cmr/m/n/10.95 (a) |Production réalisée et capacité de
  []
 
-<Images/Data/Eolien/BPA/NormWindErrs_All.pdf, id=209, 526.96875pt x 325.215pt>
+<Images/Data/Eolien/BPA/NormWindErrs_All.pdf, id=205, 526.96875pt x 325.215pt>
 File: Images/Data/Eolien/BPA/NormWindErrs_All.pdf Graphic file (type pdf)
 <use Images/Data/Eolien/BPA/NormWindErrs_All.pdf>
 Package pdftex.def Info: Images/Data/Eolien/BPA/NormWindErrs_All.pdf  used on i
@@ -1163,41 +1156,42 @@ Overfull \hbox (7.35855pt too wide) in paragraph at lines 83--83
 \T1/cmr/m/n/12 combien  
  []
 
-<Images/Data/Eolien/BPA/Hist_NormErr.pdf, id=212, 526.96875pt x 325.215pt>
-File: Images/Data/Eolien/BPA/Hist_NormErr.pdf Graphic file (type pdf)
-<use Images/Data/Eolien/BPA/Hist_NormErr.pdf>
-Package pdftex.def Info: Images/Data/Eolien/BPA/Hist_NormErr.pdf  used on input
- line 89.
-(pdftex.def)             Requested size: 212.41261pt x 131.09105pt.
-<Images/Data/Eolien/BPA/NormWindErrs_1Month.pdf, id=213, 526.96875pt x 325.215p
-t>
-File: Images/Data/Eolien/BPA/NormWindErrs_1Month.pdf Graphic file (type pdf)
-<use Images/Data/Eolien/BPA/NormWindErrs_1Month.pdf>
-Package pdftex.def Info: Images/Data/Eolien/BPA/NormWindErrs_1Month.pdf  used o
-n input line 95.
-(pdftex.def)             Requested size: 212.41261pt x 131.09105pt.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.5pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6
+[5
 
-]
-<Images/Data/PV/Tennet/Tennet_Actual.pdf, id=235, 459.7175pt x 284.06125pt>
+ <./Images/Data/Eolien/BPA/Normalize.pdf> <./Images/Data/Eolien/BPA/NormWindErr
+s_All.pdf>]
+<Images/Data/Eolien/BPA/Hist_NormErr.pdf, id=234, 526.96875pt x 325.215pt>
+File: Images/Data/Eolien/BPA/Hist_NormErr.pdf Graphic file (type pdf)
+<use Images/Data/Eolien/BPA/Hist_NormErr.pdf>
+Package pdftex.def Info: Images/Data/Eolien/BPA/Hist_NormErr.pdf  used on input
+ line 89.
+(pdftex.def)             Requested size: 212.41261pt x 131.09105pt.
+<Images/Data/Eolien/BPA/NormWindErrs_1Month.pdf, id=235, 526.96875pt x 325.215p
+t>
+File: Images/Data/Eolien/BPA/NormWindErrs_1Month.pdf Graphic file (type pdf)
+<use Images/Data/Eolien/BPA/NormWindErrs_1Month.pdf>
+Package pdftex.def Info: Images/Data/Eolien/BPA/NormWindErrs_1Month.pdf  used o
+n input line 95.
+(pdftex.def)             Requested size: 212.41261pt x 131.09105pt.
+<Images/Data/PV/Tennet/Tennet_Actual.pdf, id=241, 459.7175pt x 284.06125pt>
 File: Images/Data/PV/Tennet/Tennet_Actual.pdf Graphic file (type pdf)
 <use Images/Data/PV/Tennet/Tennet_Actual.pdf>
 Package pdftex.def Info: Images/Data/PV/Tennet/Tennet_Actual.pdf  used on input
  line 112.
 (pdftex.def)             Requested size: 212.41261pt x 131.25055pt.
-<Images/Data/PV/Tennet/Tennet_Forecast.pdf, id=236, 459.7175pt x 284.06125pt>
+<Images/Data/PV/Tennet/Tennet_Forecast.pdf, id=242, 459.7175pt x 284.06125pt>
 File: Images/Data/PV/Tennet/Tennet_Forecast.pdf Graphic file (type pdf)
 <use Images/Data/PV/Tennet/Tennet_Forecast.pdf>
 Package pdftex.def Info: Images/Data/PV/Tennet/Tennet_Forecast.pdf  used on inp
 ut line 116.
 (pdftex.def)             Requested size: 212.41261pt x 131.25055pt.
-<Images/Data/PV/Tennet/TennetPrdErrors_WholeZoom_Mod.pdf, id=238, 459.7175pt x 
+<Images/Data/PV/Tennet/TennetPrdErrors_WholeZoom_Mod.pdf, id=244, 459.7175pt x 
 284.06125pt>
 File: Images/Data/PV/Tennet/TennetPrdErrors_WholeZoom_Mod.pdf Graphic file (typ
 e pdf)
@@ -1212,17 +1206,16 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7 <./Images/Data/Eolien/BPA/Normalize.pdf> <./Images/Data/Eolien/BPA/NormWindE
-rrs_All.pdf> <./Images/Data/Eolien/BPA/Hist_NormErr.pdf> <./Images/Data/Eolien/
-BPA/NormWindErrs_1Month.pdf>]
-<Images/Data/PV/Tennet/TennetBayern_Boxplot.pdf, id=271, 459.7175pt x 284.06125
+[6 <./Images/Data/Eolien/BPA/Hist_NormErr.pdf> <./Images/Data/Eolien/BPA/NormWi
+ndErrs_1Month.pdf>]
+<Images/Data/PV/Tennet/TennetBayern_Boxplot.pdf, id=267, 459.7175pt x 284.06125
 pt>
 File: Images/Data/PV/Tennet/TennetBayern_Boxplot.pdf Graphic file (type pdf)
 <use Images/Data/PV/Tennet/TennetBayern_Boxplot.pdf>
 Package pdftex.def Info: Images/Data/PV/Tennet/TennetBayern_Boxplot.pdf  used o
 n input line 141.
 (pdftex.def)             Requested size: 212.41261pt x 131.25055pt.
-<Images/Data/PV/Tennet/Data_Tennet_Histogram.pdf, id=272, 459.7175pt x 284.0612
+<Images/Data/PV/Tennet/Data_Tennet_Histogram.pdf, id=268, 459.7175pt x 284.0612
 5pt>
 File: Images/Data/PV/Tennet/Data_Tennet_Histogram.pdf Graphic file (type pdf)
 <use Images/Data/PV/Tennet/Data_Tennet_Histogram.pdf>
@@ -1244,7 +1237,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8 <./Images/Data/PV/Tennet/Tennet_Actual.pdf> <./Images/Data/PV/Tennet/Tennet_
+[7 <./Images/Data/PV/Tennet/Tennet_Actual.pdf> <./Images/Data/PV/Tennet/Tennet_
 Forecast.pdf> <./Images/Data/PV/Tennet/TennetPrdErrors_WholeZoom_Mod.pdf>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1252,24 +1245,24 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[9 <./Images/Data/PV/Tennet/TennetBayern_Boxplot.pdf> <./Images/Data/PV/Tennet/
+[8 <./Images/Data/PV/Tennet/TennetBayern_Boxplot.pdf> <./Images/Data/PV/Tennet/
 Data_Tennet_Histogram.pdf>]
 Chapitre 3.
-<Images/Models/HMM/ChaineMarkov.png, id=339, 379.4175pt x 40.35075pt>
+<Images/Models/HMM/ChaineMarkov.png, id=335, 379.4175pt x 40.35075pt>
 File: Images/Models/HMM/ChaineMarkov.png Graphic file (type png)
 <use Images/Models/HMM/ChaineMarkov.png>
 Package pdftex.def Info: Images/Models/HMM/ChaineMarkov.png  used on input line
  193.
-(pdftex.def)             Requested size: 472.03123pt x 50.20126pt.
+(pdftex.def)             Requested size: 283.22162pt x 30.12076pt.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.5pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[10
+[9
 
-]
+ <./Images/Models/HMM/ChaineMarkov.png>]
 Overfull \hbox (1.60818pt too wide) in paragraph at lines 217--218
 \T1/cmr/m/n/12 que de l'état dans lequel le système dynamique (la chaîne de Mar
 kov) se trouve. En considérant
@@ -1281,11 +1274,11 @@ Overfull \hbox (6.37233pt too wide) in paragraph at lines 217--218
  représentées graphiquement
  []
 
-<Images/Models/HMM/HMM.png, id=354, 379.4175pt x 125.268pt>
+<Images/Models/HMM/HMM.png, id=352, 379.4175pt x 125.268pt>
 File: Images/Models/HMM/HMM.png Graphic file (type png)
 <use Images/Models/HMM/HMM.png>
 Package pdftex.def Info: Images/Models/HMM/HMM.png  used on input line 229.
-(pdftex.def)             Requested size: 472.03123pt x 155.8487pt.
+(pdftex.def)             Requested size: 283.22162pt x 93.50922pt.
 
 Underfull \hbox (badness 1137) in paragraph at lines 230--230
 []\T1/cmr/m/sc/12 Figure \T1/cmr/m/n/12 3.2  |Représentation graphique d'un mo
@@ -1304,34 +1297,26 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[11 <./Images/Models/HMM/ChaineMarkov.png>]
+[10 <./Images/Models/HMM/HMM.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 24.76854pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[12 <./Images/Models/HMM/HMM.png>]
-<Images/Models/HMM/Forward.png, id=376, 509.5035pt x 253.54726pt>
+[11]
+<Images/Models/HMM/Forward.png, id=374, 509.5035pt x 253.54726pt>
 File: Images/Models/HMM/Forward.png Graphic file (type png)
 <use Images/Models/HMM/Forward.png>
 Package pdftex.def Info: Images/Models/HMM/Forward.png  used on input line 289.
 
-(pdftex.def)             Requested size: 472.03123pt x 234.89893pt.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 24.76854pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[13 <./Images/Models/HMM/Forward.png>]
-<Images/Models/HMM/Viterbi.png, id=391, 563.706pt x 261.3765pt>
+(pdftex.def)             Requested size: 377.62642pt x 187.9199pt.
+<Images/Models/HMM/Viterbi.png, id=377, 563.706pt x 261.3765pt>
 File: Images/Models/HMM/Viterbi.png Graphic file (type png)
 <use Images/Models/HMM/Viterbi.png>
 Package pdftex.def Info: Images/Models/HMM/Viterbi.png  used on input line 310.
 
-(pdftex.def)             Requested size: 472.03123pt x 218.87274pt.
+(pdftex.def)             Requested size: 377.62642pt x 175.0974pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1339,54 +1324,80 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[14 <./Images/Models/HMM/Viterbi.png>]
+[12 <./Images/Models/HMM/Forward.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 24.76854pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[15]
+[13 <./Images/Models/HMM/Viterbi.png>]
 Overfull \hbox (8.5662pt too wide) in paragraph at lines 396--397
 \T1/cmr/m/n/12 météorologique suppose que toute la dynamique est représentée pa
 r l'état caché. Or, notamment
  []
 
-<Images/Models/HMM/MSAR.png, id=420, 379.4175pt x 171.039pt>
+<Images/Models/HMM/MSAR.png, id=405, 379.4175pt x 171.039pt>
 File: Images/Models/HMM/MSAR.png Graphic file (type png)
 <use Images/Models/HMM/MSAR.png>
 Package pdftex.def Info: Images/Models/HMM/MSAR.png  used on input line 400.
-(pdftex.def)             Requested size: 472.03123pt x 212.79343pt.
+(pdftex.def)             Requested size: 283.22162pt x 127.67606pt.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 24.76854pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[16 <./Images/Models/HMM/MSAR.png>]
+[14]
 
-LaTeX Warning: Reference `fig:GMM_ToyEx' on page 17 undefined on input line 440
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 24.76854pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15 <./Images/Models/HMM/MSAR.png>]
+
+LaTeX Warning: Reference `fig:GMM_ToyEx' on page 16 undefined on input line 440
 .
+
+
+Overfull \hbox (8.33751pt too wide) in paragraph at lines 442--442
+[][][][]\T1/cmr/m/n/12 Changer 
+ []
+
+
+Overfull \hbox (16.88678pt too wide) in paragraph at lines 442--442
+\T1/cmr/m/n/12 supprimer 
+ []
+
+
+Overfull \hbox (8.33751pt too wide) in paragraph at lines 442--442
+[][][][]\T1/cmr/m/n/12 Changer 
+ []
+
+
+Overfull \hbox (16.88678pt too wide) in paragraph at lines 442--442
+\T1/cmr/m/n/12 supprimer 
+ []
 
 <Images/Models/GMM/GMM_toyexemple.png, id=429, 578.16pt x 578.16pt>
 File: Images/Models/GMM/GMM_toyexemple.png Graphic file (type png)
 <use Images/Models/GMM/GMM_toyexemple.png>
 Package pdftex.def Info: Images/Models/GMM/GMM_toyexemple.png  used on input li
-ne 444.
+ne 446.
 (pdftex.def)             Requested size: 236.01561pt x 236.01495pt.
+
+LaTeX Warning: Citation `scrucca_mclust_2016' on page 16 undefined on input lin
+e 460.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 24.76854pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[17]
-
-LaTeX Warning: Citation `scrucca_mclust_2016' on page 18 undefined on input lin
-e 456.
-
-
-Overfull \hbox (16.58783pt too wide) in paragraph at lines 466--467
+[16 <./Images/Models/GMM/GMM_toyexemple.png>]
+Overfull \hbox (16.58783pt too wide) in paragraph at lines 470--471
 \T1/cmr/m/n/12 d'observations dans la série temporelle. Au vu de sa définition 
 c'est un score orienté négativement.
  []
@@ -1397,14 +1408,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[18 <./Images/Models/GMM/GMM_toyexemple.png>]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 24.76854pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[19]
+[17]
 Chapitre 4.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1412,54 +1416,54 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[20
+[18
 
 ]
 Chapitre 5.
 
-Overfull \hbox (15.0247pt too wide) in paragraph at lines 509--509
+Overfull \hbox (15.0247pt too wide) in paragraph at lines 513--513
 [][][][]\T1/cmr/m/n/12 Expliquer 
  []
 
 
-Overfull \hbox (10.94792pt too wide) in paragraph at lines 509--509
+Overfull \hbox (10.94792pt too wide) in paragraph at lines 513--513
 \T1/cmr/m/n/12 pourquoi 
  []
 
 
-Overfull \hbox (18.45306pt too wide) in paragraph at lines 509--509
+Overfull \hbox (18.45306pt too wide) in paragraph at lines 513--513
 \T1/cmr/m/n/12 clairement  
  []
 
 
-Overfull \hbox (15.0247pt too wide) in paragraph at lines 509--509
+Overfull \hbox (15.0247pt too wide) in paragraph at lines 513--513
 [][][][]\T1/cmr/m/n/12 Expliquer 
  []
 
 
-Overfull \hbox (10.94792pt too wide) in paragraph at lines 509--509
+Overfull \hbox (10.94792pt too wide) in paragraph at lines 513--513
 \T1/cmr/m/n/12 pourquoi 
  []
 
 
-Overfull \hbox (18.45306pt too wide) in paragraph at lines 509--509
+Overfull \hbox (18.45306pt too wide) in paragraph at lines 513--513
 \T1/cmr/m/n/12 clairement  
  []
 
 
-Overfull \hbox (7.25294pt too wide) in paragraph at lines 511--512
+Overfull \hbox (7.25294pt too wide) in paragraph at lines 515--516
 \T1/cmr/m/n/12 résolution numérique, une approche simpliste aurait consisté à s
 upprimer les périodes nocturnes
  []
 
 
-Overfull \hbox (10.61615pt too wide) in paragraph at lines 513--514
+Overfull \hbox (10.61615pt too wide) in paragraph at lines 517--518
 []\T1/cmr/m/n/12 En observant la série de donnée, il est possible de remarquer 
 que des trajectoires quotidiennes
  []
 
 
-Overfull \hbox (0.31201pt too wide) in paragraph at lines 521--522
+Overfull \hbox (0.31201pt too wide) in paragraph at lines 525--526
 \T1/cmr/m/n/12 minimisaient [] où $\OML/cmm/m/it/12 z$ \T1/cmr/m/n/12 représent
 e la trajectoire de la journée courante et $[]$ une des trajectoires
  []
@@ -1470,26 +1474,26 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[21
+[19
 
 ]
-<Images/PV/KNN/NN_intraday_testdata_11.pdf, id=472, 526.96875pt x 325.215pt>
+<Images/PV/KNN/NN_intraday_testdata_11.pdf, id=466, 526.96875pt x 325.215pt>
 File: Images/PV/KNN/NN_intraday_testdata_11.pdf Graphic file (type pdf)
 <use Images/PV/KNN/NN_intraday_testdata_11.pdf>
 Package pdftex.def Info: Images/PV/KNN/NN_intraday_testdata_11.pdf  used on inp
-ut line 542.
+ut line 546.
 (pdftex.def)             Requested size: 236.01561pt x 145.65562pt.
-<Images/PV/KNN/NN_intraday_testdata_48.pdf, id=473, 526.96875pt x 325.215pt>
+<Images/PV/KNN/NN_intraday_testdata_48.pdf, id=467, 526.96875pt x 325.215pt>
 File: Images/PV/KNN/NN_intraday_testdata_48.pdf Graphic file (type pdf)
 <use Images/PV/KNN/NN_intraday_testdata_48.pdf>
 Package pdftex.def Info: Images/PV/KNN/NN_intraday_testdata_48.pdf  used on inp
-ut line 549.
+ut line 553.
 (pdftex.def)             Requested size: 236.01561pt x 145.65562pt.
-<Images/PV/KNN/NN_intraday_testdata_99.pdf, id=474, 526.96875pt x 325.215pt>
+<Images/PV/KNN/NN_intraday_testdata_99.pdf, id=468, 526.96875pt x 325.215pt>
 File: Images/PV/KNN/NN_intraday_testdata_99.pdf Graphic file (type pdf)
 <use Images/PV/KNN/NN_intraday_testdata_99.pdf>
 Package pdftex.def Info: Images/PV/KNN/NN_intraday_testdata_99.pdf  used on inp
-ut line 557.
+ut line 561.
 (pdftex.def)             Requested size: 236.01561pt x 145.65562pt.
 
 
@@ -1498,37 +1502,37 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[22 <./Images/PV/KNN/NN_intraday_testdata_11.pdf> <./Images/PV/KNN/NN_intraday_
+[20 <./Images/PV/KNN/NN_intraday_testdata_11.pdf> <./Images/PV/KNN/NN_intraday_
 testdata_48.pdf> <./Images/PV/KNN/NN_intraday_testdata_99.pdf>]
-<Images/PV/KNN/KNN_compare.pdf, id=518, 526.96875pt x 325.215pt>
+<Images/PV/KNN/KNN_compare.pdf, id=511, 526.96875pt x 325.215pt>
 File: Images/PV/KNN/KNN_compare.pdf Graphic file (type pdf)
 <use Images/PV/KNN/KNN_compare.pdf>
-Package pdftex.def Info: Images/PV/KNN/KNN_compare.pdf  used on input line 575.
+Package pdftex.def Info: Images/PV/KNN/KNN_compare.pdf  used on input line 579.
 
 (pdftex.def)             Requested size: 354.02342pt x 218.49336pt.
-<Images/PV/Kmeans/Kmeans5Clusts.pdf, id=521, 526.96875pt x 325.215pt>
+<Images/PV/Kmeans/Kmeans5Clusts.pdf, id=514, 526.96875pt x 325.215pt>
 File: Images/PV/Kmeans/Kmeans5Clusts.pdf Graphic file (type pdf)
 <use Images/PV/Kmeans/Kmeans5Clusts.pdf>
 Package pdftex.def Info: Images/PV/Kmeans/Kmeans5Clusts.pdf  used on input line
- 583.
+ 587.
 (pdftex.def)             Requested size: 212.4126pt x 131.09105pt.
-<Images/PV/Kmeans/Kmeans10Clusts.pdf, id=522, 526.96875pt x 325.215pt>
+<Images/PV/Kmeans/Kmeans10Clusts.pdf, id=515, 526.96875pt x 325.215pt>
 File: Images/PV/Kmeans/Kmeans10Clusts.pdf Graphic file (type pdf)
 <use Images/PV/Kmeans/Kmeans10Clusts.pdf>
 Package pdftex.def Info: Images/PV/Kmeans/Kmeans10Clusts.pdf  used on input lin
-e 590.
+e 594.
 (pdftex.def)             Requested size: 212.4126pt x 131.09105pt.
-<Images/PV/Kmeans/Kmeans15Clusts.pdf, id=523, 526.96875pt x 325.215pt>
+<Images/PV/Kmeans/Kmeans15Clusts.pdf, id=516, 526.96875pt x 325.215pt>
 File: Images/PV/Kmeans/Kmeans15Clusts.pdf Graphic file (type pdf)
 <use Images/PV/Kmeans/Kmeans15Clusts.pdf>
 Package pdftex.def Info: Images/PV/Kmeans/Kmeans15Clusts.pdf  used on input lin
-e 598.
+e 602.
 (pdftex.def)             Requested size: 212.4126pt x 131.09105pt.
-<Images/PV/Kmeans/Kmeans20Clusts.pdf, id=524, 526.96875pt x 325.215pt>
+<Images/PV/Kmeans/Kmeans20Clusts.pdf, id=517, 526.96875pt x 325.215pt>
 File: Images/PV/Kmeans/Kmeans20Clusts.pdf Graphic file (type pdf)
 <use Images/PV/Kmeans/Kmeans20Clusts.pdf>
 Package pdftex.def Info: Images/PV/Kmeans/Kmeans20Clusts.pdf  used on input lin
-e 604.
+e 608.
 (pdftex.def)             Requested size: 212.4126pt x 131.09105pt.
 
 
@@ -1540,77 +1544,77 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[23 <./Images/PV/KNN/KNN_compare.pdf>]
+[21 <./Images/PV/KNN/KNN_compare.pdf>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 25.19739pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[24 <./Images/PV/Kmeans/Kmeans5Clusts.pdf> <./Images/PV/Kmeans/Kmeans10Clusts.p
+[22 <./Images/PV/Kmeans/Kmeans5Clusts.pdf> <./Images/PV/Kmeans/Kmeans10Clusts.p
 df> <./Images/PV/Kmeans/Kmeans15Clusts.pdf> <./Images/PV/Kmeans/Kmeans20Clusts.
 pdf>]
-<Images/PV/GMM/GMM_BICCompare_20.pdf, id=564, 426.59375pt x 284.06125pt>
+<Images/PV/GMM/GMM_BICCompare_20.pdf, id=556, 426.59375pt x 284.06125pt>
 File: Images/PV/GMM/GMM_BICCompare_20.pdf Graphic file (type pdf)
 <use Images/PV/GMM/GMM_BICCompare_20.pdf>
 Package pdftex.def Info: Images/PV/GMM/GMM_BICCompare_20.pdf  used on input lin
-e 625.
+e 629.
 (pdftex.def)             Requested size: 212.4126pt x 141.44511pt.
-<Images/PV/GMM/GMM_CompareIntraday.pdf, id=565, 459.7175pt x 284.06125pt>
+<Images/PV/GMM/GMM_CompareIntraday.pdf, id=557, 459.7175pt x 284.06125pt>
 File: Images/PV/GMM/GMM_CompareIntraday.pdf Graphic file (type pdf)
 <use Images/PV/GMM/GMM_CompareIntraday.pdf>
 Package pdftex.def Info: Images/PV/GMM/GMM_CompareIntraday.pdf  used on input l
-ine 632.
+ine 636.
 (pdftex.def)             Requested size: 212.4126pt x 131.25055pt.
 
-Overfull \hbox (7.83145pt too wide) in paragraph at lines 623--636
+Overfull \hbox (7.83145pt too wide) in paragraph at lines 627--640
 []$[]$   $[]$ 
  []
 
 
-Overfull \hbox (12.80165pt too wide) in paragraph at lines 639--640
+Overfull \hbox (12.80165pt too wide) in paragraph at lines 643--644
 \T1/cmr/m/n/12 obtenu, et d'en limiter sa complexité, il est impératif de chois
 ir un nombre de cluster relativement
  []
 
-<Images/PV/GMM/GMM_6Clust_Intraday_24d_10h_idtest98.pdf, id=569, 526.96875pt x 
+<Images/PV/GMM/GMM_6Clust_Intraday_24d_10h_idtest98.pdf, id=561, 526.96875pt x 
 325.215pt>
 File: Images/PV/GMM/GMM_6Clust_Intraday_24d_10h_idtest98.pdf Graphic file (type
  pdf)
 <use Images/PV/GMM/GMM_6Clust_Intraday_24d_10h_idtest98.pdf>
 Package pdftex.def Info: Images/PV/GMM/GMM_6Clust_Intraday_24d_10h_idtest98.pdf
-  used on input line 644.
+  used on input line 648.
 (pdftex.def)             Requested size: 212.4126pt x 131.09105pt.
-<Images/PV/GMM/GMM_6Clust_Intraday_24d_13h_idtest98.pdf, id=570, 526.96875pt x 
+<Images/PV/GMM/GMM_6Clust_Intraday_24d_13h_idtest98.pdf, id=562, 526.96875pt x 
 325.215pt>
 File: Images/PV/GMM/GMM_6Clust_Intraday_24d_13h_idtest98.pdf Graphic file (type
  pdf)
 <use Images/PV/GMM/GMM_6Clust_Intraday_24d_13h_idtest98.pdf>
 Package pdftex.def Info: Images/PV/GMM/GMM_6Clust_Intraday_24d_13h_idtest98.pdf
-  used on input line 651.
+  used on input line 655.
 (pdftex.def)             Requested size: 212.4126pt x 131.09105pt.
-<Images/PV/GMM/GMM_6Clust_Intraday_24d_10h_idtest335.pdf, id=571, 526.96875pt x
+<Images/PV/GMM/GMM_6Clust_Intraday_24d_10h_idtest335.pdf, id=563, 526.96875pt x
  325.215pt>
 File: Images/PV/GMM/GMM_6Clust_Intraday_24d_10h_idtest335.pdf Graphic file (typ
 e pdf)
 <use Images/PV/GMM/GMM_6Clust_Intraday_24d_10h_idtest335.pdf>
 Package pdftex.def Info: Images/PV/GMM/GMM_6Clust_Intraday_24d_10h_idtest335.pd
-f  used on input line 659.
+f  used on input line 663.
 (pdftex.def)             Requested size: 212.4126pt x 131.09105pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/PV/GMM/GMM_MeansVars_6_dim24.pdf, id=576, 426.59375pt x 284.06125pt>
+<Images/PV/GMM/GMM_MeansVars_6_dim24.pdf, id=568, 426.59375pt x 284.06125pt>
 File: Images/PV/GMM/GMM_MeansVars_6_dim24.pdf Graphic file (type pdf)
 <use Images/PV/GMM/GMM_MeansVars_6_dim24.pdf>
 Package pdftex.def Info: Images/PV/GMM/GMM_MeansVars_6_dim24.pdf  used on input
- line 673.
+ line 677.
 (pdftex.def)             Requested size: 354.02342pt x 235.75342pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (10.38431pt too wide) in paragraph at lines 679--680
+Overfull \hbox (10.38431pt too wide) in paragraph at lines 683--684
 \T1/cmr/m/n/12 d'identifier les probabilités d'appartenance au cours de la jour
 née via les densités de probabilités,
  []
@@ -1621,7 +1625,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[25 <./Images/PV/GMM/GMM_BICCompare_20.pdf> <./Images/PV/GMM/GMM_CompareIntrada
+[23 <./Images/PV/GMM/GMM_BICCompare_20.pdf> <./Images/PV/GMM/GMM_CompareIntrada
 y.pdf>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1629,66 +1633,66 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[26 <./Images/PV/GMM/GMM_6Clust_Intraday_24d_10h_idtest98.pdf> <./Images/PV/GMM
+[24 <./Images/PV/GMM/GMM_6Clust_Intraday_24d_10h_idtest98.pdf> <./Images/PV/GMM
 /GMM_6Clust_Intraday_24d_13h_idtest98.pdf> <./Images/PV/GMM/GMM_6Clust_Intraday
 _24d_10h_idtest335.pdf>]
-<Images/PV/ACP/ACP_DimSelect.pdf, id=636, 459.7175pt x 284.06125pt>
+<Images/PV/ACP/ACP_DimSelect.pdf, id=629, 459.7175pt x 284.06125pt>
 File: Images/PV/ACP/ACP_DimSelect.pdf Graphic file (type pdf)
 <use Images/PV/ACP/ACP_DimSelect.pdf>
-Package pdftex.def Info: Images/PV/ACP/ACP_DimSelect.pdf  used on input line 69
-6.
+Package pdftex.def Info: Images/PV/ACP/ACP_DimSelect.pdf  used on input line 70
+0.
 (pdftex.def)             Requested size: 283.22162pt x 175.01086pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `fig:Donnees_TenneT_Bayern_BoxHist' on page 27 undefin
-ed on input line 701.
+LaTeX Warning: Reference `fig:Donnees_TenneT_Bayern_BoxHist' on page 25 undefin
+ed on input line 705.
 
 
-Overfull \hbox (5.59741pt too wide) in paragraph at lines 701--702
+Overfull \hbox (5.59741pt too wide) in paragraph at lines 705--706
 []\T1/cmr/m/n/12 Ces 6 composantes sont présentées sur la figure []5.8[]. Les 6
  composantes principales partagent
  []
 
+<Images/PV/ACP/ACP_PrincipalComp_6.pdf, id=631, 459.7175pt x 284.06125pt>
+File: Images/PV/ACP/ACP_PrincipalComp_6.pdf Graphic file (type pdf)
+<use Images/PV/ACP/ACP_PrincipalComp_6.pdf>
+Package pdftex.def Info: Images/PV/ACP/ACP_PrincipalComp_6.pdf  used on input l
+ine 709.
+(pdftex.def)             Requested size: 377.62642pt x 233.34781pt.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 25.19739pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[27 <./Images/PV/GMM/GMM_MeansVars_6_dim24.pdf>]
-<Images/PV/ACP/ACP_PrincipalComp_6.pdf, id=653, 459.7175pt x 284.06125pt>
-File: Images/PV/ACP/ACP_PrincipalComp_6.pdf Graphic file (type pdf)
-<use Images/PV/ACP/ACP_PrincipalComp_6.pdf>
-Package pdftex.def Info: Images/PV/ACP/ACP_PrincipalComp_6.pdf  used on input l
-ine 705.
-(pdftex.def)             Requested size: 377.62642pt x 233.34781pt.
-<Images/PV/HMM/MS6AR_6dimACP.pdf, id=655, 459.7175pt x 284.06125pt>
+[25 <./Images/PV/GMM/GMM_MeansVars_6_dim24.pdf>]
+<Images/PV/HMM/MS6AR_6dimACP.pdf, id=648, 459.7175pt x 284.06125pt>
 File: Images/PV/HMM/MS6AR_6dimACP.pdf Graphic file (type pdf)
 <use Images/PV/HMM/MS6AR_6dimACP.pdf>
-Package pdftex.def Info: Images/PV/HMM/MS6AR_6dimACP.pdf  used on input line 71
-6.
+Package pdftex.def Info: Images/PV/HMM/MS6AR_6dimACP.pdf  used on input line 72
+0.
 (pdftex.def)             Requested size: 224.2141pt x 138.54538pt.
-<Images/PV/HMM/MS6AR_24dimReco.pdf, id=656, 459.7175pt x 284.06125pt>
+<Images/PV/HMM/MS6AR_24dimReco.pdf, id=649, 459.7175pt x 284.06125pt>
 File: Images/PV/HMM/MS6AR_24dimReco.pdf Graphic file (type pdf)
 <use Images/PV/HMM/MS6AR_24dimReco.pdf>
 Package pdftex.def Info: Images/PV/HMM/MS6AR_24dimReco.pdf  used on input line 
-723.
+727.
 (pdftex.def)             Requested size: 224.2141pt x 138.54538pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (0.4736pt too wide) in paragraph at lines 740--741
+Overfull \hbox (0.4736pt too wide) in paragraph at lines 744--745
 \T1/cmr/m/n/12 intéressant à noter. Tout d'abord, les régimes sont caractérisés
  par des valeurs non négligeables
  []
 
 
-Overfull \hbox (11.9248pt too wide) in paragraph at lines 740--741
+Overfull \hbox (11.9248pt too wide) in paragraph at lines 744--745
 \T1/cmr/m/n/12 maximisation de la variance qu'elles expliquent. Les régimes, tr
 ansformés dans l'espace d'origine,
  []
@@ -1699,18 +1703,18 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[28 <./Images/PV/ACP/ACP_DimSelect.pdf> <./Images/PV/ACP/ACP_PrincipalComp_6.pd
+[26 <./Images/PV/ACP/ACP_DimSelect.pdf> <./Images/PV/ACP/ACP_PrincipalComp_6.pd
 f>]
-<Images/PV/HMM/Stats/SyntheticDataZoom.pdf, id=678, 525.965pt x 324.21124pt>
+<Images/PV/HMM/Stats/SyntheticDataZoom.pdf, id=671, 525.965pt x 324.21124pt>
 File: Images/PV/HMM/Stats/SyntheticDataZoom.pdf Graphic file (type pdf)
 <use Images/PV/HMM/Stats/SyntheticDataZoom.pdf>
 Package pdftex.def Info: Images/PV/HMM/Stats/SyntheticDataZoom.pdf  used on inp
-ut line 749.
+ut line 753.
 (pdftex.def)             Requested size: 224.2141pt x 138.21092pt.
-<Images/PV/HMM/Stats/QQPlot.pdf, id=679, 525.965pt x 324.21124pt>
+<Images/PV/HMM/Stats/QQPlot.pdf, id=672, 525.965pt x 324.21124pt>
 File: Images/PV/HMM/Stats/QQPlot.pdf Graphic file (type pdf)
 <use Images/PV/HMM/Stats/QQPlot.pdf>
-Package pdftex.def Info: Images/PV/HMM/Stats/QQPlot.pdf  used on input line 756
+Package pdftex.def Info: Images/PV/HMM/Stats/QQPlot.pdf  used on input line 760
 .
 (pdftex.def)             Requested size: 224.2141pt x 138.21092pt.
 
@@ -1718,7 +1722,7 @@ Package pdftex.def Info: Images/PV/HMM/Stats/QQPlot.pdf  used on input line 756
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (11.43634pt too wide) in paragraph at lines 766--767
+Overfull \hbox (11.43634pt too wide) in paragraph at lines 770--771
 \T1/cmr/m/n/12 valeur caractérise la dynamique globale de la série considérée. 
 On remarque une nette diminution
  []
@@ -1729,17 +1733,28 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[29 <./Images/PV/HMM/MS6AR_6dimACP.pdf> <./Images/PV/HMM/MS6AR_24dimReco.pdf>]
-<Images/PV/HMM/Stats/MDO.pdf, id=704, 525.965pt x 324.21124pt>
+[27 <./Images/PV/HMM/MS6AR_6dimACP.pdf> <./Images/PV/HMM/MS6AR_24dimReco.pdf>]
+<Images/PV/HMM/Stats/MDO.pdf, id=697, 525.965pt x 324.21124pt>
 File: Images/PV/HMM/Stats/MDO.pdf Graphic file (type pdf)
 <use Images/PV/HMM/Stats/MDO.pdf>
-Package pdftex.def Info: Images/PV/HMM/Stats/MDO.pdf  used on input line 771.
+Package pdftex.def Info: Images/PV/HMM/Stats/MDO.pdf  used on input line 775.
 (pdftex.def)             Requested size: 224.2141pt x 138.21092pt.
-<Images/PV/HMM/Stats/NU.pdf, id=705, 525.965pt x 324.21124pt>
+<Images/PV/HMM/Stats/NU.pdf, id=698, 525.965pt x 324.21124pt>
 File: Images/PV/HMM/Stats/NU.pdf Graphic file (type pdf)
 <use Images/PV/HMM/Stats/NU.pdf>
-Package pdftex.def Info: Images/PV/HMM/Stats/NU.pdf  used on input line 778.
+Package pdftex.def Info: Images/PV/HMM/Stats/NU.pdf  used on input line 782.
 (pdftex.def)             Requested size: 224.2141pt x 138.21092pt.
+
+Overfull \hbox (3.04807pt too wide) in paragraph at lines 806--807
+\T1/cmr/m/n/12 d'appartenance d'une journée à chacun des états cachés. Elles so
+nt déterminées par l'utilisation
+ []
+
+
+Overfull \hbox (12.96785pt too wide) in paragraph at lines 806--807
+\T1/cmr/m/n/12 de l'algorithme forward backward décrit dans []3.1.2[]. Des exem
+ples de probabilités d'appartenance
+ []
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1747,40 +1762,31 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[30 <./Images/PV/HMM/Stats/SyntheticDataZoom.pdf> <./Images/PV/HMM/Stats/QQPlot
+[28 <./Images/PV/HMM/Stats/SyntheticDataZoom.pdf> <./Images/PV/HMM/Stats/QQPlot
 .pdf> <./Images/PV/HMM/Stats/MDO.pdf> <./Images/PV/HMM/Stats/NU.pdf>]
-Overfull \hbox (3.04807pt too wide) in paragraph at lines 802--803
-\T1/cmr/m/n/12 d'appartenance d'une journée à chacun des états cachés. Elles so
-nt déterminées par l'utilisation
- []
-
-
-Overfull \hbox (12.96785pt too wide) in paragraph at lines 802--803
-\T1/cmr/m/n/12 de l'algorithme forward backward décrit dans []3.1.2[]. Des exem
-ples de probabilités d'appartenance
- []
-
-<Images/PV/HMM/HMM_ForwardProb_ACP_TrainDataset.pdf, id=737, 459.7175pt x 284.0
+<Images/PV/HMM/HMM_ForwardProb_ACP_TrainDataset.pdf, id=729, 459.7175pt x 284.0
 6125pt>
 File: Images/PV/HMM/HMM_ForwardProb_ACP_TrainDataset.pdf Graphic file (type pdf
 )
 <use Images/PV/HMM/HMM_ForwardProb_ACP_TrainDataset.pdf>
 Package pdftex.def Info: Images/PV/HMM/HMM_ForwardProb_ACP_TrainDataset.pdf  us
-ed on input line 809.
-(pdftex.def)             Requested size: 381.16672pt x 235.5367pt.
-<Images/PV/HMM/HMM_ForwardProb_Reconstructed_TrainDataset.pdf, id=738, 459.7175
+ed on input line 813.
+(pdftex.def)             Requested size: 224.2141pt x 138.54538pt.
+<Images/PV/HMM/HMM_ForwardProb_Reconstructed_TrainDataset.pdf, id=730, 459.7175
 pt x 284.06125pt>
 File: Images/PV/HMM/HMM_ForwardProb_Reconstructed_TrainDataset.pdf Graphic file
  (type pdf)
 <use Images/PV/HMM/HMM_ForwardProb_Reconstructed_TrainDataset.pdf>
 Package pdftex.def Info: Images/PV/HMM/HMM_ForwardProb_Reconstructed_TrainDatas
-et.pdf  used on input line 817.
-(pdftex.def)             Requested size: 381.16672pt x 235.5367pt.
+et.pdf  used on input line 821.
+(pdftex.def)             Requested size: 224.2141pt x 138.54538pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Overfull \hbox (5.22096pt too wide) in paragraph at lines 811--826
+ []  [] 
+ []
 
 
-Overfull \hbox (10.38426pt too wide) in paragraph at lines 830--831
+Overfull \hbox (10.38426pt too wide) in paragraph at lines 834--835
 []\T1/cmr/m/n/12 A partir de ces probabilités d'appartenance, il est possible d
 e faire de la prévision d'ensemble,
  []
@@ -1791,14 +1797,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[31]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 25.19739pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[32 <./Images/PV/HMM/HMM_ForwardProb_ACP_TrainDataset.pdf> <./Images/PV/HMM/HMM
+[29 <./Images/PV/HMM/HMM_ForwardProb_ACP_TrainDataset.pdf> <./Images/PV/HMM/HMM
 _ForwardProb_Reconstructed_TrainDataset.pdf>]
 Chapitre 6.
 
@@ -1807,37 +1806,37 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[33
+[30
 
 ]
 Annexe A.
 
-Overfull \hbox (38.02141pt too wide) in paragraph at lines 858--858
+Overfull \hbox (38.02141pt too wide) in paragraph at lines 862--862
 |\T1/cmr/bx/n/24.88 Première version de la publication concernant
  []
 
-<Images/Eolien/modeling-wind-power.pdf, id=812, 597.50829pt x 845.0471pt>
+<Images/Eolien/modeling-wind-power.pdf, id=803, 597.50829pt x 845.0471pt>
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
 <use Images/Eolien/modeling-wind-power.pdf>
 Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf  used on input l
-ine 860.
+ine 864.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
 <use Images/Eolien/modeling-wind-power.pdf>
 Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf  used on input l
-ine 860.
+ine 864.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
-<Images/Eolien/modeling-wind-power.pdf, id=815, page=1, 597.50829pt x 845.0471p
+<Images/Eolien/modeling-wind-power.pdf, id=806, page=1, 597.50829pt x 845.0471p
 t>
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
 <use Images/Eolien/modeling-wind-power.pdf, page 1>
 Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page1 used on 
-input line 860.
+input line 864.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
 <use Images/Eolien/modeling-wind-power.pdf, page 1>
 Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page1 used on 
-input line 860.
+input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1845,205 +1844,205 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[34
+[31
 
 ]
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
 <use Images/Eolien/modeling-wind-power.pdf, page 1>
 Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page1 used on 
-input line 860.
+input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
 <use Images/Eolien/modeling-wind-power.pdf, page 1>
 Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page1 used on 
-input line 860.
+input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
 <use Images/Eolien/modeling-wind-power.pdf, page 1>
 Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page1 used on 
-input line 860.
+input line 864.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [32 <./Images/Eolien/modeling-wind-power.pdf>]
+<Images/Eolien/modeling-wind-power.pdf, id=851, page=2, 597.50829pt x 845.0471p
+t>
+File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
+<use Images/Eolien/modeling-wind-power.pdf, page 2>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page2 used on 
+input line 864.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
+<use Images/Eolien/modeling-wind-power.pdf, page 2>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page2 used on 
+input line 864.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
+<use Images/Eolien/modeling-wind-power.pdf, page 2>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page2 used on 
+input line 864.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [33 <./Images/Eolien/modeling-wind-power.pdf>]
+<Images/Eolien/modeling-wind-power.pdf, id=924, page=3, 597.50829pt x 845.0471p
+t>
+File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
+<use Images/Eolien/modeling-wind-power.pdf, page 3>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page3 used on 
+input line 864.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
+<use Images/Eolien/modeling-wind-power.pdf, page 3>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page3 used on 
+input line 864.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
+<use Images/Eolien/modeling-wind-power.pdf, page 3>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page3 used on 
+input line 864.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [34 <./Images/Eolien/modeling-wind-power.pdf>]
+<Images/Eolien/modeling-wind-power.pdf, id=947, page=4, 597.50829pt x 845.0471p
+t>
+File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
+<use Images/Eolien/modeling-wind-power.pdf, page 4>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page4 used on 
+input line 864.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
+<use Images/Eolien/modeling-wind-power.pdf, page 4>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page4 used on 
+input line 864.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
+<use Images/Eolien/modeling-wind-power.pdf, page 4>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page4 used on 
+input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
  [35 <./Images/Eolien/modeling-wind-power.pdf>]
-<Images/Eolien/modeling-wind-power.pdf, id=860, page=2, 597.50829pt x 845.0471p
+<Images/Eolien/modeling-wind-power.pdf, id=989, page=5, 597.50829pt x 845.0471p
 t>
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 2>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page2 used on 
-input line 860.
+<use Images/Eolien/modeling-wind-power.pdf, page 5>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page5 used on 
+input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 2>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page2 used on 
-input line 860.
+<use Images/Eolien/modeling-wind-power.pdf, page 5>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page5 used on 
+input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 2>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page2 used on 
-input line 860.
+<use Images/Eolien/modeling-wind-power.pdf, page 5>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page5 used on 
+input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
  [36 <./Images/Eolien/modeling-wind-power.pdf>]
-<Images/Eolien/modeling-wind-power.pdf, id=934, page=3, 597.50829pt x 845.0471p
-t>
+<Images/Eolien/modeling-wind-power.pdf, id=1035, page=6, 597.50829pt x 845.0471
+pt>
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 3>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page3 used on 
-input line 860.
+<use Images/Eolien/modeling-wind-power.pdf, page 6>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page6 used on 
+input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 3>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page3 used on 
-input line 860.
+<use Images/Eolien/modeling-wind-power.pdf, page 6>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page6 used on 
+input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 3>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page3 used on 
-input line 860.
+<use Images/Eolien/modeling-wind-power.pdf, page 6>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page6 used on 
+input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
  [37 <./Images/Eolien/modeling-wind-power.pdf>]
-<Images/Eolien/modeling-wind-power.pdf, id=957, page=4, 597.50829pt x 845.0471p
-t>
+<Images/Eolien/modeling-wind-power.pdf, id=1040, page=7, 597.50829pt x 845.0471
+pt>
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 4>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page4 used on 
-input line 860.
+<use Images/Eolien/modeling-wind-power.pdf, page 7>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page7 used on 
+input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 4>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page4 used on 
-input line 860.
+<use Images/Eolien/modeling-wind-power.pdf, page 7>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page7 used on 
+input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 4>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page4 used on 
-input line 860.
+<use Images/Eolien/modeling-wind-power.pdf, page 7>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page7 used on 
+input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
  [38 <./Images/Eolien/modeling-wind-power.pdf>]
-<Images/Eolien/modeling-wind-power.pdf, id=999, page=5, 597.50829pt x 845.0471p
-t>
+<Images/Eolien/modeling-wind-power.pdf, id=1062, page=8, 597.50829pt x 845.0471
+pt>
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 5>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page5 used on 
-input line 860.
+<use Images/Eolien/modeling-wind-power.pdf, page 8>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page8 used on 
+input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 5>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page5 used on 
-input line 860.
+<use Images/Eolien/modeling-wind-power.pdf, page 8>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page8 used on 
+input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 5>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page5 used on 
-input line 860.
+<use Images/Eolien/modeling-wind-power.pdf, page 8>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page8 used on 
+input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
  [39 <./Images/Eolien/modeling-wind-power.pdf>]
-<Images/Eolien/modeling-wind-power.pdf, id=1044, page=6, 597.50829pt x 845.0471
+<Images/Eolien/modeling-wind-power.pdf, id=1120, page=9, 597.50829pt x 845.0471
 pt>
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 6>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page6 used on 
-input line 860.
+<use Images/Eolien/modeling-wind-power.pdf, page 9>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page9 used on 
+input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 6>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page6 used on 
-input line 860.
+<use Images/Eolien/modeling-wind-power.pdf, page 9>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page9 used on 
+input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 6>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page6 used on 
-input line 860.
+<use Images/Eolien/modeling-wind-power.pdf, page 9>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page9 used on 
+input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
  [40 <./Images/Eolien/modeling-wind-power.pdf>]
-<Images/Eolien/modeling-wind-power.pdf, id=1049, page=7, 597.50829pt x 845.0471
-pt>
+<Images/Eolien/modeling-wind-power.pdf, id=1135, page=10, 597.50829pt x 845.047
+1pt>
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 7>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page7 used on 
-input line 860.
+<use Images/Eolien/modeling-wind-power.pdf, page 10>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page10 used on
+ input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 7>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page7 used on 
-input line 860.
+<use Images/Eolien/modeling-wind-power.pdf, page 10>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page10 used on
+ input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 7>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page7 used on 
-input line 860.
+<use Images/Eolien/modeling-wind-power.pdf, page 10>
+Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page10 used on
+ input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
  [41 <./Images/Eolien/modeling-wind-power.pdf>]
-<Images/Eolien/modeling-wind-power.pdf, id=1071, page=8, 597.50829pt x 845.0471
-pt>
-File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 8>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page8 used on 
-input line 860.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
-File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 8>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page8 used on 
-input line 860.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
-File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 8>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page8 used on 
-input line 860.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
- [42 <./Images/Eolien/modeling-wind-power.pdf>]
-<Images/Eolien/modeling-wind-power.pdf, id=1130, page=9, 597.50829pt x 845.0471
-pt>
-File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 9>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page9 used on 
-input line 860.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
-File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 9>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page9 used on 
-input line 860.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
-File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 9>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page9 used on 
-input line 860.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
- [43 <./Images/Eolien/modeling-wind-power.pdf>]
-<Images/Eolien/modeling-wind-power.pdf, id=1145, page=10, 597.50829pt x 845.047
-1pt>
-File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 10>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page10 used on
- input line 860.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
-File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 10>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page10 used on
- input line 860.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
-File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
-<use Images/Eolien/modeling-wind-power.pdf, page 10>
-Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page10 used on
- input line 860.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
- [44 <./Images/Eolien/modeling-wind-power.pdf>]
-<Images/Eolien/modeling-wind-power.pdf, id=1150, page=11, 597.50829pt x 845.047
+<Images/Eolien/modeling-wind-power.pdf, id=1140, page=11, 597.50829pt x 845.047
 1pt>
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
 <use Images/Eolien/modeling-wind-power.pdf, page 11>
 Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page11 used on
- input line 860.
+ input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
 <use Images/Eolien/modeling-wind-power.pdf, page 11>
 Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page11 used on
- input line 860.
+ input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: Images/Eolien/modeling-wind-power.pdf Graphic file (type pdf)
 <use Images/Eolien/modeling-wind-power.pdf, page 11>
 Package pdftex.def Info: Images/Eolien/modeling-wind-power.pdf , page11 used on
- input line 860.
+ input line 864.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
-[45 <./Images/Eolien/modeling-wind-power.pdf>] (Rapport_Stage_ENS.bbl
+[42 <./Images/Eolien/modeling-wind-power.pdf>] (Rapport_Stage_ENS.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `en'. Using the pattern for
 ** the default language instead.
@@ -2078,14 +2077,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[46
+[43
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 865.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 865.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 869.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 869.
  (Rapport_Stage_ENS.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 865.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 865.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 869.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 869.
 Package rerunfilecheck Info: File `Rapport_Stage_ENS.out' has not changed.
 (rerunfilecheck)             Checksum: 2B43F74FB3683CA166B1535D857C5835;2180.
 
@@ -2096,22 +2095,22 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 865.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 869.
  ) 
 Here is how much of TeX's memory you used:
- 25309 strings out of 494891
- 469654 string characters out of 3178733
- 599786 words of memory out of 3000000
- 28258 multiletter control sequences out of 15000+200000
+ 25315 strings out of 494891
+ 469829 string characters out of 3178733
+ 600786 words of memory out of 3000000
+ 28266 multiletter control sequences out of 15000+200000
  33213 words of font info for 94 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
  64i,18n,77p,1789b,715s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/enzo/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1200.
 pk> </home/enzo/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440
-.pk> </home/enzo/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm109
-5.pk> </home/enzo/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt10
+.pk> </home/enzo/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt100
+0.pk> </home/enzo/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm10
 00.pk> </home/enzo/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1
-000.pk> </home/enzo/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm
+095.pk> </home/enzo/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm
 0800.pk> </home/enzo/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecc
 c1200.pk> </home/enzo/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ec
 ti1200.pk> </home/enzo/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/e
@@ -2148,9 +2147,9 @@ l/fonts/type1/urw/times/utmb8a.pfb></home/enzo/.miktex/texmfs/install/fonts/typ
 e1/urw/times/utmbi8a.pfb></home/enzo/.miktex/texmfs/install/fonts/type1/urw/tim
 es/utmr8a.pfb></home/enzo/.miktex/texmfs/install/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on Rapport_Stage_ENS.pdf (47 pages, 4798393 bytes).
+Output written on Rapport_Stage_ENS.pdf (44 pages, 4797702 bytes).
 PDF statistics:
- 1778 PDF objects out of 2073 (max. 8388607)
- 146 named destinations out of 1000 (max. 500000)
+ 1769 PDF objects out of 2073 (max. 8388607)
+ 144 named destinations out of 1000 (max. 500000)
  515 words of extra memory for PDF output out of 10000 (max. 10000000)
 
