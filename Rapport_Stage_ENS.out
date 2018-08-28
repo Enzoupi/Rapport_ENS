@@ -18,8 +18,8 @@
 \BOOKMARK [2][-]{subsection.3.6.2}{Erreur moyenne absolue \(MAE\)}{section.3.6}% 18
 \BOOKMARK [2][-]{subsection.3.6.3}{Erreur quadratique moyenne \(RMSE\)}{section.3.6}% 19
 \BOOKMARK [0][-]{chapter.4}{R\351sultats pour la production \351olienne}{}% 20
-\BOOKMARK [0][-]{chapter.5}{Application aux erreurs de pr\351dictions photovolta\357ques}{}% 21
+\BOOKMARK [0][-]{chapter.5}{Application aux erreurs de pr\351visions photovolta\357ques}{}% 21
 \BOOKMARK [1][-]{section.5.1}{M\351thode des plus proches voisins}{chapter.5}% 22
 \BOOKMARK [1][-]{section.5.2}{R\351sulats avec un GMM}{chapter.5}% 23
 \BOOKMARK [1][-]{section.5.3}{R\351sultats avec un HMM}{chapter.5}% 24
-\BOOKMARK [0][-]{appendix.A}{Premi\350re version de la publication concernant les erreurs de pr\351dictions \351oliennes}{}% 25
+\BOOKMARK [0][-]{appendix.A}{Premi\350re version de la publication concernant les erreurs de pr\351visions \351oliennes}{}% 25

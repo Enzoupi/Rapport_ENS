@@ -26,7 +26,7 @@ J'ai réalisé mon stage au sein du laboratoire Systèmes et Applications des Te
 \section{Contexte}
 %Ce stage s'inscrit dans le contexte d'un changement de paradigme quant à la production d'électricité.
 
-La part des énergies renouvelables à production variable -notamment l'éolien et le photovoltaïque- est en augmentation constante au cours des dernières années comme le montre la figure \ref{fig:Intro_EnergyProduction}. En effet leur part dans la production d'énergie renouvelables passe d'une quantité négligeable au début des années 2000 à environ $20 \%$ en 2016.
+La part des énergies renouvelables à production variable et \textbf{incertaine} -notamment l'éolien et le photovoltaïque- est en augmentation constante au cours des dernières années comme le montre la figure \ref{fig:Intro_EnergyProduction}. En effet leur part dans la production d'énergie renouvelable passe d'une quantité négligeable au début des années 2000 à environ $20 \%$ en 2016.
 
 \begin{figure}[h]
 	\begin{center}
@@ -36,15 +36,20 @@ La part des énergies renouvelables à production variable -notamment l'éolien 
 	\end{center}
 \end{figure}
 
-Cette intégration croissante des énergies renouvelables à production variable demande d'être faite avec minutie car elle impose de nouvelles formes d'incertitudes. Cependant, elles peuvent aussi être vectrice de nouvelles opportunités.
+Cette intégration croissante des énergies renouvelables à production incertaine demande d'être faite avec minutie car elle impose de nouvelles formes d'incertitudes. %Cependant, elles peuvent aussi être vectrice de nouvelles opportunités.
 
-Afin de comprendre pourquoi, il est nécessaire de faire un point sur le réseau électrique Français, et par extension, Européen. Ces réseaux se sont construits autour de l'impératif d'être en mesure de fournir, à n'importe quel instant, la puissance demandée par les utilisateurs. Les sources de productions d'énergies d'alors étaient principalement délocalisées, constantes et avec une faible inertie (centrales thermiques) ou forte inertie (centrale nucléaires). Or comme l'énergie qui circule sur les réseaux électriques est un \textbf{flux instantané}, nécessairement \textbf{demande} et \textbf{production} doivent être \textbf{égalées à tout instant}. Contrainte à laquelle il faut ajouter la difficulté de stockage de l'électricité ainsi que des infrastructures qui limitent la puissance de certains échanges. Pour pallier à ces difficultés et contraintes, plusieurs systèmes correspondant à différentes échelles de temps ont été mis en place.
+Afin de comprendre pourquoi, il est nécessaire de faire un point sur le réseau électrique Français, et par extension, Européen. Ces réseaux se sont construits autour de l'impératif d'être en mesure de fournir, à n'importe quel instant, la puissance demandée par les utilisateurs. Or comme l'énergie qui circule sur les réseaux électriques est un flux instantané, une contrainte physique impose que demande et production soient égales à tout instant.
 
-L'égalisation de la production et de la consommation aux temps long est peut être celle qui a été la moins problématique à l'heure actuelle. Il \textit{suffit} de s'assurer que les infrastructures en places et futures garantiront une production suffisante pour combler l'évolution de la demande. Les matières premières et énergies fossiles étant encore largement présente, beaucoup d'options de production d'énergies à moyen terme restent disponibles.
+Les sources de productions d'énergies d'alors étaient principalement délocalisées, constantes et avec une faible inertie (centrales thermiques) ou forte inertie (centrale nucléaires).  Contraintes auxquelles il faut ajouter la difficulté de stockage de l'électricité ainsi que des infrastructures qui limitent la puissance de certains échanges. Pour pallier à ces difficultés et contraintes, plusieurs systèmes correspondant à différentes échelles de temps ont été mis en place.
 
-L'essentiel de l'organisation pour égaliser production et consommation aux temps moyens et courts réside dans la mise en place de différents marchés. Un premier ,le marché \textit{day-ahead}, sur lequel des accords non engageants sont pris pour le lendemain basés sur les particularismes de la journée (vague de froid, jour férié,... etc). Un autre marché au cours de la journée, contractuel celui-ci, ou des offres sont effectuées dès qu'elles sont compatibles.
+%L'égalisation de la production et de la consommation aux temps long est peut être celle qui a été la moins problématique à l'heure actuelle. Il \textit{suffit} de s'assurer que les infrastructures en places et futures garantiront une production suffisante pour combler l'évolution de la demande. Les matières premières et énergies fossiles étant encore largement présente, beaucoup d'options de production d'énergies à moyen terme restent disponibles.
 
-Au vu de l'organisation de ces marchés, c'est pourquoi il est intéressant de travailler sur les erreurs de prédictions  
+L'essentiel de l'organisation pour égaliser production et consommation aux temps moyens et courts réside dans la mise en place de différents marchés. Un premier ,le marché \textit{day-ahead}, sur lequel des accords non engageants sont pris pour le lendemain basés sur les particularismes de la journée (vague de froid, jour férié,... etc). Un autre marché a lieu au cours de la journée où des offres sont effectuées dès qu'elles sont compatibles. Cependant des écarts plus ou moins grands par rapport aux engagements ont lieux. Le gestionnaire de réseau fait alors appel à un second marché plus onéreux, dit marché de \textit{balancing}, pour combler ces écarts. En fonction des législation, les écarts par rapports aux engagements sur les différents marchés peuvent être soumis à des pénalisations.
+
+Dans ce contexte, de nombreuses études avaient été réalisées sur la prévision de la consommation des ménages qui était à l'époque la principale source d'incertitude. Avec l'arrivée des énergies renouvelables à production incertaine, un important effort de recherche à été orienté autour de la prévision de production. Dans le cas de l'éolien et du photovoltaïque, ces prévisions sont souvent basées sur des prévisions météorologiques.
+
+Étudier les erreurs de prévisions prend son sens au travers de plusieurs éléments. Tout d'abord, le fait que les prévisions de production soient basées sur des prévisions météorologiques empêche un rafraîchissement continu des prévision. En effet, les calculs météorologiques étant particulièrement lourds, ils ne sont réalisés que quelques fois par jour. Déterminer une dynamique dans les erreurs de prévisions permettrait donc d'affiner les prévisions de production entre deux mises à jour successives des calculs météorologiques. Enfin, au vu de la conception des marchés, ce sont bien les erreurs de prévisions qui doivent être compensés sur le second marché et qui peuvent perturber le réseau côté gestionnaire ou donner lieu à des amendes côté producteur. C'est donc bien, in fine, cette valeur qu'il est impératif de minimiser. Caractériser les erreurs de prévision est donc une approche complémentaire et une seconde source d'information valable et pertinente.  
+
 
 
 \chapter{Présentation des données}
@@ -54,7 +59,7 @@ L'étude est réalisée dans un premier temps sur des données issue de \href{ht
 
 Afin de réduire la taille du jeu de données, il est réduit à un échantillonnage horaire. Pour ce faire la moyenne sur l'heure suivante est réalisée.
 
-D'autre part, comme le nombre d'installations de production à évoluée du simple au double (voir \href{https://transmission.bpa.gov/business/operations/Wind/WIND_InstalledCapacity_Plot.pdf}{ici} \footnote{\url{https://transmission.bpa.gov/business/operations/Wind/WIND_InstalledCapacity_Plot.pdf}}) sur cette période, les données ont été normalisées par la capacité de production maximale (voir \ref{fig::PredErrors_all}). Les erreurs de prédictions sont donc reconstituées à partir de ces données en soustrayant les productions mesurées aux productions prévues (voir \ref{fig:Data_BPA_WholeNorm}).
+D'autre part, comme le nombre d'installations de production à évoluée du simple au double (voir \href{https://transmission.bpa.gov/business/operations/Wind/WIND_InstalledCapacity_Plot.pdf}{ici} \footnote{\url{https://transmission.bpa.gov/business/operations/Wind/WIND_InstalledCapacity_Plot.pdf}}) sur cette période, les données ont été normalisées par la capacité de production maximale (voir \ref{fig::PredErrors_all}). Les erreurs de prévisions sont donc reconstituées à partir de ces données en soustrayant les productions mesurées aux productions prévues (voir \ref{fig:Data_BPA_WholeNorm}).
 
 
 \begin{figure}[ht!]
@@ -67,7 +72,7 @@ D'autre part, comme le nombre d'installations de production à évoluée du simp
 ~
 \begin{subfigure}[b]{0.45\textwidth}
 	\includegraphics[width=\textwidth]{Images/Data/Eolien/BPA/NormWindErrs_All.pdf}
-	\caption{Erreurs de prédictions normalisées }
+	\caption{Erreurs de prévisions normalisées }
 	\label{fig:Data_BPA_WholeNorm}
 \end{subfigure}
 \caption{Représentation du jeu de donnée utilisé pour l'étude sur la période  allant de Janvier 2009 jusqu'à Mai 2018 }
@@ -76,19 +81,19 @@ D'autre part, comme le nombre d'installations de production à évoluée du simp
 \end{figure}
 
 La figure \ref{fig::Data_Eolien_BPA_HistNormERR} présente l'histogramme des erreurs normalisées en échelle logarithmique. On constate que les erreurs sont bien centrées autour de zéro et qu'une grande partie réside dans l'intervalle $[-0.2,0.2]$ \todo{Préciser combien} ce qui témoigne d'une relativement bonne capacité de prévision.
-La figure \ref{fig::Data_Eolien_BPA_NormWindErrs_1Month} représente quand à elle un zoom sur la série temporelle des erreurs de prédictions. Il est intéressant de noter que la série présente des période sur lesquelles la variance est relativement faible (comme autour du 3 ou après le 8 décembre) et d'autre ou la variance est nettement plus élevée (comme sur la deuxième partie du mois).
+La figure \ref{fig::Data_Eolien_BPA_NormWindErrs_1Month} représente quand à elle un zoom sur la série temporelle des erreurs de prévisions. Il est intéressant de noter que la série présente des période sur lesquelles la variance est relativement faible (comme autour du 3 ou après le 8 décembre) et d'autre ou la variance est nettement plus élevée (comme sur la deuxième partie du mois).
 
 \begin{figure}[ht!]
 	\begin{center}
 		\begin{subfigure}[b]{0.45\textwidth}
 			\includegraphics[width=\textwidth]{Images/Data/Eolien/BPA/Hist_NormErr.pdf}
-			\caption{Histogramme des erreurs de prédictions}
+			\caption{Histogramme des erreurs de prévisions}
 			\label{fig::Data_Eolien_BPA_HistNormERR}
 		\end{subfigure}
 		~
 		\begin{subfigure}[b]{0.45\textwidth}
 			\includegraphics[width=\textwidth]{Images/Data/Eolien/BPA/NormWindErrs_1Month.pdf}
-			\caption{Erreurs de prédictions sur un mois}
+			\caption{Erreurs de prévisions sur un mois}
 			\label{fig::Data_Eolien_BPA_NormWindErrs_1Month}
 		\end{subfigure}
 		\caption{Représentation du jeu de donnée utilisé pour l'étude}
@@ -98,7 +103,7 @@ La figure \ref{fig::Data_Eolien_BPA_NormWindErrs_1Month} représente quand à el
 
 \section{Production Photovoltaïques}
 %\subsection{Données Bavière (TenneT)}
-Des données agrégées de production d'énergie photovoltaïque ainsi que les prédictions $J-1$ correspondantes sont mises à disposition par TenneT sur leur \href{https://www.tennet.eu/electricity-market/transparency-pages/transparency-germany/}{site web} \footnote{\url{https://www.tennet.eu/electricity-market/transparency-pages/transparency-germany/}}. Les données fournies sur la Bavière ont été utilisées pour cette étude. Ces données sont libres d'accès et ouvertes à la publication scientifique. Elles vont du $1^{er}$ décembre 2010 jusqu'à aujourd'hui avec un pas d'échantillonnage de 15 minutes (voir figure \ref{fig::Donnees_TenneT_Bayern_WHole}). Aucune covariable n'est mise à disposition. N'ayant pas eu accès à la capacité de production installée en Bavière sur cette période, ces données sont normalisées par des maxima de prévisions/productions sur certaines périodes. Cette capacité de production installée estimée est aussi représentée sur la figure \ref{fig::Donnees_TenneT_Bayern_WHole}. Les données manquantes (190 pour les prévisions et 69 pour les réalisations) sont remplacées par la dernière valeur observée temporellement parlant. 
+Des données agrégées de production d'énergie photovoltaïque ainsi que les prévisions $J-1$ correspondantes sont mises à disposition par TenneT sur leur \href{https://www.tennet.eu/electricity-market/transparency-pages/transparency-germany/}{site web} \footnote{\url{https://www.tennet.eu/electricity-market/transparency-pages/transparency-germany/}}. Les données fournies sur la Bavière ont été utilisées pour cette étude. Ces données sont libres d'accès et ouvertes à la publication scientifique. Elles vont du $1^{er}$ décembre 2010 jusqu'à aujourd'hui avec un pas d'échantillonnage de 15 minutes (voir figure \ref{fig::Donnees_TenneT_Bayern_WHole}). Aucune covariable n'est mise à disposition. N'ayant pas eu accès à la capacité de production installée en Bavière sur cette période, ces données sont normalisées par des maxima de prévisions/productions sur certaines périodes. Cette capacité de production installée estimée est aussi représentée sur la figure \ref{fig::Donnees_TenneT_Bayern_WHole}. Les données manquantes (190 pour les prévisions et 69 pour les réalisations) sont remplacées par la dernière valeur observée temporellement parlant. 
 
 \begin{figure}[ht!]
 	\begin{center}
@@ -117,7 +122,7 @@ Des données agrégées de production d'énergie photovoltaïque ainsi que les p
 	\end{center}
 \end{figure}
 
-La série temporelle des erreurs de prédictions alors obtenue est présentée sur la figure \ref{fig:Data_PV_PredErrs}. Comme l'illustre la partie zoomée, la structure de ces données est particulière avec une alternance de plages a valeurs négligeables et non négligeables.
+La série temporelle des erreurs de prévisions alors obtenue est présentée sur la figure \ref{fig:Data_PV_PredErrs}. Comme l'illustre la partie zoomée, la structure de ces données est particulière avec une alternance de plages a valeurs négligeables et non négligeables.
 
 \begin{figure}	
 	\begin{center}
@@ -127,7 +132,7 @@ La série temporelle des erreurs de prédictions alors obtenue est présentée s
 	\end{center}
 \end{figure}
 
-Cette structure correspond en fait à une saisonnalité quotidienne comme le montre le diagramme en boîte de la figure \ref{fig:Data_TenneT_Bayern_BoxHist}. Les erreurs de prédictions entre 20h et 4h du matin sont systématiquement nulles. Elles correspondent aux plages horaires pendant lesquelles le soleil ne brille jamais en Bavière. En effet, à Munich (capitale de la Bavière), le soleil s'est levé à 5h12 et s'est couché à 21h17 le 21 Juin 2018. Sur ces périodes, aucune production d'énergie n'est prévue ni réalisée, et donc les erreurs sont systématiquement nulles.  Il est donc logique que les erreurs moyennes jusqu'à 5h du matin soient nulles. Cependant, au vu de cette amplitude d'ensoleillement maximale, il est possible qu'un autre phénomène réduise systématiquement les erreurs de prédiction a 20h et 21h pour lesquelles cette analyse n'explique pas d'aussi faible valeurs. L'histogramme aussi présenté sur cette figure illustre aussi cette surreprésentation des valeurs très faible. D'autre part, il montre que la grande majorité des erreurs de prédictions moyennées sont assez faibles. Par exemple, $90 \%$ des données sont incluses dans l'intervalle $[-0.688 , 0.0891]$. 
+Cette structure correspond en fait à une saisonnalité quotidienne comme le montre le diagramme en boîte de la figure \ref{fig:Data_TenneT_Bayern_BoxHist}. Les erreurs de prévisions entre 20h et 4h du matin sont systématiquement nulles. Elles correspondent aux plages horaires pendant lesquelles le soleil ne brille jamais en Bavière. En effet, à Munich (capitale de la Bavière), le soleil s'est levé à 5h12 et s'est couché à 21h17 le 21 Juin 2018. Sur ces périodes, aucune production d'énergie n'est prévue ni réalisée, et donc les erreurs sont systématiquement nulles.  Il est donc logique que les erreurs moyennes jusqu'à 5h du matin soient nulles. Cependant, au vu de cette amplitude d'ensoleillement maximale, il est possible qu'un autre phénomène réduise systématiquement les erreurs de prédiction a 20h et 21h pour lesquelles cette analyse n'explique pas d'aussi faible valeurs. L'histogramme aussi présenté sur cette figure illustre aussi cette surreprésentation des valeurs très faible. D'autre part, il montre que la grande majorité des erreurs de prévisions moyennées sont assez faibles. Par exemple, $90 \%$ des données sont incluses dans l'intervalle $[-0.688 , 0.0891]$. 
 
 \begin{figure}[ht!]
 	\begin{center}
@@ -140,7 +145,7 @@ Cette structure correspond en fait à une saisonnalité quotidienne comme le mon
 			\includegraphics[width=\textwidth]{Images/Data/PV/Tennet/Data_Tennet_Histogram.pdf}
 		\end{subfigure}
 		
-		\caption{Diagramme en boîte et histogramme pour les erreurs de prédictions moyennées sur chaque heure}
+		\caption{Diagramme en boîte et histogramme pour les erreurs de prévisions moyennées sur chaque heure}
 		\label{fig:Data_TenneT_Bayern_BoxHist}
 		
 	\end{center}
@@ -498,10 +503,10 @@ L'erreur quadratique moyenne est définie comme étant :
 \chapter{Résultats pour la production éolienne}
 \label{seq:ResultatsEolien}
 
-L'application des modèles MS-AR aux erreurs de prédictions de production d'énergie éolienne a donné lieu à la rédaction d'une première version d'un article scientifique. Le lecteur est donc invité à lire ce document en annexe \ref{annex:ModelingWindPower}. Les travaux que j'ai effectués sont présentés dans la section intitulé \textit{Modelling of the wind power forecast error}. Les poursuites d'études, notamment celles concernant les transitions non homogènes, ont été commencées mais elles ne sont pas assez abouties pour être intégrées telles quelles dans ce rapport.
+L'application des modèles MS-AR aux erreurs de prévisions de production d'énergie éolienne a donné lieu à la rédaction d'une première version d'un article scientifique. Le lecteur est donc invité à lire ce document en annexe \ref{annex:ModelingWindPower}. Les travaux que j'ai effectués sont présentés dans la section intitulé \textit{Modelling of the wind power forecast error}. Les poursuites d'études, notamment celles concernant les transitions non homogènes, ont été commencées mais elles ne sont pas assez abouties pour être intégrées telles quelles dans ce rapport.
 
-\chapter{Application aux erreurs de prédictions photovoltaïques}
-Les erreurs de prédiction de production photovoltaïques diffèrent par nature de celles de production éolienne. Alors que le vent peut être d'intensité non négligeable à tout instant, l'irradiance sera quant à elle complètement nulle la nuit. Comme l'alternance jour/nuit est un phénomène purement déterministe les prévisionniste ne commettent pas d'erreurs de prévisions la nuit. Ceci modifie la structure des erreurs de prédictions en introduisant régulièrement des plages de prévisions nulles. Or les outils utilisés dans la section \ref{seq:ResultatsEolien} se heurtent à des problèmes de convergence numérique s'ils sont utilisés tels quels sur la série d'erreur de prédiction de production photovoltaïque. \todo{Expliquer pourquoi clairement}.
+\chapter{Application aux erreurs de prévisions photovoltaïques}
+Les erreurs de prédiction de production photovoltaïques diffèrent par nature de celles de production éolienne. Alors que le vent peut être d'intensité non négligeable à tout instant, l'irradiance sera quant à elle complètement nulle la nuit. Comme l'alternance jour/nuit est un phénomène purement déterministe les prévisionniste ne commettent pas d'erreurs de prévisions la nuit. Ceci modifie la structure des erreurs de prévisions en introduisant régulièrement des plages de prévisions nulles. Or les outils utilisés dans la section \ref{seq:ResultatsEolien} se heurtent à des problèmes de convergence numérique s'ils sont utilisés tels quels sur la série d'erreur de prédiction de production photovoltaïque. \todo{Expliquer pourquoi clairement}.
 
 Afin de se ramener à une structure de série temporelle moins délicate en termes de résolution numérique, une approche simpliste aurait consisté à supprimer les périodes nocturnes de la série temporelle. Cependant, cette méthode fait part de deux désavantages qui à fait qu'elle a été écartée au cours de ce stage. Tout d'abord, même si elle paraît très simple, il faut malgré tout tenir compte que la durée de la nuit change tous les jours. De surcroît, cela imposerait un pré-traitement des données qui dépend aussi de leur origine géographique. Ainsi la méthodologie et le modèle obtenu paraît être trop difficilement transposable pour être un jour utilisé en opérationnel. C'est pourquoi une approche légèrement différente a été choisie.
 
@@ -554,7 +559,7 @@ La Figure \ref{fig:KNN_Intraday_scenarios} montre des exemples ou cette méthode
 		%\label{fig::HHMM_8HS_Traj_HS3} 
 	\end{subfigure}%%
 	
-	\caption{Exemples de trajectoires d'erreurs de prédictions ainsi que les 10 trajectoires les plus proches identifiés via \eqref{eq:NN_identification} et leur moyenne}
+	\caption{Exemples de trajectoires d'erreurs de prévisions ainsi que les 10 trajectoires les plus proches identifiés via \eqref{eq:NN_identification} et leur moyenne}
 	\label{fig:KNN_Intraday_scenarios} 
 \end{figure}
 
@@ -606,7 +611,7 @@ L'identification de ces trajectoires à été réalisée grâce à la méthode d
 	\label{fig:Kmeans_centers} 
 \end{figure}
 
-Dans cette section, une approche assez simple de la méthode des plus proche voisins a été mise en œuvre et elle a permis d'en démontrer le potentiel. En effet elle a permis d'atteindre des corrections des prévisions au cour de la journée qui permettant de réduire les erreurs de prédictions entre $25$ et $35\%$. De meilleurs résultats auraient probablement pu être obtenus en affinant la méthode. En effet, il aurait pu être intéressant de pondérer certaines heures dans l'identification des plus proches voisins afin de donner plus de poids aux dernières heures connues. Ou encore de regarder si la prise en compte du jour précédent pouvait amener de l'information supplémentaire ? Finalement, combiner l'utilisation de l'erreur absolue avec l'erreur quadratique aurait aussi pu amener plus d'informations. Cependant, le potentiel de cette méthode m'a conduit à explorer une autre piste. En effet, plutôt que de n'identifier que les trajectoires types via la méthode des Kmeans, de l'information supplémentaire sur les variances associées pouvaient se révéler utile en utilisant la méthode de mélange Gaussien.
+Dans cette section, une approche assez simple de la méthode des plus proche voisins a été mise en œuvre et elle a permis d'en démontrer le potentiel. En effet elle a permis d'atteindre des corrections des prévisions au cour de la journée qui permettant de réduire les erreurs de prévisions entre $25$ et $35\%$. De meilleurs résultats auraient probablement pu être obtenus en affinant la méthode. En effet, il aurait pu être intéressant de pondérer certaines heures dans l'identification des plus proches voisins afin de donner plus de poids aux dernières heures connues. Ou encore de regarder si la prise en compte du jour précédent pouvait amener de l'information supplémentaire ? Finalement, combiner l'utilisation de l'erreur absolue avec l'erreur quadratique aurait aussi pu amener plus d'informations. Cependant, le potentiel de cette méthode m'a conduit à explorer une autre piste. En effet, plutôt que de n'identifier que les trajectoires types via la méthode des Kmeans, de l'information supplémentaire sur les variances associées pouvaient se révéler utile en utilisant la méthode de mélange Gaussien.
 
 
 \section{Résulats avec un GMM}
@@ -665,7 +670,7 @@ Les paramètres du modèle obtenus sont présentés graphiquement dans la figure
 \begin{figure}[h]
 	\centering
 	\includegraphics[width = 0.75 \linewidth]{Images/PV/GMM/GMM_MeansVars_6_dim24.pdf}
-	\caption{Représentation graphique des paramètres du modèle GMM à 6 clusters obtenu sur la série des erreurs prédictions photovoltaïques. Les lignes continues représentent les moyennes, les fonds colorés leur intervalles de confiance de $68 \%$ respectifs. Les proportions respectives sont intégrées dans la légende.}
+	\caption{Représentation graphique des paramètres du modèle GMM à 6 clusters obtenu sur la série des erreurs prévisions photovoltaïques. Les lignes continues représentent les moyennes, les fonds colorés leur intervalles de confiance de $68 \%$ respectifs. Les proportions respectives sont intégrées dans la légende.}
 	\label{fig:PV_GMM_MeanVarProp}
 \end{figure}
 
@@ -675,7 +680,7 @@ Finalement, l'utilisation de modèle GMM n'a pas permis d'améliorer les résult
 \section{Résultats avec un HMM}
 \label{sec:PV_HMM}
 
-En gardant à l'esprit que ce modèle est identifié dans le but de générer des prédictions sur plusieurs journée, il est impératif de donner plus de liberté au HMM qu'au GMM quant à la structure de sa matrice de variance covariance. En effet, si on ne relaxe pas la contrainte d'avoir une valeur unique sur la diagonale de variance covariance alors le modèle ne sera jamais en mesure de capturer les erreurs nulles ou négligeables la nuit. Les scénarios générés n'auraient pas alors cette caractéristique et les performances en termes d'applications seraient grandement réduites. Cependant, ce faisant, le nombre de paramètres passe de chaque modèle devient alors :
+En gardant à l'esprit que ce modèle est identifié dans le but de générer des prévisions sur plusieurs journée, il est impératif de donner plus de liberté au HMM qu'au GMM quant à la structure de sa matrice de variance covariance. En effet, si on ne relaxe pas la contrainte d'avoir une valeur unique sur la diagonale de variance covariance alors le modèle ne sera jamais en mesure de capturer les erreurs nulles ou négligeables la nuit. Les scénarios générés n'auraient pas alors cette caractéristique et les performances en termes d'applications seraient grandement réduites. Cependant, ce faisant, le nombre de paramètres passe de chaque modèle devient alors :
 
 \begin{equation}
 \underbrace{K-1}_\text{Probabilités initiales}  + \underbrace{K \times d}_\text{Centres}  +  \underbrace{K \times d}_\text{Matrices de variance covariance} + \underbrace{K \times K}_\text{Matrice de transition}
@@ -774,7 +779,7 @@ A partir de ces probabilités d'appartenance, il est possible de faire de la pr�
 \appendix
 
 
-\chapter{Première version de la publication concernant les erreurs de prédictions éoliennes}
+\chapter{Première version de la publication concernant les erreurs de prévisions éoliennes}
 \label{annex:ModelingWindPower}
 \includepdf[pages=-]{Images/Eolien/modeling-wind-power.pdf}
 
