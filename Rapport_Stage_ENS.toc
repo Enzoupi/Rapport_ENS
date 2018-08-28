@@ -1,0 +1,29 @@
+\babel@toc {french}{}
+\contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}
+\contentsline {section}{\numberline {1.1}Pr\IeC {\'e}sentation du Laboratoire}{4}{section.1.1}
+\contentsline {section}{\numberline {1.2}Contexte}{5}{section.1.2}
+\contentsline {chapter}{\numberline {2}Pr\IeC {\'e}sentation des donn\IeC {\'e}es}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Production \IeC {\'E}olienne}{7}{section.2.1}
+\contentsline {section}{\numberline {2.2}Production Photovolta\IeC {\"\i }ques}{9}{section.2.2}
+\contentsline {chapter}{\numberline {3}Mod\IeC {\`e}les et m\IeC {\'e}triques}{12}{chapter.3}
+\contentsline {section}{\numberline {3.1}Mod\IeC {\`e}les de Markov cach\IeC {\'e}s}{12}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Cha\IeC {\^\i }ne de Markov}{12}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Mod\IeC {\`e}le de Markov cach\IeC {\'e}s}{13}{subsection.3.1.2}
+\contentsline {subsubsection}{Probabilit\IeC {\'e} d\IeC {\textquoteright }observation d\IeC {\textquoteright }une s\IeC {\'e}quence}{15}{equation.3.1.3}
+\contentsline {subsubsection}{Recherche de la s\IeC {\'e}quence la plus probable}{16}{figure.caption.12}
+\contentsline {subsubsection}{Apprentissage}{17}{figure.caption.13}
+\contentsline {subsection}{\numberline {3.1.3}Mod\IeC {\`e}les Markov Switching Auto-Regressive}{20}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Mod\IeC {\`e}les GARCH}{21}{section.3.2}
+\contentsline {section}{\numberline {3.3}K-moyennes (Kmeans)}{21}{section.3.3}
+\contentsline {section}{\numberline {3.4}Mod\IeC {\`e}le de m\IeC {\'e}lange gaussien (GMM)}{22}{section.3.4}
+\contentsline {section}{\numberline {3.5}Analyse par Composante Principale}{23}{section.3.5}
+\contentsline {section}{\numberline {3.6}M\IeC {\'e}triques}{23}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}BIC}{23}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Erreur moyenne absolue (MAE)}{23}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}Erreur quadratique moyenne (RMSE)}{23}{subsection.3.6.3}
+\contentsline {chapter}{\numberline {4}R\IeC {\'e}sultats pour la production \IeC {\'e}olienne}{25}{chapter.4}
+\contentsline {chapter}{\numberline {5}Application aux erreurs de pr\IeC {\'e}dictions photovolta\IeC {\"\i }ques}{26}{chapter.5}
+\contentsline {section}{\numberline {5.1}M\IeC {\'e}thode des plus proches voisins}{27}{section.5.1}
+\contentsline {section}{\numberline {5.2}R\IeC {\'e}sulats avec un GMM}{30}{section.5.2}
+\contentsline {section}{\numberline {5.3}R\IeC {\'e}sultats avec un HMM}{34}{section.5.3}
+\contentsline {chapter}{\numberline {A}Premi\IeC {\`e}re version de la publication concernant les erreurs de pr\IeC {\'e}dictions \IeC {\'e}oliennes}{39}{appendix.A}

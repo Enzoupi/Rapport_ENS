@@ -1,0 +1,15 @@
+\nomenclatureentry{aHMM@[{HMM}]\begingroup Modèle de Markov Caché ( \ref{subsec:Modeles_HMM} )\nomeqref {3.0}|nompageref}{12}
+\nomenclatureentry{aMS-AR@[{MS-AR}]\begingroup Modèle Markov Switching Auto Regressive (\ref{subsec:Modeles_MSAR})\nomeqref {3.0}|nompageref}{12}
+\nomenclatureentry{a$m$@[{$m$}]\begingroup Nombre d'états cachés (HMM et MSAR)\nomeqref {3.0}|nompageref}{12}
+\nomenclatureentry{a$\Gamma$@[{$\Gamma$}]\begingroup Matrice de transition entre les états cachés (HMM et MSAR)\nomeqref {3.0}|nompageref}{12}
+\nomenclatureentry{a$\bm{\pi}$@[{$\bm{\pi}$}]\begingroup Probabilités initiales d'appartenance à l'un ou l'autre des états cachés (HMM et MSAR)\nomeqref {3.0}|nompageref}{12}
+\nomenclatureentry{a$a_0$@[{$a_0$}]\begingroup Moyenne des densités de probabilités (HMM) ou coefficient constant du processus auto-regréssif (MSAR)\nomeqref {3.2}|nompageref}{14}
+\nomenclatureentry{a$\sigma$@[{$\sigma$}]\begingroup Variance des densités de probabilités Gaussiennes de dimension $d \times d$ (HMM et MSAR)\nomeqref {3.2}|nompageref}{14}
+\nomenclatureentry{a$d$@[{$d$}]\begingroup Dimension de l'espace\nomeqref {3.2}|nompageref}{14}
+\nomenclatureentry{aKmeans@[{Kmeans}]\begingroup Méthode de partitionnement K-moyennes\nomeqref {3.23}|nompageref}{21}
+\nomenclatureentry{aGMM@[{GMM}]\begingroup Modèle de mélange gaussien\nomeqref {3.23}|nompageref}{22}
+\nomenclatureentry{aACP@[{ACP}]\begingroup Analyse par Composante Principale\nomeqref {3.24}|nompageref}{23}
+\nomenclatureentry{aBIC@[{BIC}]\begingroup Bayesian Information Criterion\nomeqref {3.24}|nompageref}{23}
+\nomenclatureentry{aMAE@[{MAE}]\begingroup Erreur moyenne absolue\nomeqref {3.25}|nompageref}{23}
+\nomenclatureentry{aRMSE@[{RMSE}]\begingroup Erreur quadratique moyenne\nomeqref {3.26}|nompageref}{23}
+\nomenclatureentry{a$\widehat{d}$@[{$\widehat{d}$}]\begingroup Indice de la journée indiquant l'heure de la correction\nomeqref {5.0}|nompageref}{27}

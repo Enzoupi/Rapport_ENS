@@ -1,0 +1,41 @@
+\fancypagestyle{corpus}{%
+	\fancyhf{}
+	\fancyhead[LE,RO]{Share\LaTeX}
+	\fancyhead[RE,LO]{Guides and tutorials}
+	\fancyfoot[CE,CO]{\leftmark}
+	\fancyfoot[LE,RO]{\thepage}
+ 
+	\renewcommand{\headrulewidth}{2pt}
+	\renewcommand{\headrule}{\hbox to\headwidth{%
+  		\color{Orange_FlatUI}\leaders\hrule height \headrulewidth\hfill}}
+  		
+	\renewcommand{\footrulewidth}{1pt}
+	\renewcommand{\footrule}{\hbox to\headwidth{%
+		\color{Orange_FlatUI}\leaders\hrule height \footrulewidth\hfill}}
+}
+
+\fancypagestyle{plain}{%
+	\fancyhf{}
+	\fancyfoot[R]{\thepage}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{1pt}
+	\renewcommand{\footrule}{\hbox to\headwidth{%
+		\color{Orange_FlatUI}\leaders\hrule height \footrulewidth\hfill}}
+}
+
+
+% Chapter styles
+
+\titleformat{\chapter} % command
+[display] % shape
+{\normalsize \huge  \color{Blue_FlatUI}} % format
+{
+	\color{Blue_FlatUI}\rule{\textwidth}{1pt}
+	\flushright\normalsize \color{Orange_FlatUI} %
+		\Large \textbf{ \MakeUppercase{\chaptertitlename}\hspace{1ex} %
+	{\fontsize{60}{60}\selectfont\thechapter}}
+} % Lbael
+{10 pt}%
+{\bfseries\huge}%
+[\vspace{2ex}%
+\color{Blue_FlatUI}\titlerule]
