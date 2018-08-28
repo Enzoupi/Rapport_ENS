@@ -500,12 +500,12 @@ L'erreur quadratique moyenne est définie comme étant :
  
 
 
-\chapter{Résultats pour la production éolienne}
+\chapter{Erreurs de prévision éolienne}
 \label{seq:ResultatsEolien}
 
 L'application des modèles MS-AR aux erreurs de prévisions de production d'énergie éolienne a donné lieu à la rédaction d'une première version d'un article scientifique. Le lecteur est donc invité à lire ce document en annexe \ref{annex:ModelingWindPower}. Les travaux que j'ai effectués sont présentés dans la section intitulé \textit{Modelling of the wind power forecast error}. Les poursuites d'études, notamment celles concernant les transitions non homogènes, ont été commencées mais elles ne sont pas assez abouties pour être intégrées telles quelles dans ce rapport.
 
-\chapter{Application aux erreurs de prévisions photovoltaïques}
+\chapter{Erreurs de prévision photovoltaïque}
 Les erreurs de prédiction de production photovoltaïques diffèrent par nature de celles de production éolienne. Alors que le vent peut être d'intensité non négligeable à tout instant, l'irradiance sera quant à elle complètement nulle la nuit. Comme l'alternance jour/nuit est un phénomène purement déterministe les prévisionniste ne commettent pas d'erreurs de prévisions la nuit. Ceci modifie la structure des erreurs de prévisions en introduisant régulièrement des plages de prévisions nulles. Or les outils utilisés dans la section \ref{seq:ResultatsEolien} se heurtent à des problèmes de convergence numérique s'ils sont utilisés tels quels sur la série d'erreur de prédiction de production photovoltaïque. \todo{Expliquer pourquoi clairement}.
 
 Afin de se ramener à une structure de série temporelle moins délicate en termes de résolution numérique, une approche simpliste aurait consisté à supprimer les périodes nocturnes de la série temporelle. Cependant, cette méthode fait part de deux désavantages qui à fait qu'elle a été écartée au cours de ce stage. Tout d'abord, même si elle paraît très simple, il faut malgré tout tenir compte que la durée de la nuit change tous les jours. De surcroît, cela imposerait un pré-traitement des données qui dépend aussi de leur origine géographique. Ainsi la méthodologie et le modèle obtenu paraît être trop difficilement transposable pour être un jour utilisé en opérationnel. C'est pourquoi une approche légèrement différente a été choisie.
@@ -633,6 +633,7 @@ Le modèle de mélange Gaussien, présenté dans \ref{sec:Model_GMM}, a été aj
 		\caption{Corrections d'erreurs à 10 heures obtenus avec plusieurs GMM dont le nombre de clusters $K$ diffèrent}
 		\label{fig:PV_GMM_IntradayComp}
 	\end{subfigure}
+	\caption{Représentation de deux critères sur lesquels se sont basés le choix du nombre de groupes}
 \end{figure}
 
 Le critère BIC ne favorise pas un nombre spécifique de cluster mais donne plutôt une tendance générale favorisant systématiquement l'augmentation du nombre de clusters. Une explication plausible réside dans le fait que le phénomène sous-jacent, l'évolution du temps au sens météorologique du terme, est par définition un phénomène continu et non discret. Plus on discrétiserait son espace de représentation, plus on se rapprocherait d'une représentation continue et ainsi meilleurs sont les résultats. Afin de garder l'interprétabilité du modèle obtenu, et d'en limiter sa complexité, il est impératif de choisir un nombre de cluster relativement restreint. La figure \ref{fig:PV_GMM_BIC} montre une croissance plus faible en terme de critère BIC à partir du sixième cluster. Afin de combiner des informations provenant de deux indicateurs différents, il est possible de voir comment le GMM répond à une application spécifique en fonction de $K$. J'ai donc choisi de les comparer sur la base de leur potentiel à réaliser de la correction au cours de la journée. Des exemples de ces corrections sont présentées dans la figure \ref{fig:PV_GMM_IntraDay}. Ces résultats sont présentés sur la figure \ref{fig:PV_GMM_IntradayComp}. Un net gain, d'environ $5\%$, est constaté en passant de 4 clusters à 6. Ensuite les gains sont relativement plus faible et pour ré-obtenir un gain similaire il faudrait prendre 12 clusters. En comparant ces deux indicateurs, il semble que le modèle à 6 clusters soit un bon compromis entre complexité et précision.
@@ -680,6 +681,8 @@ Finalement, l'utilisation de modèle GMM n'a pas permis d'améliorer les résult
 \section{Résultats avec un HMM}
 \label{sec:PV_HMM}
 
+\subsection{Détermination du modèle}
+
 En gardant à l'esprit que ce modèle est identifié dans le but de générer des prévisions sur plusieurs journée, il est impératif de donner plus de liberté au HMM qu'au GMM quant à la structure de sa matrice de variance covariance. En effet, si on ne relaxe pas la contrainte d'avoir une valeur unique sur la diagonale de variance covariance alors le modèle ne sera jamais en mesure de capturer les erreurs nulles ou négligeables la nuit. Les scénarios générés n'auraient pas alors cette caractéristique et les performances en termes d'applications seraient grandement réduites. Cependant, ce faisant, le nombre de paramètres passe de chaque modèle devient alors :
 
 \begin{equation}
@@ -690,7 +693,7 @@ Par exemple, en prenant le cas d'une observation toutes les heures ($d=24$) et d
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width = 0.8 \linewidth]{Images/PV/ACP/ACP_DimSelect.pdf}
+	\includegraphics[width = 0.6 \linewidth]{Images/PV/ACP/ACP_DimSelect.pdf}
 	\caption{Variance cumulée expliquée en fonction du nombre de composante principales}
 	\label{fig:PV_HMM_ACP_DimSelect}
 \end{figure}
@@ -737,12 +740,64 @@ Dans cet espace réduit, le nombre de paramètres d'un HMM à états cachés ne 
 L'interprétation des régimes sous cette forme n'est pas aisée mais deux éléments sont intéressant à noter. Tout d'abord, les régimes sont caractérisés par des valeurs non négligeables sur la première composante uniquement. D'autre part, la variance diminue en augmentant l'ordre de la composante principale, et ce dans tous les régimes. Ce phénomène est inhérent à l'utilisation de l'ACP qui détermine les composante principales en s'appuyant sur une maximisation de la variance qu'elles expliquent. Les régimes, transformés dans l'espace d'origine, sont présentés dans la figure \ref{fig:PV_HMM_MeanVarOrig}. On retrouve les profils obtenus dans par les modèles utilisés précédemment. Notamment deux modèles de surestimation plus ou moins forte, deux modèles de sous-estimation plus ou moins forte et deux modèles à moyenne nulles mais avec des variances très distinctes. Comme dans le cas du GMM, le régime 6 sert à caractériser les journées aux profils atypiques. 
 
 
+\subsection{Caractérisation statistique du modèle}
+Une particularité des HMM est qu'ils permettent facilement de générer des données synthétiques. En effet, une fois l'initialisation faite, la matrice de transition et les paramètres des états cachés contiennent l'information nécessaire à la production de données synthétiques de la longueur voulue. La figure \ref{fig:PV_HMM_Stat_Zoom} montre une portion de série synthétique dont le profil des journées paraît cohérent avec ce qui est présenté dans la figure \ref{fig:Data_PV_PredErrs}. Il est alors possible de comparer des critères statistiques sur ces données synthétiques et sur la série originale pour évaluer le caractéristiques capturées ou non par le modèle. La figure \ref{fig:PV_HMM_Stat_QQ} montre le diagramme quantile-quantile des séries synthétiques et de la série originale. Pour rappel, ce diagramme cherche à représenter les quantiles d'une série par rapport à ceux de l'autre. Si ces deux séries sont émises par la même distribution, alors les quantiles s'alignent tous sur une droite. Sur cette figure on peut voir que les quantiles s'alignent parfaitement sur l'intervalle $[-0.25,0.25]$ qui, d'après la figure \ref{fig:Data_TenneT_Bayern_BoxHist} représente une grande majorité des observations. Cependant, la figure indique clairement que le modèle ne réussit pas à capturer les queues de la distribution en sous estimant l'occurence de prévision très mauvaises.
+
+\begin{figure}[h] 
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering
+		\includegraphics[width = 0.95 \linewidth]{Images/PV/HMM/Stats/SyntheticDataZoom.pdf}
+		\caption{Espace réduit}
+		\label{fig:PV_HMM_Stat_Zoom}
+		%\vspace{4ex}
+	\end{subfigure}%% 
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering
+		\includegraphics[width = 0.95 \linewidth]{Images/PV/HMM/Stats/QQPlot.pdf}
+		\caption{Espace original}
+		\label{fig:PV_HMM_Stat_QQ}
+		%\vspace{4ex}
+	\end{subfigure}
+	
+	\caption{Représentation des moyennes et variances d'un HMM à 6 états cachés}
+	\label{fig:PV_HMM_Stat_ZoomQQ} 
+\end{figure}
+
+La figure \ref{fig:PV_HMM_Stat_MDO} représente le temps de séjour moyen au dessus d'une valeur seuil. Cette valeur caractérise la dynamique globale de la série considérée. On remarque une nette diminution dans le temps de séjour moyen autour de 0. Ceci s'explique par la présence des erreurs nulles la nuit. En effet, en considérant une valeur seuil très légèrement positive, alors le temps de séjour moyen peut encore être assez élevé en présence de journée de sous-estimation (d'erreurs négatives). En considérant maintenant une valeur seuil très légèrement négative, elle sera nécessairement dépassée positivement à la prochaine période nocturne. Ce faisant le temps de séjour moyen au dessus de cette valeur seuil sera, au maximum, égal à la durée de l'ensoleillement à la période considérée. Cette particularité semble être parfaitement capturée par le modèle avec une superposition des temps de séjours des séries synthétiques et de la série originale sur cet intervalle. On retrouve une bonne superposition sur l'intervalle $[-0.25,0.25]$ et même un petit peu au delà. Les sous estimations des événements menant à des prédictions de mauvaises qualités se retrouvent aussi sur ce graphique. Cependant, l'écart de comportement sur les marges entre la série originale et la série synthétique est magnifié par l'échelle logarithmique. La figure \ref{fig:PV_HMM_Stat_NU} montre le nombre de dépassement positifs de valeurs seuils et traduit donc la volatilité des séries. Selon cette métrique il y a superposition presque parfaite entre les séries synthétiques et la série originale, ce qui traduit que le modèle capture avec succès la volatilité de la série temporelle.
+
+\begin{figure}[h] 
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering
+		\includegraphics[width = 0.95 \linewidth]{Images/PV/HMM/Stats/MDO.pdf}
+		\caption{Temps de séjour moyen au dessus d'une valeur seuil}
+		\label{fig:PV_HMM_Stat_MDO}
+		%\vspace{4ex}
+	\end{subfigure}%% 
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering
+		\includegraphics[width = 0.95 \linewidth]{Images/PV/HMM/Stats/NU.pdf}
+		\caption{Nombre de dépassement positifs}
+		\label{fig:PV_HMM_Stat_NU}
+		%\vspace{4ex}
+	\end{subfigure}
+	
+	\caption{Caractérisation statistiques par rapport à des valeurs seuils}
+	\label{fig:PV_HMM_Stat_MDONU} 
+\end{figure}
+
+Cependant ces métriques ne parviennent pas à mettre en évidence deux sources de différences entre la série originale et la série synthétique. Tout d'abord, au vu des profils moyens du modèle et matrices de variances covariances, peu ou pas de journée avec une inversion de profil ne sont générées. Ce ne sont pas les profils les plus typiques, mais la méthode des Kmeans les exhibait à partir de 7 ou 8 clusters. D'autre part, il s'agit ici de statistiques réalisées sur l'ensemble de la série et qui ne tiennent donc pas compte de particularismes saisonniers. Il serait donc intéressant de réaliser ces statistiques sur des périodes de l'année et de voir si les résultats diffèrent. Le cas échéant, la prise en compte de la date calendaire par le modèle HMM serait une évolution non négligeable.
+
+
+
+
 %\begin{figure}[h]
 %	\centering
 %	\includegraphics[width = 0.8 \linewidth]{Images/PV/HMM/MS6AR_24dimReco.pdf}
 %	\caption{Représentation des 6 états cachés obtenus pour un HMM à 6 états cachés dans l'espace original}
 %	\label{fig:PV_HMM_MeanVarOrig}
 %\end{figure}
+
+\subsection{Applications du modèle}
 
 Utiliser ce modèle pour faire de la correction au cours de la journée n'apporterait que peu de gain par rapport au GMM de la section \ref{sec:PV_GMM} au vu de leurs nombreuses similitudes. Cependant, il est possible de l'utiliser pour faire des prévisions d'ensembles sur une ou plusieurs journées. Comme pré-requis, il est nécessaire de pouvoir déterminer les probabilités d'appartenance d'une journée à chacun des états cachés. Elles sont déterminées par l'utilisation de l'algorithme forward backward décrit dans \ref{subsubsec:Models_HMM_Apprentissage}. Des exemples de probabilités d'appartenance sont présentées dans la figure \ref{fig:PV_HMM_Forward} dans l'espace réduit (figure \ref{fig:PV_HMM_ForwardReduct}) et dans l'espace d'origine (figure \ref{fig:PV_HMM_ForwardOrig}).
 

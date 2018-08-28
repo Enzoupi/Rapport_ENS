@@ -17,10 +17,13 @@
 \BOOKMARK [2][-]{subsection.3.6.1}{BIC}{section.3.6}% 17
 \BOOKMARK [2][-]{subsection.3.6.2}{Erreur moyenne absolue \(MAE\)}{section.3.6}% 18
 \BOOKMARK [2][-]{subsection.3.6.3}{Erreur quadratique moyenne \(RMSE\)}{section.3.6}% 19
-\BOOKMARK [0][-]{chapter.4}{R\351sultats pour la production \351olienne}{}% 20
-\BOOKMARK [0][-]{chapter.5}{Application aux erreurs de pr\351visions photovolta\357ques}{}% 21
+\BOOKMARK [0][-]{chapter.4}{Erreurs de pr\351vision \351olienne}{}% 20
+\BOOKMARK [0][-]{chapter.5}{Erreurs de pr\351vision photovolta\357que}{}% 21
 \BOOKMARK [1][-]{section.5.1}{M\351thode des plus proches voisins}{chapter.5}% 22
 \BOOKMARK [1][-]{section.5.2}{R\351sulats avec un GMM}{chapter.5}% 23
 \BOOKMARK [1][-]{section.5.3}{R\351sultats avec un HMM}{chapter.5}% 24
-\BOOKMARK [0][-]{chapter.6}{Conclusion et perspectives}{}% 25
-\BOOKMARK [0][-]{appendix.A}{Premi\350re version de la publication concernant les erreurs de pr\351visions \351oliennes}{}% 26
+\BOOKMARK [2][-]{subsection.5.3.1}{D\351termination du mod\350le}{section.5.3}% 25
+\BOOKMARK [2][-]{subsection.5.3.2}{Caract\351risation statistique du mod\350le}{section.5.3}% 26
+\BOOKMARK [2][-]{subsection.5.3.3}{Applications du mod\350le}{section.5.3}% 27
+\BOOKMARK [0][-]{chapter.6}{Conclusion et perspectives}{}% 28
+\BOOKMARK [0][-]{appendix.A}{Premi\350re version de la publication concernant les erreurs de pr\351visions \351oliennes}{}% 29
