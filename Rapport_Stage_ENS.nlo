@@ -12,4 +12,5 @@
 \nomenclatureentry{aBIC@[{BIC}]\begingroup Bayesian Information Criterion\nomeqref {3.24}|nompageref}{17}
 \nomenclatureentry{aMAE@[{MAE}]\begingroup Erreur moyenne absolue\nomeqref {3.25}|nompageref}{17}
 \nomenclatureentry{aRMSE@[{RMSE}]\begingroup Erreur quadratique moyenne\nomeqref {3.26}|nompageref}{17}
+\nomenclatureentry{aBIAS@[{BIAS}]\begingroup Erreur moyenne\nomeqref {3.27}|nompageref}{17}
 \nomenclatureentry{a$\widehat{d}$@[{$\widehat{d}$}]\begingroup Indice de la journée indiquant l'heure de la correction\nomeqref {5.0}|nompageref}{19}

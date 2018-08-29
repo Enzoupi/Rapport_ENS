@@ -475,6 +475,7 @@ BIC = - 2 \log L + k \log N
 \end{equation}
 
 \subsection{Erreur moyenne absolue (MAE)}
+\label{subsec:Model_Metric_MAE}
 \nomenclature{MAE}{Erreur moyenne absolue}
 L'erreur moyenne absolue est définie comme étant :
 \begin{equation}
@@ -483,6 +484,7 @@ L'erreur moyenne absolue est définie comme étant :
 \end{equation}
 
 \subsection{Erreur quadratique moyenne (RMSE)}
+\label{subsec:Model_Metric_RMSE}
 \nomenclature{RMSE}{Erreur quadratique moyenne}
 L'erreur quadratique moyenne est définie comme étant :
 
@@ -491,8 +493,9 @@ L'erreur quadratique moyenne est définie comme étant :
 \end{equation}
 
 
-%\subsection{Erreur moyenne (BIAS)}
-%\nomenclature{BIAS}{Erreur moyenne}
+\subsection{Erreur moyenne (BIAS)}
+\nomenclature{BIAS}{Erreur moyenne}
+\label{subsec:Model_Metric_BIAS}
 %
 %\subsection{Energy Score}
 %On présente ici une métrique, l'Energy Score, qui cherche à qualifier la qualité d'un ensemble de scénarios générés dans un contexte de prédiction. Cette métrique est introduite dans \cite{tilmann_gneiting_probabilistic_2007} et son caractère discriminant a été discuté dans \cite{pinson_discrimination_2013}.Il pondère l'écart entre la réalité avec la moyenne des scénarios et la largeur du spectre des scénarios. En notant $J$ le nombre total de scénarios, $z_t$ la série réalisée et $\hat{z}_t^{j}$ le $j^{eme}$ scénario, l'\textit{Energy Score} est définit dans l'équation \ref{eq::EnergyScore}. C'est un score orienté négativement : le meilleur ensemble de scénarios obtiendra donc le score le plus faible.
@@ -743,6 +746,7 @@ Dans cet espace réduit, le nombre de paramètres d'un HMM à états cachés ne 
 
 L'interprétation des régimes sous cette forme n'est pas aisée mais deux éléments sont intéressant à noter. Tout d'abord, les régimes sont caractérisés par des valeurs non négligeables sur la première composante uniquement. D'autre part, la variance diminue en augmentant l'ordre de la composante principale, et ce dans tous les régimes. Ce phénomène est inhérent à l'utilisation de l'ACP qui détermine les composante principales en s'appuyant sur une maximisation de la variance qu'elles expliquent. Les régimes, transformés dans l'espace d'origine, sont présentés dans la figure \ref{fig:PV_HMM_MeanVarOrig}. On retrouve les profils obtenus dans par les modèles utilisés précédemment. Notamment deux modèles de surestimation plus ou moins forte, deux modèles de sous-estimation plus ou moins forte et deux modèles à moyenne nulles mais avec des variances très distinctes. Comme dans le cas du GMM, le régime 6 sert à caractériser les journées aux profils atypiques. 
 
+\todo{Présenter la matrice de transition aussi !}
 
 \subsection{Caractérisation statistique du modèle}
 Une particularité des HMM est qu'ils permettent facilement de générer des données synthétiques. En effet, une fois l'initialisation faite, la matrice de transition et les paramètres des états cachés contiennent l'information nécessaire à la production de données synthétiques de la longueur voulue. La figure \ref{fig:PV_HMM_Stat_Zoom} montre une portion de série synthétique dont le profil des journées paraît cohérent avec ce qui est présenté dans la figure \ref{fig:Data_PV_PredErrs}. Il est alors possible de comparer des critères statistiques sur ces données synthétiques et sur la série originale pour évaluer le caractéristiques capturées ou non par le modèle. La figure \ref{fig:PV_HMM_Stat_QQ} montre le diagramme quantile-quantile des séries synthétiques et de la série originale. Pour rappel, ce diagramme cherche à représenter les quantiles d'une série par rapport à ceux de l'autre. Si ces deux séries sont émises par la même distribution, alors les quantiles s'alignent tous sur une droite. Sur cette figure on peut voir que les quantiles s'alignent parfaitement sur l'intervalle $[-0.25,0.25]$ qui, d'après la figure \ref{fig:Data_TenneT_Bayern_BoxHist} représente une grande majorité des observations. Cependant, la figure indique clairement que le modèle ne réussit pas à capturer les queues de la distribution en sous estimant l'occurence de prévision très mauvaises.
@@ -831,19 +835,71 @@ Utiliser ce modèle pour faire de la correction au cours de la journée n'apport
 
 On constate que, dans cet exemple, les probabilités d'appartenance mettent en évidence une compétition entre plusieurs états. En effet, comme aucune des trajectoires ne correspond exactement à une trajectoire type, c'est l'information sur les variances de chaque états qui est prépondérante. Par exemple, le profil moyen de la première journée semble, dans l'espace de dimension réduit, être le plus proche du Régime 1. Cependant, comme il a une très faible variance notamment sur les composantes principales d'ordre supérieur à 1, il n'a pas une plus grande probabilité d'avoir émis cette observation que les régimes 2 et 3. La troisième journée se rapproche très fortement de la trajectoire moyenne du régime 4 et il est donc nettement plus probable que ce soit lui qui ait la probabilité d'émission la plus forte. La sixième journée représente un autre cas intéressant. En effet, la première composante principale est assez proche de celle de l'état 5. Mais, au vu de la forte valeur sur la troisième composante principale, une compétition entre le régime 5 (forte erreurs positive) et le régime 6 (caractérisé par sa forte variance) s'installe.
 
-A partir de ces probabilités d'appartenance, il est possible de faire de la prévision d'ensemble, c'est à dire de la génération de scénarios probables. En effet, en les utilisant pour définir une loi de probabilité multinomiale, il est possible de déterminer pour chaque scénario le régime ayant généré la trajectoire initiale. Le régime suivant est alors déterminé par tirage d'une autre loi binomiale définie cette fois par une ligne de la matrice de transition $\Gamma$. L'observation générée sera donc la moyenne du régime tiré auquel est ajouté un bruit définit par la matrice de variance covariance dudit régime. L'opération est à répéter jusqu'à l'obtention de scénarios de la durée voulue.   
+A partir de ces probabilités d'appartenance, il est possible de faire de la prévision d'ensemble, c'est à dire de la génération de scénarios probables. En effet, en les utilisant pour définir une loi de probabilité multinomiale, il est possible de déterminer pour chaque scénario le régime ayant généré la trajectoire initiale. Le régime suivant est alors déterminé par tirage d'une autre loi binomiale définie cette fois par une ligne de la matrice de transition $\Gamma$. L'observation générée sera donc la moyenne du régime tiré auquel est ajouté un bruit définit par la matrice de variance covariance dudit régime. L'opération est à répéter jusqu'à l'obtention de scénarios de la durée voulue. La figure \ref{fig:PV_HMM_Scenarios} montre des exemples de scénarios générés dans 4 situations différentes.
+
+\begin{figure}[h]
+	\begin{center}
+		
+		\begin{subfigure}[b]{0.5\linewidth}
+			\centering
+			\includegraphics[width = 0.95 \linewidth]{Images/PV/HMM/id175.pdf}
+			\caption{25-27 Juin 2017}
+			%\vspace{4ex}
+		\end{subfigure}%%
+		\begin{subfigure}[b]{0.5\linewidth}
+			\centering
+			\includegraphics[width = 0.95 \linewidth]{Images/PV/HMM/id187.pdf}
+			\caption{7-9 Juillet 2017}
+			%\vspace{4ex}
+		\end{subfigure}
+		
+		\begin{subfigure}[b]{0.5\linewidth}
+			\centering
+			\includegraphics[width = 0.95 \linewidth]{Images/PV/HMM/id27.pdf}
+			\caption{27-29 Janvier 2017}
+			%\vspace{4ex}
+		\end{subfigure}%%
+		\begin{subfigure}[b]{0.5\linewidth}
+			\centering
+			\includegraphics[width = 0.95 \linewidth]{Images/PV/HMM/id41.pdf}
+			\caption{10-12 février 2017}
+			%\vspace{4ex}
+		\end{subfigure}
+	\end{center}
+	
+	\caption{Génération de 10 scénarios à partir d'initialisations différentes matérialisées par un fond coloré. Les différents scénarios sont en violet, leur moyenne en rose, leur intervalle de prévision à $90\%$ en vert et enfin la série originale en orange.}
+	\label{fig:PV_HMM_Scenarios} 
+\end{figure}
+
+Il est intéressant de constater que dans presque tous les cas, la série originale est bien intégrée dans le faisceau de scénarios. Cependant le 10 février illustre comment tous les scénarios prédits sont positifs ou presque alors que l'erreur réellement observée est négative. Par ailleurs, il est important de remarquer comment l'initialisation, traduite par des probabilités d'appartenance, influe le faisceau de scénarios générés. On constate par exemple que l'initialisation du 27 Janvier donne lieu a des scénarios équitablement positifs ou négatifs et de faible amplitude. En effet parmi les 100 scénarios, très peu sortent de l'intervalle des $20\%$ d'erreurs. Le 25 Juin et le 10 février génèrent quant à eux des scénarios de relativement faible amplitude mais en très grosse majorité positifs.
+
+Afin de caractériser ces ensembles de prédictions, \cite{madsen_protocol_nodate} préconise l'utilisation d'au moins trois critères, à savoir la MAE (\ref{subsec:Model_Metric_MAE}), l'erreur quadratique (\ref{subsec:Model_Metric_RMSE}) et l'erreur moyenne (\ref{subsec:Model_Metric_BIAS}).
+
+
+\begin{table}[h]
+\centering
+\caption{Score obtenus par différents modèles pour la simulation de 100 scénarios}
+\begin{tabular}{lccc}
+	& MAE  & RMSE & BIAS \\
+HMM	& $2.049374 \times 10^{-2}$ & $4.680091\times 10^{-2}$ & $1.05063 \times 10^{-2}$	    \\
+SARIMA	&  &  & 
+\end{tabular}
+\end{table}
+
+   
 
 \chapter{Conclusion et perspectives}
+Au cours de ce stage, j'ai eu l'occasion d'étudier des séries d'erreurs de prévision de production d'énergie d'origine solaire et photovoltaïque. Côté éolien, leur étude avait déjà montré un potentiel intéressant à travers l'étude réalisée par \cite{haessig_dimensionnement_2014} et la mise en place d'un modèle AR(1). Côté photovoltaïque, \cite{latimier_gestion_2016} avait identifié la présence de profils typiques dans les données et proposé l'idée d'une approche par trajectoire. Dans les deux cas, l'objectif de ce stage était de poursuivre les pistes ouvertes dans ces deux directions afin de voir si des modèles plus complexes pouvaient améliorer les résultats.
+
+Concernant les erreurs de prévision de production éolienne, un modèle de type Markov Switching Auto-Regressive (MSAR) avec 3 états cachés et des modèles AR(2) à été ajusté sur la série. L'augmentation en terme de complexité du modèle MSAR par rapport au AR(1) précédemment proposé (21 paramètres contre 2) permet de prendre en compte des comportements non linéaires exhibés par a série temporelle. Ces comportements se manifestaient essentiellement sous la forme de période avec des variances faibles, moyennes ou fortes. En s'intéressant aux comportements statistiques de séries synthétiquement générées par les modèles, un très net gain est obtenu par le MSAR. En effet il a été montré que la prise en compte de non linéarité permettait une meilleure représentation de la volatilité -- avec les dépassements positifs de valeurs seuil-- et de la dynamique générale --avec le temps de séjour moyen au dessus de valeurs seuils--. Cependant, le gain dans un exemple d'application sur une gestion optimale de stockage n'a pas été aussi notable que lors de l'étude des distributions statistiques. Cette amélioration, bien que faible, peut quand même s'avérer non négligeable économiquement si elle est envisagée sur une ferme de production qui, par un facteur d'échelle, multipliera le résultat obtenu sur l'exemple jouet. La saisonnalité annuelle des erreurs de prévisions n'a pas été prise en compte dans l'ajustement des paramètres de ce MSAR. Intégrer des transitions non homogènes en fonction de la date calendaire pourrait permettre de capturer le fait que les périodes à faible volatilité se manifestent surtout dans les saisons hivernales. Cette nouvelle introduction devrait permettre d'améliorer les résultats de manière sensible. Par ailleurs, en s'inspirant des modèles utilisés en économie, la modélisation de cette variance variable par des modèles GARCH a été réalisée mais les résultats n'étaient pas suffisamment probants pour être développés plus avant.
+
+Concernant les erreurs de prévision issues de centrales photovoltaïques, plusieurs modèles avec objectifs variés ont été ajustés. Dans un premier temps, la présence d'information valable dans la série temporelle dans un but de correction au cours de la journée a été testée avec la méthode des plus proches voisins. Cette méthode à conduit à une correction d'environ $35 \%$ en identifiant la trajectoire à 10h du jour considéré et l'ensemble des trajectoires déjà connues. Cette information est suffisante en elle-même pour mettre en exergue l'information résiduelle dans les séries d'erreurs de prévisions photovoltaïques et justifier de continuer leur étude. Dans une mesure de simplification, l'identification a ensuite été testée par rapport à un certains nombre de trajectoire types identifiées par la méthode des Kmeans. Ainsi en limitant l'identification parmi un jeu de 20 trajectoires -- au lieu de 2190 précédemment -- permettait une réduction d'erreur de $20 \%$ au cours de la journée dans les même conditions. Un modèle de mélange gaussien à ensuite été ajusté afin d'obtenir de l'information supplémentaire sur les variances des trajectoires caractéristiques. Cette connaissance permet entre autre de pouvoir réaliser l'étude duale de celle qui a été faite pour l'éolien, à savoir une stratégie de gestion optimale de stockage. Toujours dans cette optique, le modèle doit être en mesure de générer des scénarios non pas uniquement sur le restant d'une journée mais sur des temps plus longs. L'intérêt de 
+
 
 \chapter{Retour sur expérience}
 
 
 
-%\begin{itemize}
-%	\item [\textbf{Ce qui a été fait et pourrait être fait}] : MSAR sur Eolien  Implémenter des transitions non homogènes, notamment en se basant sur la date calendaire et le fait que les régimes à plus faible erreurs de prévision arrivent le plus souvent en hiver // et combo KNN Kmeans GMM HMM sur PV
-%	. \textit{PV} : MSAR ? Transitions non homogènes ? Applications possibles à une stratégie optimale de stockage ?
-%	\item[Ce que ce stage m'a apporté] \textit{Pro} : Connaissance en statistique, série temporelles, R d'une part. Découverte le microcosme des ENS et surtout l'environnement de la recherche  \textit{Perso} : Confirmation de domaine d'intérêt et choix d'étude (mentionner retour de voyage)
-%\end{itemize}
 
 
 A cours de ce stage et à travers les différentes missions qui m'ont été confiées, j'ai été amené à mettre en pratique des connaissances acquises lors de ma formation. De surcroît, j'au aussi eu l'opportunité d'en acquérir de nouvelles, complémentaires, qui m'ouvrent de belles perspectives.
