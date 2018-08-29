@@ -57,6 +57,15 @@ C.~Bouveyron and C.~Brunet-Saumard, ``\BIBforeignlanguage{en}{Model-based
   \url{http://linkinghub.elsevier.com/retrieve/pii/S0167947312004422}
 \BIBentrySTDinterwordspacing
 
+\bibitem{scrucca_mclust_2016}
+\BIBentryALTinterwordspacing
+L.~Scrucca, M.~Fop, T.~B. Murphy, and A.~E. Raftery, ``mclust 5: {Clustering},
+  {Classification} and {Density} {Estimation} {Using} {Gaussian} {Finite}
+  {Mixture} {Models},'' \emph{The R journal}, vol.~8, no.~1, pp. 289--317, Aug.
+  2016. [Online]. Available:
+  \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5096736/}
+\BIBentrySTDinterwordspacing
+
 \bibitem{latimier_gestion_2016}
 R.~L.~G. Latimier, ``Gestion et dimensionnement d'une flotte de véhicules
   électriques associée à une centrale photovoltaïque: co-optimisation

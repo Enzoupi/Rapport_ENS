@@ -21,12 +21,12 @@
 
 \chapter{Introduction}
 \section{Présentation du Laboratoire}
-J'ai réalisé mon stage au sein du laboratoire Systèmes et Applications des Technologies de l'Information et de l'Énergie (SATIE) qui est une unité mixte de recherche du CNRS comptant environ 200 personnes. Ses tutelles sont le CNRS, l'ENS Paris Saclay, l'ENS Rennes, le CNAM Paris, l'université de Cergy Pontoise, l'université de Paris Sud et l'IFFSTAR. Ce stage a été encadré par Roman Le Goff Latimier, Hamid Ben Hamed et Bernard Multon qui font partie de l'ENS de Rennes, lieu dans lequel s'est déroulé le stage. Le laboratoire SATIE comporte de nombreuses équipes de recherches dont les thématiques dérivent toutes de problématiques liées à l'\textit{Electrical Engeneering}. Les travaux que j'ai eu à réaliser s'intégraient dans les thématiques de l'équipe Système d'Énergies pour les Transports et l'Environnement. L'objectif principal de cette équipe est de mettre au point de nouveaux systèmes (ou des les améliorer) de création, de transport ou de conversion d'énergie afin d'augmenter leur efficacité tout en minimisant l'impact environnemental.
+J'ai réalisé mon stage au sein du laboratoire Systèmes et Applications des Technologies de l'Information et de l'Énergie (SATIE) qui est une unité mixte de recherche (UMR 8029) du CNRS comptant environ 200 personnes. Ses tutelles sont le CNRS, l'ENS Paris Saclay, l'ENS Rennes, le CNAM Paris, l'université de Cergy Pontoise, l'université de Paris Sud et l'IFFSTAR. Ce stage a été encadré par Roman Le Goff Latimier, Hamid Ben Hamed et Bernard Multon qui font partie de l'ENS de Rennes, lieu dans lequel s'est déroulé le stage. Le laboratoire SATIE comporte de nombreuses équipes de recherches dont les thématiques dérivent toutes de problématiques liées à l'\textit{Electrical Engeneering}. Les travaux que j'ai eu à réaliser s'intégraient dans les thématiques de l'équipe Système d'Énergies pour les Transports et l'Environnement. L'objectif principal de cette équipe est de mettre au point de nouveaux systèmes (ou des les améliorer) de création, de transport, de conversion ou de gestion d'énergie afin d'augmenter leur efficacité tout en minimisant l'impact environnemental.
 
 \section{Contexte}
 %Ce stage s'inscrit dans le contexte d'un changement de paradigme quant à la production d'électricité.
 
-La part des énergies renouvelables à production variable et \textbf{incertaine} -notamment l'éolien et le photovoltaïque- est en augmentation constante au cours des dernières années comme le montre la figure \ref{fig:Intro_EnergyProduction}. En effet leur part dans la production d'énergie renouvelable passe d'une quantité négligeable au début des années 2000 à environ $20 \%$ en 2016.
+La part des énergies renouvelables à production variable et \textbf{incertaine} -- notamment l'éolien et le photovoltaïque -- est en augmentation constante au cours des dernières années comme le montre la figure \ref{fig:Intro_EnergyProduction}. En effet leur part dans la production d'énergie renouvelable passe d'une quantité négligeable au début des années 2000 à environ $20 \%$ en 2016.
 
 \begin{figure}[h]
 	\begin{center}
@@ -38,28 +38,32 @@ La part des énergies renouvelables à production variable et \textbf{incertaine
 
 Cette intégration croissante des énergies renouvelables à production incertaine demande d'être faite avec minutie car elle impose de nouvelles formes d'incertitudes. %Cependant, elles peuvent aussi être vectrice de nouvelles opportunités.
 
-Afin de comprendre pourquoi, il est nécessaire de faire un point sur le réseau électrique Français, et par extension, Européen. Ces réseaux se sont construits autour de l'impératif d'être en mesure de fournir, à n'importe quel instant, la puissance demandée par les utilisateurs. Or comme l'énergie qui circule sur les réseaux électriques est un flux instantané, une contrainte physique impose que demande et production soient égales à tout instant.
+Afin de comprendre pourquoi, il est nécessaire de faire un point sur le réseau électrique Français, et par extension, mondiaux. Ces réseaux se sont construits autour de l'impératif d'être en mesure de fournir, à n'importe quel instant, la puissance demandée par les utilisateurs. Or comme l'énergie qui circule sur les réseaux électriques est un flux instantané, une contrainte physique impose que demande et production soient égales à tout instant.
 
-Les sources de productions d'énergies d'alors étaient principalement délocalisées, constantes et avec une faible inertie (centrales thermiques) ou forte inertie (centrale nucléaires).  Contraintes auxquelles il faut ajouter la difficulté de stockage de l'électricité ainsi que des infrastructures qui limitent la puissance de certains échanges. Pour pallier à ces difficultés et contraintes, plusieurs systèmes correspondant à différentes échelles de temps ont été mis en place.
+Les sources de productions d'énergies d'alors étaient principalement centralisées, constantes et avec une faible inertie (centrales thermiques) ou forte inertie (centrale nucléaires).  Contraintes auxquelles il faut ajouter la difficulté de stockage de l'électricité ainsi que des infrastructures qui limitent la puissance de certains échanges. Pour pallier à ces difficultés et contraintes, plusieurs systèmes correspondant à différentes échelles de temps ont été mis en place.
 
 %L'égalisation de la production et de la consommation aux temps long est peut être celle qui a été la moins problématique à l'heure actuelle. Il \textit{suffit} de s'assurer que les infrastructures en places et futures garantiront une production suffisante pour combler l'évolution de la demande. Les matières premières et énergies fossiles étant encore largement présente, beaucoup d'options de production d'énergies à moyen terme restent disponibles.
 
-L'essentiel de l'organisation pour égaliser production et consommation aux temps moyens et courts réside dans la mise en place de différents marchés. Un premier ,le marché \textit{day-ahead}, sur lequel des accords non engageants sont pris pour le lendemain basés sur les particularismes de la journée (vague de froid, jour férié,... etc). Un autre marché a lieu au cours de la journée où des offres sont effectuées dès qu'elles sont compatibles. Cependant des écarts plus ou moins grands par rapport aux engagements ont lieux. Le gestionnaire de réseau fait alors appel à un second marché plus onéreux, dit marché de \textit{balancing}, pour combler ces écarts. En fonction des législation, les écarts par rapports aux engagements sur les différents marchés peuvent être soumis à des pénalisations.
+L'essentiel de l'organisation pour égaliser production et consommation aux temps moyens et courts réside dans la mise en place de différents marchés. Un premier ,le marché \textit{day-ahead}, sur lequel des accords non engageants sont pris pour le lendemain basés sur les particularismes de la journée (vague de froid, jour férié,... etc). Un autre marché a lieu au cours de la journée où des offres sont effectuées dès qu'elles sont compatibles. Cependant des écarts plus ou moins grands par rapport aux engagements ont lieux. Ces écarts doivent alors être immédiatement compensés en temps réel. Tout déséquilibre entre la production et la consommation se traduisant par une variation de la fréquence du réseau électrique, il doit être corrigé en quelques secondes. Le gestionnaire de réseau fait alors appel à un second marché plus onéreux, dit marché de \textit{balancing}. En fonction des législation, les écarts par rapports aux engagements sur les différents marchés peuvent être soumis à des pénalisations.
 
-Dans ce contexte, de nombreuses études avaient été réalisées sur la prévision de la consommation des ménages qui était à l'époque la principale source d'incertitude. Avec l'arrivée des énergies renouvelables à production incertaine, un important effort de recherche à été orienté autour de la prévision de production. Dans le cas de l'éolien et du photovoltaïque, ces prévisions sont souvent basées sur des prévisions météorologiques.
+Dans ce contexte, de nombreuses études avaient été réalisées sur la prévision de la consommation des ménages qui était à l'époque la principale source d'incertitude. Avec l'arrivée des énergies renouvelables à production incertaine, un important effort de recherche a été orienté autour de la prévision de production. Dans le cas de l'éolien et du photovoltaïque, ces prévisions sont souvent basées sur des prévisions météorologiques.
 
 Étudier les erreurs de prévisions prend son sens au travers de plusieurs éléments. Tout d'abord, le fait que les prévisions de production soient basées sur des prévisions météorologiques empêche un rafraîchissement continu des prévision. En effet, les calculs météorologiques étant particulièrement lourds, ils ne sont réalisés que quelques fois par jour. Déterminer une dynamique dans les erreurs de prévisions permettrait donc d'affiner les prévisions de production entre deux mises à jour successives des calculs météorologiques. Enfin, au vu de la conception des marchés, ce sont bien les erreurs de prévisions qui doivent être compensés sur le second marché et qui peuvent perturber le réseau côté gestionnaire ou donner lieu à des amendes côté producteur. C'est donc bien, in fine, cette valeur qu'il est impératif de minimiser. Caractériser les erreurs de prévision est donc une approche complémentaire et une seconde source d'information valable et pertinente.  
+
+\todo{Etat de l'art + plan du rapport}
 
 
 
 \chapter{Présentation des données}
+Dans ce chapitre, les données utilisées lors de ce stage seront présentées. Les sources et les pré-traitement réalisés sont clairement indiqués de façon à pouvoir reproduire et vérifier les résultats mis en avant lors de ce stage. Une première description des grandes caractéristiques statistiques y est aussi présentée. 
+
 \section{Production Éolienne}
 %\subsection{Données de Californie (BPA)}
-L'étude est réalisée dans un premier temps sur des données issue de \href{https://transmission.bpa.gov/Business/Operations/Wind/}{Bonneville Power Administration} \footnote{\url{https://transmission.bpa.gov/Business/Operations/Wind/}} entre 2009 et 2017. Ces données comportent, par pas de temps de 5 minutes, les productions électriques éoliennes réelles ainsi que les prévisions à 1 heure annoncées par les producteurs.
+L'étude est réalisée dans un premier temps sur des données issue de \href{https://transmission.bpa.gov/Business/Operations/Wind/}{Bonneville Power Administration}  \footnote{\url{https://transmission.bpa.gov/Business/Operations/Wind/}} entre 2009 et 2017. Ces données comportent, par pas de temps de 5 minutes, les productions électriques éoliennes réelles ainsi que les prévisions à 1 heure annoncées par les producteurs.
 
 Afin de réduire la taille du jeu de données, il est réduit à un échantillonnage horaire. Pour ce faire la moyenne sur l'heure suivante est réalisée.
 
-D'autre part, comme le nombre d'installations de production à évoluée du simple au double (voir \href{https://transmission.bpa.gov/business/operations/Wind/WIND_InstalledCapacity_Plot.pdf}{ici} \footnote{\url{https://transmission.bpa.gov/business/operations/Wind/WIND_InstalledCapacity_Plot.pdf}}) sur cette période, les données ont été normalisées par la capacité de production maximale (voir \ref{fig::PredErrors_all}). Les erreurs de prévisions sont donc reconstituées à partir de ces données en soustrayant les productions mesurées aux productions prévues (voir \ref{fig:Data_BPA_WholeNorm}).
+D'autre part, comme la capacité de production installée a évoluée du simple au double  \footnote{\url{https://transmission.bpa.gov/business/operations/Wind/WIND_InstalledCapacity_Plot.pdf}} sur cette période, les données ont été normalisées par la capacité de production maximale (voir \ref{fig::PredErrors_all}). Les erreurs de prévisions sont donc reconstituées à partir de ces données en soustrayant les productions mesurées aux productions prévues (voir \ref{fig:Data_BPA_WholeNorm}).
 
 
 \begin{figure}[ht!]
@@ -80,7 +84,8 @@ D'autre part, comme le nombre d'installations de production à évoluée du simp
 \end{center}
 \end{figure}
 
-La figure \ref{fig::Data_Eolien_BPA_HistNormERR} présente l'histogramme des erreurs normalisées en échelle logarithmique. On constate que les erreurs sont bien centrées autour de zéro et qu'une grande partie réside dans l'intervalle $[-0.2,0.2]$ \todo{Préciser combien} ce qui témoigne d'une relativement bonne capacité de prévision.
+La figure \ref{fig::Data_Eolien_BPA_HistNormERR} présente l'histogramme des erreurs normalisées en échelle logarithmique. On constate que les erreurs sont bien centrées autour de zéro. D'autre part les valeurs faibles sont très nettement majoritaire avec $77 \%$ des erreurs qui sont inférieures à $5 \%$ de la capacité de production installée (c'est à dire qu'elles sont comprises dans l'intervalle $[-0.05,0.05]$). Cette tendance se confirme avec $94 \%$ des erreurs observées qui sont inférieures à $10 \%$ de la capacité installée.
+
 La figure \ref{fig::Data_Eolien_BPA_NormWindErrs_1Month} représente quand à elle un zoom sur la série temporelle des erreurs de prévisions. Il est intéressant de noter que la série présente des période sur lesquelles la variance est relativement faible (comme autour du 3 ou après le 8 décembre) et d'autre ou la variance est nettement plus élevée (comme sur la deuxième partie du mois).
 
 \begin{figure}[ht!]
@@ -155,6 +160,7 @@ Cette structure correspond en fait à une saisonnalité quotidienne comme le mon
 
 \pagestyle{corpus}
 \chapter{Modèles et métriques}
+Dans ce chapitre, les principales notions théoriques utilisées lors de ce stage seront présentées. Notamment la description de tous les modèles statistiques que j'ai eu à mettre en œuvre pour caractériser les erreurs de prévisions ou qui sont évoqués au sein de ce rapport. D'autre part, certaines métriques et critères utilisés pour choisir et comparer des modèles entre eux seront aussi introduites. Cette section peut donc être lue telle quelle ou quand les notions sont rencontrées pour la première fois en suivant les liens insérés dans le texte. 
 
 \section{Modèles de Markov cachés}
 \nomenclature{HMM}{Modèle de Markov Caché ( \ref{subsec:Modeles_HMM} )}
@@ -191,7 +197,7 @@ D'autre part on introduit la terminologie suivante : si $P\left( C_{t+1} | C_t  
 \begin{figure}[ht]
 	\begin{center}
 		\includegraphics[width= 0.6 \textwidth]{Images/Models/HMM/ChaineMarkov.png}
-		\caption{Représentation graphique d'une chaîne de Markov. Figure inspirée de \cite{zucchini_hidden_2017}.}
+		\caption{Représentation graphique d'une chaîne de Markov. Figure adaptée de \cite{zucchini_hidden_2017}.}
 		\label{fig::HMM:MarkovChain}
 	\end{center}
 \end{figure}
@@ -249,147 +255,8 @@ Il a été montré précédemment dans \cite{rabiner_tutorial_1989} que les prob
 	\item Apprentissage
 \end{itemize}
 
-\subsubsection{Probabilité d’observation d’une séquence}
-On se place dans  le cadre ou l'on dispose d'un HMM complet et on souhaite déterminer quelle est la probabilité d'obtenir une séquence d'observation précise. Plus formellement, en notant $\bm{X}$ la séquence observée et $\lambda$ le HMM considéré, on cherche $P(\bm{X}|\lambda)$.
+La résolution de ces problèmes est discutée dans \ref{annex:HMM_Algos}.
 
-En supposant que l'on connaisse la séquence d'états $\bm{C}$ alors il vient le résultat suivant :
-
-\begin{equation}
-P(\bm{X}|C_1,C_2,...,C_T) = \prod\limits_{i=1}^T P(X_i|C_i)
-\end{equation}
-
-Et comme cette séquence d'états $\bm{C}$ possède elle même une probabilité d'apparition, il vient :
-
-\begin{equation}
-P(\bm{X},\bm{C}) = P(\bm{X}|\bm{C}) \times P(\bm{C}) =   \prod\limits_{i=1}^T P(X_i|C_i) \times \prod \limits_{i=1}^T P(C_i|C_{i-1})
-\end{equation}
-
-Cependant, dans le cas des HMM, on ne connaît pas la succession d'états cachés qui a eu lieu pour générer cette séquence d'observation. Une méthode pour y remédier est de calculer la probabilité d'obtenir cette séquence par chaque combinaison de chemin. Traduit mathématiquement, cela donne :
-
-\begin{equation}
-P(\bm{X},\lambda) =\sum\limits_{\bm{C}} P(\bm{X}|\bm{C}) \times P(\bm{C}) 
-\end{equation}
-
-Le nombre total de séquences possibles dans le HMM $\lambda$ est de $m^T$. Dans un cadre réaliste, ou $T$ est grand et potentiellement $m$ aussi, ce calcul devient irréalisable. Pour y remédier, on utilise un algorithme progressif (communément appelé le forward algorithm) pour le calcul des probabilités. On introduit $\bm{P}(X)$ la matrice diagonale dont le $ii$-ième élément est $p_i(x)$ la probabilité d'obtenir l'observation $X$ depuis l'état $i$. On introduit de plus le vecteur $\bm{\alpha}_t$ dont la $j$-ième composante$ \alpha_t(j)$ est la probabilité d'être dans l'état $j$ après $t$ observations dans le cadre du HMM $\lambda$. Mathématiquement elle s'obtient de la façon suivante : 
-
-\begin{equation}
-\bm{\alpha}_t = \bm{\pi} \bm{P}(X_1) \times \prod\limits_{i=2}^t \bm{\Gamma}\bm{P}(X_i)
-\end{equation}
-
-On obtient donc l'algorithme récursif suivant dont le coût calculatoire n'est plus que de $T \times m^2$ :
-
-\begin{align} 
-\label{eq::HMM:ForwardAlgo}
-\bm{\alpha}_1 &= \bm{\pi} \bm{P}(X_1) \\ 
-\bm{\alpha}_t &= \bm{\alpha}_{t-1} \bm{\Gamma} \bm{P}(X_t)
-\end{align}
-
-\begin{figure}[ht]
-	\begin{center}
-		\includegraphics[width= 0.8 \textwidth]{Images/Models/HMM/Forward.png}
-		\caption{Schéma du forward algorithm inspiré de \cite{jurafsky_speech_2017} }
-		\label{fig::HMM:ForwardAlgo}
-	\end{center}
-\end{figure}
-
-\subsubsection{Recherche de la séquence la plus probable}
-On se place dans le cadre ou l'on dispose d'un HMM $\lambda$ et d'une série de $T$ observation $\bm{X}$. On cherche alors à déterminer quelle est la séquence d'états cachés $C_1,C_2,...,C_T$ qui a le plus de chance de générer cette séquence d'observation.
-
-Encore une fois ce problème n'est pas viable en testant une à une les combinaisons afin de déterminer quelle est la plus probable. Pour y remédier, il est possible d'utiliser l'algorithme de Viterbi, dont la structure est assez similaire au forward algorithm. En effet il repose sur le même treillis mais la valeur en chaque maille représente la probabilité d'observer $X_t$ depuis l'état $C_i$ \textit{en ayant emprunté le chemin le plus probable menant à $C_i$}. A l'itération $t$ le vecteur de probabilités de Viterbi $\bm{v}_t$ se calcule donc de la manière suivante :
-
-\begin{align} 
-\label{eq::HMM:ViterbiAlgo}
-\bm{v}_1 &= \bm{\pi} \bm{P}(X_1) \\ 
-\bm{v}_t(j) &= \max\limits_{i=1}^m \left[ \bm{v}_{t-1}(i) \times \gamma_{ij} \times  p_j(X_t) \right] \quad \forall j \in 1,2,...,m
-\end{align}
-
-La séquence recherchée qui maximise la probabilité de réaliser l'observation est donc celle qui mène au $\max\left(\bm{v}_T\right)$. Lors du calcul, il est donc nécessaire de garder en mémoire le parcours effectué.
-
-\begin{figure}[ht]
-	\begin{center}
-		\includegraphics[width= 0.8 \textwidth]{Images/Models/HMM/Viterbi.png}
-		\caption{Représentation du parcours du treillis par l'algorithme de Viterbi. Les cercles à fond blanc représentent les probabilités initiales ; les cercles à fond bleu les états et les carrés les observations. Les $v$ sont les probabilitées de Viterbi. Un maximum arbitraire à chaque $t$ est représenté en rouge pour illustrer le cheminement de la séquence la plus probable. Schéma inspiré de \cite{jurafsky_speech_2017}.}
-		\label{fig::HMM:ViterbiAlgo}
-	\end{center}
-\end{figure}
-
-\subsubsection{Apprentissage}
-\label{subsubsec:Models_HMM_Apprentissage}
-On se place dans le cadre ou l'on dispose d'une liste de $m$ états $\bm{E}$ et d'une séquence de $T$ observations $\bm{X}$. On cherche à déterminer la matrice de transition $\bm{\Gamma}$ et les probabilités d'émissions $p_i(x) \quad \forall i\in 1,2,...,m \quad \forall x \in \bm{X}$.
-
-Pour ce faire il est possible de faire appel à un algorithme itératif nommé "forward backward". Celui-ci nécessite l'introduction d'une autre entité $\bm{\beta}_t$ qui est défini par l'équation \eqref{eq::HMM:BackwardProb}.
-
-\begin{equation}
-\bm{\beta}_t(i) = P(X_{t+1},X_{t+2},...,X_{T}|C_t=E_i)
-\label{eq::HMM:BackwardProb}
-\end{equation}
-
-C'est un algorithme itératif qui calcule une estimation initiale des probabilités et qui utilise cette même estimation pour générer de meilleures probabilités. La première étape est de définir une formule pour calculer une estimation de $\gamma_{ij}$ que l'on notera $\hat{\gamma}_{ij}$ :
-
-\begin{equation}
-\hat{\gamma}_{ij} = \frac{\text{Nombre attendu de transitions entre } E_i \text{ et } E_j}{\text{Nombre total attendu de transitions depuis }E_i}
-\end{equation}
-
-En introduisant $\xi_t(i,j) = P(C_{t+1}=j,C_t=i|\bm{X},\lambda)$  On remarque que le numérateur pourrait alors s'écrire comme étant :
-
-\begin{equation}
-\sum\limits_{t=1}^{T-1} \xi_t(i,j) 
-\end{equation}
-
-D'autre part, on remarque qu'il est possible de calculer une quantité similaire à $\xi_t(i,j)$ :
-
-\begin{equation}
-\hat{\xi}_t(i,j) = P(C_{t+1}=j,C_t=i,\bm{X}|\lambda) = \alpha_t(i) \times \gamma_{ij} p_j(X_{t+1}) \times \beta_{t+1}(j)
-\end{equation}
-
-D'après l'identité $P(AB|C)=P(A|BC)P(B|C)$ on a :
-
-\begin{equation}
-\xi_t(i,j) = \frac{\hat{\xi}_t(i,j)}{P(\bm{X}|\lambda)} = \frac{\alpha_t(i) \times \gamma_{ij} p_j(X_{t+1}) \times \beta_{t+1}(j)}{\alpha_T(X_T)}
-\end{equation}
-
-Au final, on obtient :
-
-\begin{equation}
-\hat{\gamma}_{ij} = 
-\frac{\sum\limits_{t=1}^{T-1} \frac{\alpha_t(i) \times \gamma_{ij} p_j(X_{t+1}) \times \beta_{t+1}(j)}
-	{\alpha_T(X_T)}}
-{\sum\limits_{k=1}^m \sum\limits_{t=1}^{T-1} \frac{\alpha_t(i) \times \gamma_{ik} p_k(X_{t+1}) \times \beta_{t+1}(k)}	   {\alpha_T(X_T)}}
-\end{equation}
-
-Il reste encore à déterminer les probabilités d'émissions. Pour cela on dérive une formule pour l'estimation de $p_i(x)$ : 
-
-\begin{equation}
-\hat{p}_i(X) = \frac{\text{Nombre attendu d'observations de }X\text{ depuis }i}
-{\text{Nombre attendu d'occurrences  de }i}
-\end{equation}
-
-On introduit :
-
-\begin{equation}
-\kappa_t(j) = P(C_t=E_j|\bm{X},\lambda) = \frac{P(C_t=E_j,\bm{X}|\lambda)}{P(\bm{X}|\lambda)}
-\end{equation} 
-
-On est dans un cas particulier de la situation précédente avec $i=j$ et on obtient donc le résultat suivant :
-
-\begin{equation}
-\kappa_t(j) = \frac{\alpha_t(j)\beta_t(j)}{\alpha_T(X_T)}
-\end{equation}
-
-Au final :
-
-\begin{equation}
-\hat{p}_i(X) = \frac
-{\sum\limits_{t=1}^T  \delta \kappa_t(i)}
-{\sum\limits_{t=1}^T  \kappa_t(i)}
-\quad \text{avec } \delta=
-\begin{cases}
-1\text{ si }X_t=X \\
-0\text{ sinon}
-\end{cases}
-\end{equation}
-
-Il est maintenant possible de raffiner l'estimation précédente de $\Gamma$ et des $p_i(x)$ à chaque itération. Cependant cet algorithme converge vers un minimum local. Il peut dont être important de déterminer une "bonne" estimation initiale.
 
 \subsection{Modèles Markov Switching Auto-Regressive}
 \label{subsec:Modeles_MSAR}
@@ -515,9 +382,9 @@ L'application des modèles MS-AR aux erreurs de prévisions de production d'éne
 \chapter{Erreurs de prévision photovoltaïque}
 Les erreurs de prédiction de production photovoltaïques diffèrent par nature de celles de production éolienne. Alors que le vent peut être d'intensité non négligeable à tout instant, l'irradiance sera quant à elle complètement nulle la nuit. Comme l'alternance jour/nuit est un phénomène purement déterministe les prévisionniste ne commettent pas d'erreurs de prévisions la nuit. Ceci modifie la structure des erreurs de prévisions en introduisant régulièrement des plages de prévisions nulles. Or les outils utilisés dans la section \ref{seq:ResultatsEolien} se heurtent à des problèmes de convergence numérique s'ils sont utilisés tels quels sur la série d'erreur de prédiction de production photovoltaïque. \todo{Expliquer pourquoi clairement}.
 
-Afin de se ramener à une structure de série temporelle moins délicate en termes de résolution numérique, une approche simpliste aurait consisté à supprimer les périodes nocturnes de la série temporelle. Cependant, cette méthode fait part de deux désavantages qui à fait qu'elle a été écartée au cours de ce stage. Tout d'abord, même si elle paraît très simple, il faut malgré tout tenir compte que la durée de la nuit change tous les jours. De surcroît, cela imposerait un pré-traitement des données qui dépend aussi de leur origine géographique. Ainsi la méthodologie et le modèle obtenu paraît être trop difficilement transposable pour être un jour utilisé en opérationnel. C'est pourquoi une approche légèrement différente a été choisie.
+Afin de se ramener à une structure de série temporelle moins délicate en termes de résolution numérique, une approche simpliste aurait consisté à supprimer les périodes nocturnes de la série temporelle afin de rester dans le même cadre théorique. Cependant, cette méthode fait part de deux désavantages qui a fait qu'elle a été écartée au cours de ce stage. Tout d'abord, même si elle paraît très simple, il faut malgré tout tenir compte que la durée de la nuit change tous les jours. De surcroît, cela imposerait un pré-traitement des données qui dépend aussi de leur origine géographique. Ainsi la méthodologie et le modèle obtenu paraît être trop difficilement transposable pour être un jour utilisé en opérationnel. C'est pourquoi une approche légèrement différente a été choisie.
 
-En observant la série de donnée, il est possible de remarquer que des trajectoires quotidiennes typiques apparaissent. Cette approche à déjà été utilisée dans \cite{latimier_gestion_2016}, ce qui permet de se soustraire aux problèmes de convergences numériques en introduisant un autre difficulté : la haute dimension.
+En observant la série de donnée, il est possible de remarquer que des trajectoires quotidiennes typiques apparaissent. Cette approche à déjà été utilisée dans \cite{latimier_gestion_2016}. La notion de série temporelle est alors délaissée pour lui préférer la notion de trajectoire à l'échelle d'une journée. Chaque journée est considérée comme une réalisation d'un phénomène non directement observable. Ceci permet de se soustraire aux problèmes de convergences numériques car il n'y a plus de nécessité de normaliser la série. Cependant la notion de trajectoire introduit une autre difficulté : la grande dimension du phénomène qui est décrit par toutes les mesures faites au cours d'une journée.
 
 \section{Méthode des plus proches voisins}
 Dans un premier temps, je me suis attaché à voir s'il était possible de corriger la prédiction fournie un jour à l'avance en fonction de l'allure des erreurs déjà observées dans la journée courante.
@@ -919,6 +786,150 @@ Pour toutes ces raisons, j'ai décidé de poursuivre par une thèse de doctorat 
 \chapter{Première version de la publication concernant les erreurs de prévisions éoliennes}
 \label{annex:ModelingWindPower}
 \includepdf[pages=-]{Images/Eolien/modeling-wind-power.pdf}
+
+\chapter{Description des algorithmes permettant la résolution des 3 grands problèmes liés aux HMM}
+\label{annex:HMM_Algos}
+section{Probabilité d’observation d’une séquence}
+On se place dans  le cadre ou l'on dispose d'un HMM complet et on souhaite déterminer quelle est la probabilité d'obtenir une séquence d'observation précise. Plus formellement, en notant $\bm{X}$ la séquence observée et $\lambda$ le HMM considéré, on cherche $P(\bm{X}|\lambda)$.
+
+En supposant que l'on connaisse la séquence d'états $\bm{C}$ alors il vient le résultat suivant :
+
+\begin{equation}
+P(\bm{X}|C_1,C_2,...,C_T) = \prod\limits_{i=1}^T P(X_i|C_i)
+\end{equation}
+
+Et comme cette séquence d'états $\bm{C}$ possède elle même une probabilité d'apparition, il vient :
+
+\begin{equation}
+P(\bm{X},\bm{C}) = P(\bm{X}|\bm{C}) \times P(\bm{C}) =   \prod\limits_{i=1}^T P(X_i|C_i) \times \prod \limits_{i=1}^T P(C_i|C_{i-1})
+\end{equation}
+
+Cependant, dans le cas des HMM, on ne connaît pas la succession d'états cachés qui a eu lieu pour générer cette séquence d'observation. Une méthode pour y remédier est de calculer la probabilité d'obtenir cette séquence par chaque combinaison de chemin. Traduit mathématiquement, cela donne :
+
+\begin{equation}
+P(\bm{X},\lambda) =\sum\limits_{\bm{C}} P(\bm{X}|\bm{C}) \times P(\bm{C}) 
+\end{equation}
+
+Le nombre total de séquences possibles dans le HMM $\lambda$ est de $m^T$. Dans un cadre réaliste, ou $T$ est grand et potentiellement $m$ aussi, ce calcul devient irréalisable. Pour y remédier, on utilise un algorithme progressif (communément appelé le forward algorithm) pour le calcul des probabilités. On introduit $\bm{P}(X)$ la matrice diagonale dont le $ii$-ième élément est $p_i(x)$ la probabilité d'obtenir l'observation $X$ depuis l'état $i$. On introduit de plus le vecteur $\bm{\alpha}_t$ dont la $j$-ième composante$ \alpha_t(j)$ est la probabilité d'être dans l'état $j$ après $t$ observations dans le cadre du HMM $\lambda$. Mathématiquement elle s'obtient de la façon suivante : 
+
+\begin{equation}
+\bm{\alpha}_t = \bm{\pi} \bm{P}(X_1) \times \prod\limits_{i=2}^t \bm{\Gamma}\bm{P}(X_i)
+\end{equation}
+
+On obtient donc l'algorithme récursif suivant dont le coût calculatoire n'est plus que de $T \times m^2$ :
+
+\begin{align} 
+\label{eq::HMM:ForwardAlgo}
+\bm{\alpha}_1 &= \bm{\pi} \bm{P}(X_1) \\ 
+\bm{\alpha}_t &= \bm{\alpha}_{t-1} \bm{\Gamma} \bm{P}(X_t)
+\end{align}
+
+\begin{figure}[ht]
+	\begin{center}
+		\includegraphics[width= 0.8 \textwidth]{Images/Models/HMM/Forward.png}
+		\caption{Schéma du forward algorithm inspiré de \cite{jurafsky_speech_2017} }
+		\label{fig::HMM:ForwardAlgo}
+	\end{center}
+\end{figure}
+		
+\section{Recherche de la séquence la plus probable}
+		On se place dans le cadre ou l'on dispose d'un HMM $\lambda$ et d'une série de $T$ observation $\bm{X}$. On cherche alors à déterminer quelle est la séquence d'états cachés $C_1,C_2,...,C_T$ qui a le plus de chance de générer cette séquence d'observation.
+		
+		Encore une fois ce problème n'est pas viable en testant une à une les combinaisons afin de déterminer quelle est la plus probable. Pour y remédier, il est possible d'utiliser l'algorithme de Viterbi, dont la structure est assez similaire au forward algorithm. En effet il repose sur le même treillis mais la valeur en chaque maille représente la probabilité d'observer $X_t$ depuis l'état $C_i$ \textit{en ayant emprunté le chemin le plus probable menant à $C_i$}. A l'itération $t$ le vecteur de probabilités de Viterbi $\bm{v}_t$ se calcule donc de la manière suivante :
+		
+		\begin{align} 
+		\label{eq::HMM:ViterbiAlgo}
+		\bm{v}_1 &= \bm{\pi} \bm{P}(X_1) \\ 
+		\bm{v}_t(j) &= \max\limits_{i=1}^m \left[ \bm{v}_{t-1}(i) \times \gamma_{ij} \times  p_j(X_t) \right] \quad \forall j \in 1,2,...,m
+		\end{align}
+		
+		La séquence recherchée qui maximise la probabilité de réaliser l'observation est donc celle qui mène au $\max\left(\bm{v}_T\right)$. Lors du calcul, il est donc nécessaire de garder en mémoire le parcours effectué.
+		
+		\begin{figure}[ht]
+			\begin{center}
+				\includegraphics[width= 0.8 \textwidth]{Images/Models/HMM/Viterbi.png}
+				\caption{Représentation du parcours du treillis par l'algorithme de Viterbi. Les cercles à fond blanc représentent les probabilités initiales ; les cercles à fond bleu les états et les carrés les observations. Les $v$ sont les probabilitées de Viterbi. Un maximum arbitraire à chaque $t$ est représenté en rouge pour illustrer le cheminement de la séquence la plus probable. Schéma inspiré de \cite{jurafsky_speech_2017}.}
+				\label{fig::HMM:ViterbiAlgo}
+				\end{center}
+				\end{figure}
+				
+				section{Apprentissage}
+				\label{subsubsec:Models_HMM_Apprentissage}
+				On se place dans le cadre ou l'on dispose d'une liste de $m$ états $\bm{E}$ et d'une séquence de $T$ observations $\bm{X}$. On cherche à déterminer la matrice de transition $\bm{\Gamma}$ et les probabilités d'émissions $p_i(x) \quad \forall i\in 1,2,...,m \quad \forall x \in \bm{X}$.
+				
+				Pour ce faire il est possible de faire appel à un algorithme itératif nommé "forward backward". Celui-ci nécessite l'introduction d'une autre entité $\bm{\beta}_t$ qui est défini par l'équation \eqref{eq::HMM:BackwardProb}.
+				
+				\begin{equation}
+				\bm{\beta}_t(i) = P(X_{t+1},X_{t+2},...,X_{T}|C_t=E_i)
+				\label{eq::HMM:BackwardProb}
+				\end{equation}
+				
+				C'est un algorithme itératif qui calcule une estimation initiale des probabilités et qui utilise cette même estimation pour générer de meilleures probabilités. La première étape est de définir une formule pour calculer une estimation de $\gamma_{ij}$ que l'on notera $\hat{\gamma}_{ij}$ :
+				
+				\begin{equation}
+				\hat{\gamma}_{ij} = \frac{\text{Nombre attendu de transitions entre } E_i \text{ et } E_j}{\text{Nombre total attendu de transitions depuis }E_i}
+				\end{equation}
+				
+				En introduisant $\xi_t(i,j) = P(C_{t+1}=j,C_t=i|\bm{X},\lambda)$  On remarque que le numérateur pourrait alors s'écrire comme étant :
+				
+				\begin{equation}
+				\sum\limits_{t=1}^{T-1} \xi_t(i,j) 
+				\end{equation}
+				
+				D'autre part, on remarque qu'il est possible de calculer une quantité similaire à $\xi_t(i,j)$ :
+				
+				\begin{equation}
+				\hat{\xi}_t(i,j) = P(C_{t+1}=j,C_t=i,\bm{X}|\lambda) = \alpha_t(i) \times \gamma_{ij} p_j(X_{t+1}) \times \beta_{t+1}(j)
+				\end{equation}
+				
+				D'après l'identité $P(AB|C)=P(A|BC)P(B|C)$ on a :
+				
+				\begin{equation}
+				\xi_t(i,j) = \frac{\hat{\xi}_t(i,j)}{P(\bm{X}|\lambda)} = \frac{\alpha_t(i) \times \gamma_{ij} p_j(X_{t+1}) \times \beta_{t+1}(j)}{\alpha_T(X_T)}
+				\end{equation}
+				
+				Au final, on obtient :
+				
+				\begin{equation}
+				\hat{\gamma}_{ij} = 
+				\frac{\sum\limits_{t=1}^{T-1} \frac{\alpha_t(i) \times \gamma_{ij} p_j(X_{t+1}) \times \beta_{t+1}(j)}
+					{\alpha_T(X_T)}}
+					{\sum\limits_{k=1}^m \sum\limits_{t=1}^{T-1} \frac{\alpha_t(i) \times \gamma_{ik} p_k(X_{t+1}) \times \beta_{t+1}(k)}	   {\alpha_T(X_T)}}
+					\end{equation}
+					
+					Il reste encore à déterminer les probabilités d'émissions. Pour cela on dérive une formule pour l'estimation de $p_i(x)$ : 
+					
+					\begin{equation}
+					\hat{p}_i(X) = \frac{\text{Nombre attendu d'observations de }X\text{ depuis }i}
+					{\text{Nombre attendu d'occurrences  de }i}
+					\end{equation}
+					
+					On introduit :
+					
+					\begin{equation}
+					\kappa_t(j) = P(C_t=E_j|\bm{X},\lambda) = \frac{P(C_t=E_j,\bm{X}|\lambda)}{P(\bm{X}|\lambda)}
+					\end{equation} 
+					
+					On est dans un cas particulier de la situation précédente avec $i=j$ et on obtient donc le résultat suivant :
+					
+					\begin{equation}
+					\kappa_t(j) = \frac{\alpha_t(j)\beta_t(j)}{\alpha_T(X_T)}
+					\end{equation}
+					
+					Au final :
+					
+					\begin{equation}
+					\hat{p}_i(X) = \frac
+					{\sum\limits_{t=1}^T  \delta \kappa_t(i)}
+					{\sum\limits_{t=1}^T  \kappa_t(i)}
+					\quad \text{avec } \delta=
+					\begin{cases}
+					1\text{ si }X_t=X \\
+					0\text{ sinon}
+					\end{cases}
+					\end{equation}
+					
+					Il est maintenant possible de raffiner l'estimation précédente de $\Gamma$ et des $p_i(x)$ à chaque itération. Cependant cet algorithme converge vers un minimum local. Il peut dont être important de déterminer une "bonne" estimation initiale.
 
 
 \bibliographystyle{IEEEtran}
