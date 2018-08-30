@@ -1,3 +1,4 @@
+\nomenclatureentry{aARMA@[{ARMA}]\begingroup Processus auto-régressifs et moyenne mobile\nomeqref {1.0}|nompageref}{6}
 \nomenclatureentry{aHMM@[{HMM}]\begingroup Modèle de Markov Caché ( \ref{subsec:Modeles_HMM} )\nomeqref {3.0}|nompageref}{11}
 \nomenclatureentry{aMS-AR@[{MS-AR}]\begingroup Modèle Markov Switching Auto Regressive (\ref{subsec:Modeles_MSAR})\nomeqref {3.0}|nompageref}{11}
 \nomenclatureentry{a$m$@[{$m$}]\begingroup Nombre d'états cachés (HMM et MSAR)\nomeqref {3.0}|nompageref}{11}

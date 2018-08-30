@@ -21,14 +21,14 @@
 
 \chapter{Introduction}
 \section{Présentation du Laboratoire}
-J'ai réalisé mon stage au sein du laboratoire Systèmes et Applications des Technologies de l'Information et de l'Énergie (SATIE) qui est une unité mixte de recherche (UMR 8029) du CNRS comptant environ 200 personnes. Ses tutelles sont le CNRS, l'ENS Paris Saclay, l'ENS Rennes, le CNAM Paris, l'université de Cergy Pontoise, l'université de Paris Sud et l'IFFSTAR. Ce stage a été encadré par Roman Le Goff Latimier, Hamid Ben Hamed et Bernard Multon qui font partie de l'ENS de Rennes, lieu dans lequel s'est déroulé le stage. Le laboratoire SATIE comporte de nombreuses équipes de recherches dont les thématiques dérivent toutes de problématiques liées à l'\textit{Electrical Engeneering}. Les travaux que j'ai eu à réaliser s'intégraient dans les thématiques de l'équipe Système d'Énergies pour les Transports et l'Environnement. L'objectif principal de cette équipe est de mettre au point de nouveaux systèmes (ou des les améliorer) de création, de transport, de conversion ou de gestion d'énergie afin d'augmenter leur efficacité tout en minimisant l'impact environnemental.
+Ce stage s'est déroulé au sein du laboratoire Systèmes et Applications des Technologies de l'Information et de l'Énergie (SATIE) qui est une unité mixte de recherche (UMR 8029) du CNRS comptant environ 200 personnes. Ses tutelles sont le CNRS, l'ENS Paris Saclay, l'ENS Rennes, le CNAM Paris, l'université de Cergy Pontoise, l'université de Paris Sud et l'IFFSTAR. Ce stage a été encadré par Roman Le Goff Latimier, Hamid Ben Hamed et Bernard Multon qui font partie de l'ENS de Rennes, lieu dans lequel s'est déroulé le stage. Le laboratoire SATIE comporte de nombreuses équipes de recherches dont les thématiques dérivent toutes de problématiques liées à l'\textit{Electrical Engeneering}. Les travaux que j'ai eu à réaliser s'intégraient dans les thématiques de l'équipe Système d'Énergies pour les Transports et l'Environnement. L'objectif principal de cette équipe est de mettre au point de nouveaux systèmes (ou des les améliorer) de création, de transport, de conversion ou de gestion d'énergie afin d'augmenter leur efficacité tout en minimisant l'impact environnemental.
 
 \section{Contexte}
 %Ce stage s'inscrit dans le contexte d'un changement de paradigme quant à la production d'électricité.
 
 La part des énergies renouvelables à production variable et \textbf{incertaine} -- notamment l'éolien et le photovoltaïque -- est en augmentation constante au cours des dernières années comme le montre la figure \ref{fig:Intro_EnergyProduction}. En effet leur part dans la production d'énergie renouvelable passe d'une quantité négligeable au début des années 2000 à environ $20 \%$ en 2016.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\begin{center}
 		\includegraphics[width = \linewidth]{Images/Intro/Primary_production_of_energy_1990-2016.png}
 		\caption{Production d'énergie primaire à partir de sources renouvelables en Europe de 1990 à 2016 d'après les chiffres d'Eurostat}
@@ -40,17 +40,20 @@ Cette intégration croissante des énergies renouvelables à production incertai
 
 Afin de comprendre pourquoi, il est nécessaire de faire un point sur le réseau électrique Français, et par extension, mondiaux. Ces réseaux se sont construits autour de l'impératif d'être en mesure de fournir, à n'importe quel instant, la puissance demandée par les utilisateurs. Or comme l'énergie qui circule sur les réseaux électriques est un flux instantané, une contrainte physique impose que demande et production soient égales à tout instant.
 
-Les sources de productions d'énergies d'alors étaient principalement centralisées, constantes et avec une faible inertie (centrales thermiques) ou forte inertie (centrale nucléaires).  Contraintes auxquelles il faut ajouter la difficulté de stockage de l'électricité ainsi que des infrastructures qui limitent la puissance de certains échanges. Pour pallier à ces difficultés et contraintes, plusieurs systèmes correspondant à différentes échelles de temps ont été mis en place.
+Les sources de productions d'énergies d'alors étaient principalement centralisées, constantes et avec une faible inertie (centrales thermiques) ou forte inertie (centrale nucléaires).  Contraintes auxquelles il faut ajouter la difficulté de stockage de l'électricité ainsi que des infrastructures qui limitent la puissance de certains échanges. Pour pallier ces difficultés et contraintes, plusieurs systèmes correspondant à différentes échelles de temps ont été mis en place.
 
-%L'égalisation de la production et de la consommation aux temps long est peut être celle qui a été la moins problématique à l'heure actuelle. Il \textit{suffit} de s'assurer que les infrastructures en places et futures garantiront une production suffisante pour combler l'évolution de la demande. Les matières premières et énergies fossiles étant encore largement présente, beaucoup d'options de production d'énergies à moyen terme restent disponibles.
+L'essentiel de l'organisation pour égaliser production et consommation aux temps moyens et courts réside dans la mise en place de différents marchés. Un premier -- le marché \textit{day-ahead} -- sur lequel des accords non engageants sont pris pour le lendemain basés sur les particularismes de la journée (vague de froid, jour férié,... etc). Un autre marché a lieu au cours de la journée -- le marché \textit{intraday} -- où des offres sont effectuées dès qu'elles sont compatibles. Cependant des écarts plus ou moins grands par rapport aux engagements ont lieux. Ces écarts doivent alors être immédiatement compensés en temps réel. Tout déséquilibre entre la production et la consommation se traduisant par une variation de la fréquence du réseau électrique, il doit être corrigé en quelques secondes. Le gestionnaire de réseau fait alors appel à un second marché plus onéreux, dit marché de \textit{balancing}. En fonction des législation, les écarts par rapports aux engagements sur les différents marchés peuvent être soumis à des pénalisations.
 
-L'essentiel de l'organisation pour égaliser production et consommation aux temps moyens et courts réside dans la mise en place de différents marchés. Un premier ,le marché \textit{day-ahead}, sur lequel des accords non engageants sont pris pour le lendemain basés sur les particularismes de la journée (vague de froid, jour férié,... etc). Un autre marché a lieu au cours de la journée où des offres sont effectuées dès qu'elles sont compatibles. Cependant des écarts plus ou moins grands par rapport aux engagements ont lieux. Ces écarts doivent alors être immédiatement compensés en temps réel. Tout déséquilibre entre la production et la consommation se traduisant par une variation de la fréquence du réseau électrique, il doit être corrigé en quelques secondes. Le gestionnaire de réseau fait alors appel à un second marché plus onéreux, dit marché de \textit{balancing}. En fonction des législation, les écarts par rapports aux engagements sur les différents marchés peuvent être soumis à des pénalisations.
+Dans ce contexte de nombreuses études avaient été réalisées sur la prévision de la consommation qui était à l'époque la principale source d'incertitude. Les grands résultats de ces études sont exposés sous forme d'état de l'art dans \cite{suganthi_Energy_2012}. Avec l'arrivée des énergies renouvelables à production incertaine, un important effort de recherche a été orienté autour de la prévision de production. Concernant le photovoltaïque, un état de l'art récent à été réalisé dans \cite{antonanzas_review_2016}. Cette article détaille les deux grandes approches pour faire de la prédiction de production photovoltaïque. La première consiste à modéliser l'irradiance de façon la plus fine possible. L'autre approche se sert des données à disposition pour faire des prévisions de production à partir de modèles statistiques classiques ou reliés au domaine de l'intelligence artificielle. Concernant la production éolienne, un état de l'art est présenté dans \cite{jung_current_2014}. Les deux grandes approches sont, comme dans le cas du photovoltaïque, la modélisation déterministe et l'approche stochastique. Dans les deux cas des modèles mixtes ont aussi été mis en œuvre.
 
-Dans ce contexte, de nombreuses études avaient été réalisées sur la prévision de la consommation des ménages qui était à l'époque la principale source d'incertitude. Avec l'arrivée des énergies renouvelables à production incertaine, un important effort de recherche a été orienté autour de la prévision de production. Dans le cas de l'éolien et du photovoltaïque, ces prévisions sont souvent basées sur des prévisions météorologiques.
+Étudier les erreurs de prévisions prend son sens au travers de plusieurs éléments. Le principal réside dans le fait que tout écart par rapport aux prévisions établies devra être compensé immédiatement par le réseau. Ce qui implique que ce dernier doit être suffisamment robuste pour les absorber, c'est à dire dimensionné en conséquence de la magnitude maximale de ces écarts. C'est donc bien, in fine, cette valeur qu'il est impératif de minimiser. De surcroît, le fait que les prévisions de production soient en parties basées sur des prévisions météorologiques en empêche un rafraîchissement en continu. En effet, les calculs météorologiques étant particulièrement lourds, ils ne sont réalisés que quelques fois par jour. Déterminer une dynamique dans les erreurs de prévisions permettrait donc d'affiner les prévisions de production entre deux mises à jour successives des calculs météorologiques. Caractériser les erreurs de prévision est donc une approche complémentaire et une seconde source d'information valable et pertinente.
 
-Étudier les erreurs de prévisions prend son sens au travers de plusieurs éléments. Tout d'abord, le fait que les prévisions de production soient basées sur des prévisions météorologiques empêche un rafraîchissement continu des prévision. En effet, les calculs météorologiques étant particulièrement lourds, ils ne sont réalisés que quelques fois par jour. Déterminer une dynamique dans les erreurs de prévisions permettrait donc d'affiner les prévisions de production entre deux mises à jour successives des calculs météorologiques. Enfin, au vu de la conception des marchés, ce sont bien les erreurs de prévisions qui doivent être compensés sur le second marché et qui peuvent perturber le réseau côté gestionnaire ou donner lieu à des amendes côté producteur. C'est donc bien, in fine, cette valeur qu'il est impératif de minimiser. Caractériser les erreurs de prévision est donc une approche complémentaire et une seconde source d'information valable et pertinente.  
+\nomenclature{ARMA}{Processus auto-régressifs et moyenne mobile}
 
-\todo{Etat de l'art + plan du rapport}
+Les erreurs de prévision de production d'énergie éolienne ont été modélisées dans divers contextes par des processus auto-régressifs et moyenne mobile -- ARMA -- \cite{haessig_dimensionnement_2014}, \cite{wang_modeling_2018} et \cite{mello_optimized_2011}. Ces processus ont été assez largement utilisés pour modéliser le phénomène des séries temporelles de vent. Il paraît donc naturel que les erreurs engendrées puissent être représentée par ce même processus. Cependant, plusieurs études ont montrés qu'il était intéressant de caractériser la vitesse du vent par une succession de régimes avec des comportements différents via des modèles dit Markov Switching Auto-Regressive -- MS-AR -- \cite{ailliot_markov-switching_2012} \cite{pinson_adaptive_2012} et \cite{yoder_short-term_2013}. Le premier objectif de ce stage était donc d'identifier si l'usage d'un modèle MS-AR pouvait être intéressant dans l'étude des erreurs de prévisions de production d'énergie d'origine éolienne. Ces résultats sont présentés dans le chapitre \ref{chap:ResultatsEolien}.
+
+Les erreurs de prévision de production d'énergie photovoltaïque n'ont quant à elles fait le fruit que de peu d'études. Dans \cite{latimier_gestion_2016} il a été montré que ces erreurs avaient une saisonnalité quotidienne très marquée et qu'il était possible d'identifier des trajectoires types. Lors de cette étude, la pertinence de l'utilisation d'un modèle de Markov caché -- HMM -- avait été soulevée. L'objectif était donc dans un premier temps de déterminer si l'étude de ces erreurs pouvait effectivement permettre un gain d'information non négligeable. Dans un second temps, la pertinence effective d'un modèle HMM devait être déterminée. Ces résultats sont présentés dans le chapitre \ref{chap:PV}.
+
 
 
 
@@ -375,12 +378,14 @@ L'erreur quadratique moyenne est définie comme étant :
 
 
 \chapter{Erreurs de prévision éolienne}
-\label{seq:ResultatsEolien}
+\label{chap:ResultatsEolien}
 
 L'application des modèles MS-AR aux erreurs de prévisions de production d'énergie éolienne a donné lieu à la rédaction d'une première version d'un article scientifique. Le lecteur est donc invité à lire ce document en annexe \ref{annex:ModelingWindPower}. Les travaux que j'ai effectués sont présentés dans la section intitulé \textit{Modelling of the wind power forecast error}. Les poursuites d'études, notamment celles concernant les transitions non homogènes, ont été commencées mais elles ne sont pas assez abouties pour être intégrées telles quelles dans ce rapport.
 
 \chapter{Erreurs de prévision photovoltaïque}
-Les erreurs de prédiction de production photovoltaïques diffèrent par nature de celles de production éolienne. Alors que le vent peut être d'intensité non négligeable à tout instant, l'irradiance sera quant à elle complètement nulle la nuit. Comme l'alternance jour/nuit est un phénomène purement déterministe les prévisionniste ne commettent pas d'erreurs de prévisions la nuit. Ceci modifie la structure des erreurs de prévisions en introduisant régulièrement des plages de prévisions nulles. Or les outils utilisés dans la section \ref{seq:ResultatsEolien} se heurtent à des problèmes de convergence numérique s'ils sont utilisés tels quels sur la série d'erreur de prédiction de production photovoltaïque. \todo{Expliquer pourquoi clairement}.
+\label{chap:PV}
+
+Les erreurs de prédiction de production photovoltaïques diffèrent par nature de celles de production éolienne. Alors que le vent peut être d'intensité non négligeable à tout instant, l'irradiance sera quant à elle complètement nulle la nuit. Comme l'alternance jour/nuit est un phénomène purement déterministe les prévisionniste ne commettent pas d'erreurs de prévisions la nuit. Ceci modifie la structure des erreurs de prévisions en introduisant régulièrement des plages de prévisions nulles. Or les outils utilisés dans la section \ref{chap:ResultatsEolien} se heurtent à des problèmes de convergence numérique s'ils sont utilisés tels quels sur la série d'erreur de prédiction de production photovoltaïque. \todo{Expliquer pourquoi clairement}.
 
 Afin de se ramener à une structure de série temporelle moins délicate en termes de résolution numérique, une approche simpliste aurait consisté à supprimer les périodes nocturnes de la série temporelle afin de rester dans le même cadre théorique. Cependant, cette méthode fait part de deux désavantages qui a fait qu'elle a été écartée au cours de ce stage. Tout d'abord, même si elle paraît très simple, il faut malgré tout tenir compte que la durée de la nuit change tous les jours. De surcroît, cela imposerait un pré-traitement des données qui dépend aussi de leur origine géographique. Ainsi la méthodologie et le modèle obtenu paraît être trop difficilement transposable pour être un jour utilisé en opérationnel. C'est pourquoi une approche légèrement différente a été choisie.
 
@@ -410,7 +415,7 @@ La première étape dans l'utilisation de la méthode des plus proches voisins c
 
 La Figure \ref{fig:KNN_Intraday_scenarios} montre des exemples ou cette méthode de correction d'erreur fonctionne plus ou moins bien. Il est quand même intéressant de constater que même dans le cas où elle amplifierait l'erreur commise, plusieurs trajectoires parmi les voisins identifiés avaient capturées le bon comportement.
 
-\begin{figure}[h] 
+\begin{figure}[htbp] 
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering
 		\includegraphics[width=1\linewidth]{Images/PV/KNN/NN_intraday_testdata_11.pdf} 
@@ -444,14 +449,14 @@ Cependant, comme cette méthode requiert d'identifier la trajectoire courante pa
 
 L'identification de ces trajectoires à été réalisée grâce à la méthode des Kmeans (voir \ref{sec:Kmeans}). La figure \ref{fig:Kmeans_centers} présente les trajectoires types obtenues pour différents nombres de classes. Au vu du contexte, le nombre optimal de classe a été choisi en comparant les résultats obtenus pour de la correction d'erreur. Ces résultats sont présentés dans la figure \ref{fig:KNN_Comp}. Tout d'abord, l'identification des plus proches voisins parmi ces groupes détériore systématiquement les résultats par rapport à l'identification sur tout le passé connu. Cependant en identifiant la moyenne d'environ 5 trajectoires types parmi 20, une correction d'erreur de l'ordre de $25 \%$ peut être atteinte.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.75\linewidth]{Images/PV/KNN/KNN_compare.pdf}
 	\caption{Comparaison des corrections de prévisions en fonction du nombre de plus proches voisins. La série \textit{all} présente les résultats quand les plus proches voisins sont identifiés parmi toutes les trajectoires du jeu de données d'entraînement. Les autres, quand ils sont identifiés parmi un certain de clusters obtenus par la méthode des Kmeans (voir section \ref{sec:Kmeans})}
 	\label{fig:KNN_Comp}
 \end{figure}
 
-\begin{figure}[h] 
+\begin{figure}[htbp] 
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering
 		\includegraphics[width=0.9\linewidth]{Images/PV/Kmeans/Kmeans5Clusts.pdf} 
@@ -494,7 +499,7 @@ Le modèle de mélange Gaussien (GMM) possède toute l'information contenue dans
 
 Le modèle de mélange Gaussien a été ajusté sur la série temporelle des erreurs de prédiction photovoltaïques. Comme pour les Kmeans, il est nécessaire d'identifier le nombre optimal de clusters $K$. Pour ce faire, le critère BIC est à nouveau utilisé comme premier indicateur. On peut constater sur la figure \ref{fig:PV_GMM_BIC} que le modèle de type VII (matrice de variance covariance diagonale et à valeur unique par cluster) semble surpasser le modèle de type EII (matrice de variance covariance diagonale et à valeur unique commune pour tous les cluster). Cette figure ne présente pas les résultats obtenus par les autres modèles car ils n'ont pas convergé, probablement à cause d'un manque de données. En effet, même si le jeu d'entraînement se compose de 6 années complètes, cela ne représente qu'un total de $2190$ journées. Ce nombre est assez vite relativement faible face aux nombres de paramètres à estimer des GMM plus évolués (voir \ref{sec:Model_GMM}). Par exemple, si chaque valeur sur la diagonale est distincte alors on passe de $(K-1) + K\times d + K$ à $(K-1) + K\times d + K \times d$ paramètres et il est donc nécessaire d'avoir nettement plus de données pour les estimer. Dans ce contexte précis, il aurait pu être intéressant de pouvoir décrire la diagonale de la matrice de variance covariance par deux valeurs. Cela aurait pu permettre à l'algorithme de dissocier les variances pour les heures diurnes et nocturnes tout en restreignant le nombre de paramètres. Mais cette option n'est pas offerte par le package \texttt{Mclust} et n'a pas fait l'objet d'une implémentation de ma part par manque de temps.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\begin{subfigure}{0.5\linewidth}
 		\centering
 		\includegraphics[width = 0.9 \linewidth]{Images/PV/GMM/GMM_BICCompare_20.pdf}
@@ -513,7 +518,7 @@ Le modèle de mélange Gaussien a été ajusté sur la série temporelle des err
 
 Le critère BIC ne favorise pas un nombre spécifique de cluster mais donne plutôt une tendance générale favorisant systématiquement l'augmentation du nombre de clusters. Une explication plausible réside dans le fait que le phénomène sous-jacent, l'évolution du temps au sens météorologique du terme, est par définition un phénomène continu et non discret. Plus on discrétiserait son espace de représentation, plus on se rapprocherait d'une représentation continue et ainsi meilleurs sont les résultats. Afin de garder l'interprétabilité du modèle obtenu, et d'en limiter sa complexité, il est impératif de choisir un nombre de cluster relativement restreint. La figure \ref{fig:PV_GMM_BIC} montre une croissance plus faible en terme de critère BIC à partir du sixième cluster. Afin de combiner des informations provenant de deux indicateurs différents, il est possible de voir comment le GMM répond à une application spécifique en fonction de $K$. J'ai donc choisi de les comparer sur la base de leur potentiel à réaliser de la correction au cours de la journée. Des exemples de ces corrections sont présentées dans la figure \ref{fig:PV_GMM_IntraDay}. Dans la majorité des cas, la probabilité d'émission favorise très grandement un seul cluster en délaissant les autres. Cependant la figure présente un des cas pour lesquels la probabilité d'émission est partagée entre plusieurs clusters. Au fur et à mesure que la journée avance, il est possible de constater que ces probabilités évoluent en fonction des événements observés. La comparaison des différents GMM en fonction de leur capacité de correction au cours de la journée est présentée sur la figure \ref{fig:PV_GMM_IntradayComp}. Un net gain, d'environ $5\%$, est constaté en passant de 4 clusters à 6. Ensuite les gains sont relativement plus faible et pour ré-obtenir un gain similaire il faudrait prendre 12 clusters. En comparant ces deux indicateurs, il semble que le modèle à 6 clusters soit un bon compromis entre complexité et précision.
 
-\begin{figure}[h] 
+\begin{figure}[htbp] 
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering
 		\includegraphics[width=0.9\linewidth]{Images/PV/GMM/GMM_6Clust_Intraday_24d_10h_idtest98.pdf} 
@@ -551,7 +556,7 @@ Le critère BIC ne favorise pas un nombre spécifique de cluster mais donne plut
 
 Les paramètres du modèle obtenus sont présentés graphiquement dans la figure \ref{fig:PV_GMM_MeanVarProp}. Il est possible de constater que les trajectoires moyennes des états sont assez semblables à celles obtenus par la méthode des Kmeans (voir figure \ref{fig:Kmeans_centers}). Enfin, l'information supplémentaire réside dans la connaissance des variances pour chaque clusters. Elle sont relativement faible et globalement assez similaires les unes des autres pour les groupes allant de 1 à 5. Par contre, le groupe 6, a une variance nettement plus forte. Ce cluster, qui est significativement moins peuplé que les autres, regroupe les individus au comportement inhabituels et/ou chaotiques.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width = 0.75 \linewidth]{Images/PV/GMM/GMM_MeansVars_6_dim24.pdf}
 	\caption{Représentation graphique des paramètres du modèle GMM à 6 clusters obtenu sur la série des erreurs prévisions photovoltaïques. Les lignes continues représentent les moyennes, les fonds colorés leur intervalles de confiance de $68 \%$ respectifs. Les proportions respectives sont intégrées dans la légende.}
@@ -574,7 +579,7 @@ En gardant à l'esprit que ce modèle est identifié dans le but de générer de
 
 Par exemple, en prenant le cas d'une observation toutes les heures ($d=24$) et de 6 états cachés ($K=6$) par identification avec le GMM, il faut donc identifier $329$ paramètres. C'est donc plus du double des $155$ paramètres du GMM sélectionné dans la section \ref{sec:PV_GMM}. Pour pallier à ce problème, j'ai procédé à une réduction de dimension de l'espace par la méthode de l'ACP (voir \ref{sec:Model_ACP}). Les résultats obtenus en fonction du nombre de composantes sélectionnées sont présentés dans la figure \ref{fig:PV_HMM_ACP_DimSelect}. J'ai choisi de garder un nombre de composante principales expliquant $99 \%$ de la variance totale, soit 6 composantes principales. 
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width = 0.6 \linewidth]{Images/PV/ACP/ACP_DimSelect.pdf}
 	\caption{Variance cumulée expliquée en fonction du nombre de composante principales}
@@ -583,7 +588,7 @@ Par exemple, en prenant le cas d'une observation toutes les heures ($d=24$) et d
 
 Ces 6 composantes sont présentées sur la figure \ref{fig:PV_HMM_ACP_PC}. Les 6 composantes principales partagent le fait d'être nulles ou négligeables avant 5 heures et après 20 heures. Ces plages horaires sont celles pour lesquelles les erreurs de prédiction sont nulles toute l'année comme le montre la figure \ref{fig:Donnees_TenneT_Bayern_BoxHist}. La première composante, si multipliée par le facteur adéquat, peut permettre de représenter la plupart des trajectoires types obtenues par les différents modèles des sections précédentes. On comprend donc pourquoi elle permet, à elle seule, d'expliquer $80\%$ de la variance. Physiquement, elle traduit une pure sur ou sous estimation de la puissance productible au jour considéré. La deuxième composante principale cherche à représenter les journées avec surestimation le matin et sous estimation l'après-midi et inversement. Certaines trajectoires types obtenues précédemment traduisaient la relativement forte présence de journées d'erreurs de prévision avec ce profil. Les composantes principales d'ordres supérieurs ajoutent à chaque fois une alternance entre surestimation et sous-estimation. Procéder à une ACP dans le cas présent revient donc à faire décomposition en série de Fourier sur la plage d'heures ensoleillées tout en laissant toujours nulles les heures qui ne le sont jamais.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width = 0.8 \linewidth]{Images/PV/ACP/ACP_PrincipalComp_6.pdf}
 	\caption{Représentation graphique des 6 composantes principales obtenues par la l'ACP dans l'espace d'origine de dimension 24}
@@ -593,7 +598,7 @@ Ces 6 composantes sont présentées sur la figure \ref{fig:PV_HMM_ACP_PC}. Les 6
 Dans cet espace réduit, le nombre de paramètres d'un HMM à états cachés ne serait donc plus que de $113$ contre les $329$ dans l'espace de départ. L'initialisation des paramètres pour le HMM a été faite à partir de ceux obtenus pour le GMM. Les paramètres du modèle obtenu sont présentés graphiquement dans la figure \ref{fig:PV_HMM_MeanVarACP}.
 
 
-\begin{figure}[h] 
+\begin{figure}[htbp] 
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering
 		\includegraphics[width = 0.95 \linewidth]{Images/PV/HMM/MS6AR_6dimACP.pdf}
@@ -613,7 +618,7 @@ Dans cet espace réduit, le nombre de paramètres d'un HMM à états cachés ne 
 	\label{fig:PV_GMM_MeanVar_OrigACP} 
 \end{figure}
 
-%\begin{figure}[h]
+%\begin{figure}[htbp]
 %	\centering
 %	\includegraphics[width = 0.8 \linewidth]{Images/PV/HMM/MS6AR_6dimACP.pdf}
 %	\caption{Représentation des 6 états cachés obtenus pour un HMM à 6 états cachés dans l'espace de dimension réduite}
@@ -627,7 +632,7 @@ L'interprétation des régimes sous cette forme n'est pas aisée mais deux élé
 \subsection{Caractérisation statistique du modèle}
 Une particularité des HMM est qu'ils permettent facilement de générer des données synthétiques. En effet, une fois l'initialisation faite, la matrice de transition et les paramètres des états cachés contiennent l'information nécessaire à la production de données synthétiques de la longueur voulue. La figure \ref{fig:PV_HMM_Stat_Zoom} montre une portion de série synthétique dont le profil des journées paraît cohérent avec ce qui est présenté dans la figure \ref{fig:Data_PV_PredErrs}. Il est alors possible de comparer des critères statistiques sur ces données synthétiques et sur la série originale pour évaluer le caractéristiques capturées ou non par le modèle. La figure \ref{fig:PV_HMM_Stat_QQ} montre le diagramme quantile-quantile des séries synthétiques et de la série originale. Pour rappel, ce diagramme cherche à représenter les quantiles d'une série par rapport à ceux de l'autre. Si ces deux séries sont émises par la même distribution, alors les quantiles s'alignent tous sur une droite. Sur cette figure on peut voir que les quantiles s'alignent parfaitement sur l'intervalle $[-0.25,0.25]$ qui, d'après la figure \ref{fig:Data_TenneT_Bayern_BoxHist} représente une grande majorité des observations. Cependant, la figure indique clairement que le modèle ne réussit pas à capturer les queues de la distribution en sous estimant l'occurence de prévision très mauvaises.
 
-\begin{figure}[h] 
+\begin{figure}[htbp] 
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering
 		\includegraphics[width = 0.95 \linewidth]{Images/PV/HMM/Stats/SyntheticDataZoom.pdf}
@@ -649,7 +654,7 @@ Une particularité des HMM est qu'ils permettent facilement de générer des don
 
 La figure \ref{fig:PV_HMM_Stat_MDO} représente le temps de séjour moyen au dessus d'une valeur seuil. Cette valeur caractérise la dynamique globale de la série considérée. On remarque une nette diminution dans le temps de séjour moyen autour de 0. Ceci s'explique par la présence des erreurs nulles la nuit. En effet, en considérant une valeur seuil très légèrement positive, alors le temps de séjour moyen peut encore être assez élevé en présence de journée de sous-estimation (d'erreurs négatives). En considérant maintenant une valeur seuil très légèrement négative, elle sera nécessairement dépassée positivement à la prochaine période nocturne. Ce faisant le temps de séjour moyen au dessus de cette valeur seuil sera, au maximum, égal à la durée de l'ensoleillement à la période considérée. Cette particularité semble être parfaitement capturée par le modèle avec une superposition des temps de séjours des séries synthétiques et de la série originale sur cet intervalle. On retrouve une bonne superposition sur l'intervalle $[-0.25,0.25]$ et même un petit peu au delà. Les sous estimations des événements menant à des prédictions de mauvaises qualités se retrouvent aussi sur ce graphique. Cependant, l'écart de comportement sur les marges entre la série originale et la série synthétique est magnifié par l'échelle logarithmique. La figure \ref{fig:PV_HMM_Stat_NU} montre le nombre de dépassement positifs de valeurs seuils et traduit donc la volatilité des séries. Selon cette métrique il y a superposition presque parfaite entre les séries synthétiques et la série originale, ce qui traduit que le modèle capture avec succès la volatilité de la série temporelle.
 
-\begin{figure}[h] 
+\begin{figure}[htbp] 
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering
 		\includegraphics[width = 0.95 \linewidth]{Images/PV/HMM/Stats/MDO.pdf}
@@ -674,7 +679,7 @@ Cependant ces métriques ne parviennent pas à mettre en évidence deux sources 
 
 
 
-%\begin{figure}[h]
+%\begin{figure}[htbp]
 %	\centering
 %	\includegraphics[width = 0.8 \linewidth]{Images/PV/HMM/MS6AR_24dimReco.pdf}
 %	\caption{Représentation des 6 états cachés obtenus pour un HMM à 6 états cachés dans l'espace original}
@@ -685,7 +690,7 @@ Cependant ces métriques ne parviennent pas à mettre en évidence deux sources 
 
 Utiliser ce modèle pour faire de la correction au cours de la journée n'apporterait que peu de gain par rapport au GMM de la section \ref{sec:PV_GMM} au vu de leurs nombreuses similitudes. Cependant, il est possible de l'utiliser pour faire des prévisions d'ensembles sur une ou plusieurs journées. Comme pré-requis, il est nécessaire de pouvoir déterminer les probabilités d'appartenance d'une journée à chacun des états cachés. Elles sont déterminées par l'utilisation de l'algorithme forward backward décrit dans \ref{subsubsec:Models_HMM_Apprentissage}. Des exemples de probabilités d'appartenance sont présentées dans la figure \ref{fig:PV_HMM_Forward} dans l'espace réduit (figure \ref{fig:PV_HMM_ForwardReduct}) et dans l'espace d'origine (figure \ref{fig:PV_HMM_ForwardOrig}).
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\begin{center}
 		
 		\begin{subfigure}[b]{0.5\linewidth}
@@ -713,7 +718,7 @@ On constate que, dans cet exemple, les probabilités d'appartenance mettent en �
 
 A partir de ces probabilités d'appartenance, il est possible de faire de la prévision d'ensemble, c'est à dire de la génération de scénarios probables. En effet, en les utilisant pour définir une loi de probabilité multinomiale, il est possible de déterminer pour chaque scénario le régime ayant généré la trajectoire initiale. Le régime suivant est alors déterminé par tirage d'une autre loi binomiale définie cette fois par une ligne de la matrice de transition $\Gamma$. L'observation générée sera donc la moyenne du régime tiré auquel est ajouté un bruit définit par la matrice de variance covariance dudit régime. L'opération est à répéter jusqu'à l'obtention de scénarios de la durée voulue. La figure \ref{fig:PV_HMM_Scenarios} montre des exemples de scénarios générés dans 4 situations différentes.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\begin{center}
 		
 		\begin{subfigure}[b]{0.5\linewidth}
