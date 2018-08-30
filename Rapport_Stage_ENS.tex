@@ -69,7 +69,7 @@ Afin de réduire la taille du jeu de données, il est réduit à un échantillon
 D'autre part, comme la capacité de production installée a évoluée du simple au double  \footnote{\url{https://transmission.bpa.gov/business/operations/Wind/WIND_InstalledCapacity_Plot.pdf}} sur cette période, les données ont été normalisées par la capacité de production maximale (voir \ref{fig::PredErrors_all}). Les erreurs de prévisions sont donc reconstituées à partir de ces données en soustrayant les productions mesurées aux productions prévues (voir \ref{fig:Data_BPA_WholeNorm}).
 
 
-\begin{figure}[ht!]
+\begin{figure}[htbp]
 \begin{center}
 \begin{subfigure}[b]{0.45\textwidth}
 	\includegraphics[width=\textwidth]{Images/Data/Eolien/BPA/Normalize.pdf}
@@ -91,7 +91,7 @@ La figure \ref{fig::Data_Eolien_BPA_HistNormERR} présente l'histogramme des err
 
 La figure \ref{fig::Data_Eolien_BPA_NormWindErrs_1Month} représente quand à elle un zoom sur la série temporelle des erreurs de prévisions. Il est intéressant de noter que la série présente des période sur lesquelles la variance est relativement faible (comme autour du 3 ou après le 8 décembre) et d'autre ou la variance est nettement plus élevée (comme sur la deuxième partie du mois).
 
-\begin{figure}[ht!]
+\begin{figure}[htbp]
 	\begin{center}
 		\begin{subfigure}[b]{0.45\textwidth}
 			\includegraphics[width=\textwidth]{Images/Data/Eolien/BPA/Hist_NormErr.pdf}
@@ -109,11 +109,12 @@ La figure \ref{fig::Data_Eolien_BPA_NormWindErrs_1Month} représente quand à el
 	\end{center}
 \end{figure}
 
-\section{Production Photovoltaïques}
+
+\section{Production Photovoltaïque}
 %\subsection{Données Bavière (TenneT)}
 Des données agrégées de production d'énergie photovoltaïque ainsi que les prévisions $J-1$ correspondantes sont mises à disposition par TenneT sur leur \href{https://www.tennet.eu/electricity-market/transparency-pages/transparency-germany/}{site web} \footnote{\url{https://www.tennet.eu/electricity-market/transparency-pages/transparency-germany/}}. Les données fournies sur la Bavière ont été utilisées pour cette étude. Ces données sont libres d'accès et ouvertes à la publication scientifique. Elles vont du $1^{er}$ décembre 2010 jusqu'à aujourd'hui avec un pas d'échantillonnage de 15 minutes (voir figure \ref{fig::Donnees_TenneT_Bayern_WHole}). Aucune covariable n'est mise à disposition. N'ayant pas eu accès à la capacité de production installée en Bavière sur cette période, ces données sont normalisées par des maxima de prévisions/productions sur certaines périodes. Cette capacité de production installée estimée est aussi représentée sur la figure \ref{fig::Donnees_TenneT_Bayern_WHole}. Les données manquantes (190 pour les prévisions et 69 pour les réalisations) sont remplacées par la dernière valeur observée temporellement parlant. 
 
-\begin{figure}[ht!]
+\begin{figure}[htbp]
 	\begin{center}
 		
 		\begin{subfigure}[b]{0.45\textwidth}
@@ -142,7 +143,7 @@ La série temporelle des erreurs de prévisions alors obtenue est présentée su
 
 Cette structure correspond en fait à une saisonnalité quotidienne comme le montre le diagramme en boîte de la figure \ref{fig:Data_TenneT_Bayern_BoxHist}. Les erreurs de prévisions entre 20h et 4h du matin sont systématiquement nulles. Elles correspondent aux plages horaires pendant lesquelles le soleil ne brille jamais en Bavière. En effet, à Munich (capitale de la Bavière), le soleil s'est levé à 5h12 et s'est couché à 21h17 le 21 Juin 2018. Sur ces périodes, aucune production d'énergie n'est prévue ni réalisée, et donc les erreurs sont systématiquement nulles.  Il est donc logique que les erreurs moyennes jusqu'à 5h du matin soient nulles. Cependant, au vu de cette amplitude d'ensoleillement maximale, il est possible qu'un autre phénomène réduise systématiquement les erreurs de prédiction a 20h et 21h pour lesquelles cette analyse n'explique pas d'aussi faible valeurs. L'histogramme aussi présenté sur cette figure illustre aussi cette surreprésentation des valeurs très faible. D'autre part, il montre que la grande majorité des erreurs de prévisions moyennées sont assez faibles. Par exemple, $90 \%$ des données sont incluses dans l'intervalle $[-0.688 , 0.0891]$. 
 
-\begin{figure}[ht!]
+\begin{figure}[htbp]
 	\begin{center}
 		
 		\begin{subfigure}[b]{0.45\textwidth}
@@ -163,7 +164,42 @@ Cette structure correspond en fait à une saisonnalité quotidienne comme le mon
 
 \pagestyle{corpus}
 \chapter{Modèles et métriques}
-Dans ce chapitre, les principales notions théoriques utilisées lors de ce stage seront présentées. Notamment la description de tous les modèles statistiques que j'ai eu à mettre en œuvre pour caractériser les erreurs de prévisions ou qui sont évoqués au sein de ce rapport. D'autre part, certaines métriques et critères utilisés pour choisir et comparer des modèles entre eux seront aussi introduites. Cette section peut donc être lue telle quelle ou quand les notions sont rencontrées pour la première fois en suivant les liens insérés dans le texte. 
+Dans la première partie de ce chapitre, les principales notions théoriques utilisées lors de ce stage seront présentées. Notamment la description de tous les modèles statistiques que j'ai eu à mettre en œuvre pour caractériser les erreurs de prévisions ou qui sont évoqués au sein de ce rapport. Au vu du contexte, les modèles utilisés se devaient d'être capable de caractériser une série temporelle de manière à prédire au moins à court terme un ou des scénarios probables.
+
+En fin de chapitre certaines métriques et critères utilisés pour choisir et comparer des modèles entre eux seront aussi introduites.
+
+Cette section peut donc être lue telle quelle mais il sera sûrement plus agréable pour le lecteur d'y revenir quand le besoin se fera sentir. Dans cette optique, un lien se référant à la section théorique correspondante sera inséré dans le texte quand les notions seront rencontrées pour la première fois.
+
+\section{K-moyennes (Kmeans)}
+\label{sec:Kmeans}
+\nomenclature{Kmeans}{Méthode de partitionnement K-moyennes}
+
+Le modèle des K moyennes est un est un modèle de partitionnement de données (ou souvent dit de \textit{"clustering"} d'après la dénomination anglaise). Le problème consiste donc à diviser un ensemble de points en un certains nombre de groupe $m$ de façon à ce qu'ils minimisent une certaine fonction.
+
+Dans le cas présent, j'ai fait appel à la routine R \texttt{Kmeans}, qui cherche à minimiser la somme des erreurs quadratiques au sein de chaque groupe grâce à l'algorithme heuristique décrit dans \cite{hartigan_algorithm_1979}. Il fonctionne de la façon suivante : soit une partition de l'ensemble des points $C$. Alors, un point aléatoire $x$ est choisi et le centre du cluster auquel il appartenait est mis à jour comme si ce point ne lui appartenait plus. Le point choisi aléatoirement est ensuite réassigné au cluster qui permet de minimiser le plus possible la fonction de coût total, c'est à dire la somme des erreurs quadratiques au sein des clusters. Par construction, cet algorithme permet de ne jamais accroître la fonction de coût. Ainsi, il donne assurance qu'une partition dont les points sont fixés sera atteinte après un nombre fini d'itérations.
+
+\section{Modèle de mélange gaussien (GMM)}
+\nomenclature{GMM}{Modèle de mélange gaussien}
+\label{sec:Model_GMM}
+Le modèle de mélange de mélange gaussien est un modèle statistique qui tente d'expliquer une une distribution statistique comme étant une somme de sous distributions gaussiennes. La figure \ref{fig:GMM_ToyEx} présente un cas d'application idéaliste d'un tel modèle. 
+
+%\begin{figure}[ht]
+%	\centering
+%	\includegraphics[width=0.5\linewidth]{Images/Models/GMM/GMM_toyexemple}
+%	\caption{Exemple d'application d'un GMM dans un cas idéaliste }
+%	\label{fig:fig:GMM_ToyEx}
+%\end{figure}
+
+
+
+Ce modèle cherche donc à identifier, pour chaque gaussienne, sa variance, sa moyenne et les proportions. La gestion des problèmes en haute dimension avec ce modèle peut s'avérer difficile car il est sujet à la malédiction de la dimension. En effet, si $d$ est la dimension de l'espace et $m$ le nombre de clusters, alors le nombre de paramètres à identifier est :
+
+\begin{equation}
+\underbrace{m-1}_\text{Proportions}  + \underbrace{m \times d}_\text{Centres}  +  \underbrace{\frac{md \left(d - 1\right)}{2}}_\text{Matrices de variance covariance}
+\label{eq:Model_GMM_ParamNumber} 
+\end{equation}
+
+On a donc le nombre de paramètres qui évolue de façon linéaire avec le nombre de clusters $m$ et quadratique avec la dimension $d$. Comme le montre \cite{bouveyron_model-based_2014}, il est préférable d'utiliser des modèles réduits ou par de la sélection de variable plutôt que de réduire l'espace dans lequel vivent les données. C'est pourquoi, au cours de ce stage, les paramètres des modèles de mélanges gaussiens ont été estimés via l'utilisation du package \texttt{Mclust}. En effet, il dispose d'une liste de modèles de mélange gaussien qui facilite la prise en compte de la haute dimension en réduisant le nombre de paramètres, comme explique dans \cite{scrucca_mclust_2016}. Il utilise, tout comme les modèles MS-AR, un algorithme EM pour identifier les jeux de paramètres maximisant la vraisemblance.  
 
 \section{Modèles de Markov cachés}
 \nomenclature{HMM}{Modèle de Markov Caché ( \ref{subsec:Modeles_HMM} )}
@@ -296,38 +332,7 @@ Avec comme conditions que $\alpha_0 > 0$ et $\alpha_i \geq 0 \quad \forall \text
 $ \sigma_t^2 = \alpha_0 + \alpha_1  \epsilon_{t-1}^2 + ... + \alpha_p  \epsilon_{t-p}^2
 + \beta_{t-1} \sigma^2_{t-1} + ... + \beta_{t-q} \sigma^2_{t-q}$
 
-\section{K-moyennes (Kmeans)}
-\label{sec:Kmeans}
-\nomenclature{Kmeans}{Méthode de partitionnement K-moyennes}
 
-Le modèle des K moyennes est un est un modèle de partitionnement de données (ou souvent dit de \textit{"clustering"} d'après la dénomination anglaise). Le problème consiste donc à diviser un ensemble de points en un certains nombre de groupe $m$ de façon à ce qu'ils minimisent une certaine fonction.
-
-Dans le cas présent, j'ai fait appel à la routine R \texttt{Kmeans}, qui cherche à minimiser la somme des erreurs quadratiques au sein de chaque groupe grâce à l'algorithme heuristique décrit dans \cite{hartigan_algorithm_1979}. Il fonctionne de la façon suivante : soit une partition de l'ensemble des points $C$. Alors, un point aléatoire $x$ est choisi et le centre du cluster auquel il appartenait est mis à jour comme si ce point ne lui appartenait plus. Le point choisi aléatoirement est ensuite réassigné au cluster qui permet de minimiser le plus possible la fonction de coût total, c'est à dire la somme des erreurs quadratiques au sein des clusters. Par construction, cet algorithme permet de ne jamais accroître la fonction de coût. Ainsi, il donne assurance qu'une partition dont les points sont fixés sera atteinte après un nombre fini d'itérations.
-
-\section{Modèle de mélange gaussien (GMM)}
-\nomenclature{GMM}{Modèle de mélange gaussien}
-\label{sec:Model_GMM}
-Le modèle de mélange de mélange gaussien est un modèle statistique qui tente d'expliquer une une distribution statistique comme étant une somme de sous distributions gaussiennes. La figure \ref{fig:GMM_ToyEx} présente un cas d'application idéaliste d'un tel modèle. 
-
-\todo{Changer ou supprimer la figure}
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.5\linewidth]{Images/Models/GMM/GMM_toyexemple}
-\caption{Exemple d'application d'un GMM dans un cas idéaliste }
-\label{fig:fig:GMM_ToyEx}
-\end{figure}
-
-
-
-Ce modèle cherche donc à identifier, pour chaque gaussienne, sa variance, sa moyenne et les proportions. La gestion des problèmes en haute dimension avec ce modèle peut s'avérer difficile car il est sujet à la malédiction de la dimension. En effet, si $d$ est la dimension de l'espace et $m$ le nombre de clusters, alors le nombre de paramètres à identifier est :
-
-\begin{equation}
-	\underbrace{m-1}_\text{Proportions}  + \underbrace{m \times d}_\text{Centres}  +  \underbrace{\frac{md \left(d - 1\right)}{2}}_\text{Matrices de variance covariance}
-	\label{eq:Model_GMM_ParamNumber} 
-\end{equation}
-
-On a donc le nombre de paramètres qui évolue de façon linéaire avec le nombre de clusters $m$ et quadratique avec la dimension $d$. Comme le montre \cite{bouveyron_model-based_2014}, il est préférable d'utiliser des modèles réduits ou par de la sélection de variable plutôt que de réduire l'espace dans lequel vivent les données. C'est pourquoi, au cours de ce stage, les paramètres des modèles de mélanges gaussiens ont été estimés via l'utilisation du package \texttt{Mclust}. En effet, il dispose d'une liste de modèles de mélange gaussien qui facilite la prise en compte de la haute dimension en réduisant le nombre de paramètres, comme explique dans \cite{scrucca_mclust_2016}. Il utilise, tout comme les modèles MS-AR, un algorithme EM pour identifier les jeux de paramètres maximisant la vraisemblance. 
 
 
 \section{Analyse par Composante Principale}
@@ -380,7 +385,16 @@ L'erreur quadratique moyenne est définie comme étant :
 \chapter{Erreurs de prévision éolienne}
 \label{chap:ResultatsEolien}
 
-L'application des modèles MS-AR aux erreurs de prévisions de production d'énergie éolienne a donné lieu à la rédaction d'une première version d'un article scientifique. Le lecteur est donc invité à lire ce document en annexe \ref{annex:ModelingWindPower}. Les travaux que j'ai effectués sont présentés dans la section intitulé \textit{Modelling of the wind power forecast error}. Les poursuites d'études, notamment celles concernant les transitions non homogènes, ont été commencées mais elles ne sont pas assez abouties pour être intégrées telles quelles dans ce rapport.
+
+Comme expliqué dans l'introduction, les erreurs de prévision de production d'énergie éolienne avaient déjà été modélisées par des processus auto-régressifs. D'autre part, des études avaient montré que des séries temporelles de vitesse du vent pouvaient être plus fidèlement décrites par des modèles capable de prendre en compte différents régimes, à savoir les modèles MS-AR.   
+
+L'application des modèles MS-AR aux erreurs de prévisions de production d'énergie éolienne a donné lieu à la rédaction d'une première version d'un article scientifique. Le lecteur est donc invité à lire ce document en annexe \ref{annex:ModelingWindPower}. Les travaux de modélisation statistique effectués sont présentés dans la section intitulé \textit{Modelling of the wind power forecast error}.
+
+Ils présentent comment l'utilisation d'un MS-AR améliore nettement les correspondances de certains indicateurs statistiques par rapport aux résultats d'un AR. Cette amélioration est due à l'identification d'états cachés correspondant à des types de temps météorologiques dont la prévisibilité est faible, moyenne ou forte. En d'autres termes, ces différents régimes servent en fait à traduire les non-linéarités de la météorologie avec les changements de types de temps (conditions anti-cyclonique, dépressionnaire, etc ...). Même si le changement du temps météorologique est en fait un phénomène continu, il peut être intéressant d'essayer d'identifier un nombre discret mais représentatif de types de temps.
+
+Une fois la pertinence statistique de l'utilisation d'un tel modèle démontrée, une stratégie optimale de gestion de stockage pour un producteur d'énergie soumis à des engagements de production est déterminée. Cette détermination, faite par un algorithme de programmation dynamique, requiert une connaissance de la dynamique future des erreurs de prévisions. Cette stratégie optimale est alors comparée aux stratégies optimales obtenues à partir de différents modèles statistiques. Il est alors montré que sur cet exemple la stratégie optimale déterminée à partir du modèle MS-AR offre les meilleurs résultats.
+
+Les poursuites d'études, notamment celles concernant les transitions non homogènes, ont été commencées mais elles ne sont pas assez abouties pour être intégrées telles quelles dans ce rapport.
 
 \chapter{Erreurs de prévision photovoltaïque}
 \label{chap:PV}
@@ -772,7 +786,7 @@ SARIMA	&  &  &
 \chapter{Conclusion et perspectives}
 Au cours de ce stage, j'ai eu l'occasion d'étudier des séries d'erreurs de prévision de production d'énergie d'origine solaire et photovoltaïque. Côté éolien, leur étude avait déjà montré un potentiel intéressant à travers l'étude réalisée par \cite{haessig_dimensionnement_2014} et la mise en place d'un modèle AR(1). Côté photovoltaïque, \cite{latimier_gestion_2016} avait identifié la présence de profils typiques dans les données et proposé l'idée d'une approche par trajectoire. Dans les deux cas, l'objectif de ce stage était de poursuivre les pistes ouvertes dans ces deux directions afin de voir si des modèles plus complexes pouvaient améliorer les résultats.
 
-Concernant les erreurs de prévision de production éolienne, un modèle de type Markov Switching Auto-Regressive (MSAR) avec 3 états cachés et des modèles AR(2) à été ajusté sur la série. L'augmentation en terme de complexité du modèle MSAR par rapport au AR(1) précédemment proposé (21 paramètres contre 2) permet de prendre en compte des comportements non linéaires exhibés par a série temporelle. Ces comportements se manifestaient essentiellement sous la forme de période avec des variances faibles, moyennes ou fortes. En s'intéressant aux comportements statistiques de séries synthétiquement générées par les modèles, un très net gain est obtenu par le MSAR. En effet il a été montré que la prise en compte de non linéarité permettait une meilleure représentation de la volatilité -- avec les dépassements positifs de valeurs seuil-- et de la dynamique générale --avec le temps de séjour moyen au dessus de valeurs seuils--. Cependant, le gain dans un exemple d'application sur une gestion optimale de stockage n'a pas été aussi notable que lors de l'étude des distributions statistiques. Cette amélioration, bien que faible, peut quand même s'avérer non négligeable économiquement si elle est envisagée sur une ferme de production qui, par un facteur d'échelle, multipliera le résultat obtenu sur l'exemple jouet. La saisonnalité annuelle des erreurs de prévisions n'a pas été prise en compte dans l'ajustement des paramètres de ce MSAR. Intégrer des transitions non homogènes en fonction de la date calendaire pourrait permettre de capturer le fait que les périodes à faible volatilité se manifestent surtout dans les saisons hivernales. Cette nouvelle introduction devrait permettre d'améliorer les résultats de manière sensible. Par ailleurs, en s'inspirant des modèles utilisés en économie, la modélisation de cette variance variable par des modèles GARCH a été réalisée mais les résultats n'étaient pas suffisamment probants pour être développés plus avant.
+Concernant les erreurs de prévision de production éolienne, un modèle de type Markov Switching Auto-Regressive (MSAR) avec 3 états cachés et des modèles AR(2) à été ajusté sur la série. L'augmentation en terme de complexité du modèle MSAR par rapport au AR(1) précédemment proposé (21 paramètres contre 2) permet de prendre en compte des comportements non linéaires exhibés par a série temporelle. Ces comportements se manifestaient essentiellement sous la forme de période avec des variances faibles, moyennes ou fortes. En s'intéressant aux comportements statistiques de séries synthétiquement générées par les modèles, un très net gain est obtenu par le MSAR. En effet il a été montré que la prise en compte de non linéarité permettait une meilleure représentation de la volatilité -- avec les dépassements positifs de valeurs seuil -- et de la dynamique générale -- avec le temps de séjour moyen au dessus de valeurs seuils --. Cependant, le gain dans un exemple d'application sur une gestion optimale de stockage n'a pas été aussi notable que lors de l'étude des distributions statistiques. Cette amélioration, bien que faible, peut quand même s'avérer non négligeable économiquement si elle est envisagée sur une ferme de production qui, par un facteur d'échelle, multipliera le résultat obtenu sur l'exemple jouet. La saisonnalité annuelle des erreurs de prévisions n'a pas été prise en compte dans l'ajustement des paramètres de ce MSAR. Intégrer des transitions non homogènes en fonction de la date calendaire pourrait permettre de capturer le fait que les périodes à faible volatilité se manifestent surtout dans les saisons hivernales. Cette nouvelle introduction devrait permettre d'améliorer les résultats de manière sensible. Par ailleurs, en s'inspirant des modèles utilisés en économie, la modélisation de cette variance variable par des modèles GARCH a été réalisée mais les résultats n'étaient pas suffisamment probants pour être développés plus avant.
 
 Concernant les erreurs de prévision issues de centrales photovoltaïques, plusieurs modèles avec objectifs variés ont été ajustés. Dans un premier temps, la présence d'information valable dans la série temporelle dans un but de correction au cours de la journée a été testée avec la méthode des plus proches voisins. Cette méthode à conduit à une correction d'environ $35 \%$ en identifiant la trajectoire à 10h du jour considéré et l'ensemble des trajectoires déjà connues. Cette information est suffisante en elle-même pour mettre en exergue l'information résiduelle dans les séries d'erreurs de prévisions photovoltaïques et justifier de continuer leur étude. Dans une mesure de simplification, l'identification a ensuite été testée par rapport à un certains nombre de trajectoire types identifiées par la méthode des Kmeans. Ainsi en limitant l'identification parmi un jeu de 20 trajectoires -- au lieu de 2190 précédemment -- permettait une réduction d'erreur de $20 \%$ au cours de la journée dans les même conditions. Un modèle de mélange gaussien à ensuite été ajusté afin d'obtenir de l'information supplémentaire sur les variances des trajectoires caractéristiques. Cette connaissance permet entre autre de pouvoir réaliser l'étude duale de celle qui a été faite pour l'éolien, à savoir une stratégie de gestion optimale de stockage. Toujours dans cette optique, le modèle doit être en mesure de générer des scénarios non pas uniquement sur le restant d'une journée mais sur des temps plus longs. L'intérêt de 
 
