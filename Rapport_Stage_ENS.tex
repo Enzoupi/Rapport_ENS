@@ -791,6 +791,66 @@ On constate que, dans cet exemple, les probabilités d'appartenance mettent en �
 
 A partir de ces probabilités d'appartenance, il est possible de faire de la prévision d'ensemble, c'est à dire de la génération de scénarios probables. En effet, en les utilisant pour définir une loi de probabilité multinomiale, il est possible de déterminer pour chaque scénario le régime ayant généré la trajectoire initiale. Le régime suivant est alors déterminé par tirage d'une autre loi binomiale définie cette fois par une ligne de la matrice de transition $\Gamma$. L'observation générée sera donc la moyenne du régime tiré auquel est ajouté un bruit définit par la matrice de variance covariance dudit régime. L'opération est à répéter jusqu'à l'obtention de scénarios de la durée voulue. La figure \ref{fig:PV_HMM_Scenarios} montre des exemples de scénarios générés dans 4 situations différentes.
 
+%\begin{figure}[htbp]
+%	\begin{center}
+%		
+%		\begin{subfigure}[b]{0.5\linewidth}
+%			\centering
+%			\includegraphics[width = 0.9 \linewidth]{Images/PV/HMM/id175.pdf}
+%			\caption{25-27 Juin 2017}
+%			%\vspace{4ex}
+%		\end{subfigure}%%
+%		\begin{subfigure}[b]{0.5\linewidth}
+%			\centering
+%			\includegraphics[width = 0.9 \linewidth]{Images/PV/SARIMA/175.pdf}
+%			\caption{7-9 Juillet 2017}
+%			%\vspace{4ex}
+%		\end{subfigure}
+%		
+%		\begin{subfigure}[b]{0.5\linewidth}
+%			\centering
+%			\includegraphics[width = 0.9 \linewidth]{Images/PV/HMM/id187.pdf}
+%			\caption{25-27 Juin 2017}
+%			%\vspace{4ex}
+%		\end{subfigure}%%
+%		\begin{subfigure}[b]{0.5\linewidth}
+%			\centering
+%			\includegraphics[width = 0.9 \linewidth]{Images/PV/SARIMA/187.pdf}
+%			\caption{7-9 Juillet 2017}
+%			%\vspace{4ex}
+%		\end{subfigure}
+%		
+%		\begin{subfigure}[b]{0.5\linewidth}
+%			\centering
+%			\includegraphics[width = 0.9 \linewidth]{Images/PV/HMM/id27.pdf}
+%			\caption{25-27 Juin 2017}
+%			%\vspace{4ex}
+%		\end{subfigure}%%
+%		\begin{subfigure}[b]{0.5\linewidth}
+%			\centering
+%			\includegraphics[width = 0.9 \linewidth]{Images/PV/SARIMA/27.pdf}
+%			\caption{7-9 Juillet 2017}
+%			%\vspace{4ex}
+%		\end{subfigure}
+%		
+%		\begin{subfigure}[b]{0.5\linewidth}
+%			\centering
+%			\includegraphics[width = 0.9 \linewidth]{Images/PV/HMM/id27.pdf}
+%			\caption{25-27 Juin 2017}
+%			%\vspace{4ex}
+%		\end{subfigure}%%
+%		\begin{subfigure}[b]{0.5\linewidth}
+%			\centering
+%			\includegraphics[width = 0.9 \linewidth]{Images/PV/SARIMA/27.pdf}
+%			\caption{7-9 Juillet 2017}
+%			%\vspace{4ex}
+%		\end{subfigure}
+%	\end{center}
+%	
+%	\caption{Génération de 100 scénarios à partir d'initialisations différentes matérialisées par un fond coloré. Les différents scénarios sont en violet, leur moyenne en rose, leur intervalle de prévision à $90\%$ en vert et enfin la série originale en orange. A gauche les scénarios ont été générés par le HMM de la section \ref{sec:PV_HMM} et à droite par un SARIMA (1,0,1)(1,1,0)[24]}
+%	\label{fig:PV_SARIMA_HMM_Scenarios} 
+%\end{figure}
+
 \begin{figure}[htbp]
 	\begin{center}
 		
@@ -827,20 +887,55 @@ A partir de ces probabilités d'appartenance, il est possible de faire de la pr�
 
 Il est intéressant de constater que dans presque tous les cas, la série originale est bien intégrée dans le faisceau de scénarios. Cependant le 11 février illustre comment tous les scénarios prédits sont positifs ou presque alors que l'erreur réellement observée est négative. Par ailleurs, il est important de remarquer comment l'initialisation, traduite par des probabilités d'appartenance, influe le faisceau de scénarios générés. On constate par exemple que l'initialisation du 27 Janvier donne lieu a des scénarios équitablement positifs ou négatifs et de faible amplitude. En effet parmi les 100 scénarios, très peu sortent de l'intervalle des $20\%$ d'erreurs. Le 25 Juin et le 10 février génèrent quant à eux des scénarios de relativement faible amplitude mais en très grosse majorité positifs.
 
-Afin de caractériser ces ensembles de prédictions, \cite{madsen_protocol_nodate} préconise l'utilisation d'au moins trois critères, à savoir la MAE (\ref{subsec:Model_Metric_MAE}), l'erreur quadratique (\ref{subsec:Model_Metric_RMSE}) et l'erreur moyenne (\ref{subsec:Model_Metric_BIAS}).
+Afin de caractériser ces ensembles de prédictions, \cite{madsen_protocol_nodate} préconise l'utilisation d'au moins trois critères, à savoir la MAE (\ref{subsec:Model_Metric_MAE}), l'erreur quadratique (\ref{subsec:Model_Metric_RMSE}) et l'erreur moyenne (\ref{subsec:Model_Metric_BIAS}). Les résultats obtenus sur ces métriques et par scénario sont présentés dans le tableau \ref{tab:PV_Metrics}. Comme ces valeurs ne sont pas très explicites en elles mêmes, il est plus simple de les comparer. Il a été choisi ici de les comparer aux résultats obtenus par un modèle classique de traitement de série temporelle : un Seasonal Auto Regressive Integrated Moving Average (SARIMA). Le choix des paramètres du modèle -- l'ordre auto régressif, l'ordre de différenciation et l'ordre de la moyenne mobile ainsi que leurs homologues correspondant aux termes saisonniers -- sont choisis par le critère BIC. Les coefficients du modèle SARIMA obtenu sont présentés dans le tableau
 
 
 \begin{table}[h]
 \centering
 \caption{Score obtenus par différents modèles pour la simulation de 100 scénarios}
+\label{tab:PV_Metrics}
 \begin{tabular}{lccc}
 	& MAE  & RMSE & BIAS \\
 HMM	& $2.049374 \times 10^{-2}$ & $4.680091\times 10^{-2}$ & $1.05063 \times 10^{-2}$	    \\
-SARIMA	&  &  & 
+SARIMA	& $2.998845 \times 10^{-2}$ & $4.994762 \times 10^{-2}$ & $-2.412651 \times 10^{-5}$
 \end{tabular}
 \end{table}
 
-   
+\begin{figure}[htbp]
+ 	\begin{center}
+ 		
+ 		\begin{subfigure}[b]{0.5\linewidth}
+ 			\centering
+ 			\includegraphics[width = 0.95 \linewidth]{Images/PV/SARIMA/175.pdf}
+ 			\caption{25-27 Juin 2017}
+ 			%\vspace{4ex}
+ 		\end{subfigure}%%
+ 		\begin{subfigure}[b]{0.5\linewidth}
+ 			\centering
+ 			\includegraphics[width = 0.95 \linewidth]{Images/PV/SARIMA/187.pdf}
+ 			\caption{7-9 Juillet 2017}
+ 			%\vspace{4ex}
+ 		\end{subfigure}
+ 		
+ 		\begin{subfigure}[b]{0.5\linewidth}
+ 			\centering
+ 			\includegraphics[width = 0.95 \linewidth]{Images/PV/SARIMA/27.pdf}
+ 			\caption{27-29 Janvier 2017}
+ 			%\vspace{4ex}
+ 		\end{subfigure}%%
+ 		\begin{subfigure}[b]{0.5\linewidth}
+ 			\centering
+ 			\includegraphics[width = 0.95 \linewidth]{Images/PV/SARIMA/41.pdf}
+ 			\caption{10-12 février 2017}
+ 			%\vspace{4ex}
+ 		\end{subfigure}
+ 	\end{center}
+ 	
+ 	\caption{Génération de 100 scénarios à partir d'initialisations différentes matérialisées par un fond coloré. Les différents scénarios sont en violet, leur moyenne en rose, leur intervalle de prévision à $90\%$ en vert et enfin la série originale en orange.}
+ 	\label{fig:PV_SARIMA_Scenarios} 
+\end{figure}
+
+
 
 \chapter{Conclusion et perspectives}
 Au cours de ce stage, des séries d'erreurs de prévision de production d'énergie d'origine solaire et photovoltaïque ont été étudiées. Côté éolien, leur étude avait déjà montré un potentiel intéressant à travers l'étude réalisée par \cite{haessig_dimensionnement_2014} et la mise en place d'un modèle AR(1). Côté photovoltaïque, \cite{latimier_gestion_2016} avait identifié la présence de profils typiques dans les données et proposé l'idée d'une approche par trajectoire. Dans les deux cas, l'objectif de ce stage était de poursuivre les pistes ouvertes dans ces deux directions afin de voir si des modèles plus complexes pouvaient améliorer les résultats.
