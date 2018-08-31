@@ -1,5 +1,5 @@
 \PassOptionsToPackage{svgnames}{xcolor}
-\documentclass[12pt]{report}
+\documentclass[12pt, french]{report}
 
 \input{PackagesDefinitions.tex}
 \input{Style.tex}
@@ -22,6 +22,7 @@
 \chapter{Introduction}
 \section{Présentation du Laboratoire}
 Ce stage s'est déroulé au sein du laboratoire Systèmes et Applications des Technologies de l'Information et de l'Énergie (SATIE) qui est une unité mixte de recherche (UMR 8029) du CNRS comptant environ 200 personnes. Ses tutelles sont le CNRS, l'ENS Paris Saclay, l'ENS Rennes, le CNAM Paris, l'université de Cergy Pontoise, l'université de Paris Sud et l'IFFSTAR. Ce stage a été encadré par Roman Le Goff Latimier, Hamid Ben Hamed et Bernard Multon qui font partie de l'ENS de Rennes, lieu dans lequel s'est déroulé le stage. Le laboratoire SATIE comporte de nombreuses équipes de recherches dont les thématiques dérivent toutes de problématiques liées à l'\textit{Electrical Engeneering}. Les travaux que j'ai eu à réaliser s'intégraient dans les thématiques de l'équipe Système d'Énergies pour les Transports et l'Environnement. L'objectif principal de cette équipe est de mettre au point de nouveaux systèmes (ou des les améliorer) de création, de transport, de conversion ou de gestion d'énergie afin d'augmenter leur efficacité tout en minimisant l'impact environnemental.
+
 
 \section{Contexte}
 %Ce stage s'inscrit dans le contexte d'un changement de paradigme quant à la production d'électricité.
@@ -585,14 +586,14 @@ Afin de combiner des informations provenant de deux indicateurs différents, il 
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering
 		\includegraphics[width=0.9\linewidth]{Images/PV/GMM/GMM_6Clust_Intraday_24d_10h_idtest98.pdf} 
-		%\caption{5 clusters} 
+		\caption{9 avril 2017 - 10h00} 
 		%\label{fig::HHMM_8HS_Traj_HS1} 
 		%\vspace{4ex}
 	\end{subfigure}%% 
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering
 		\includegraphics[width=0.9\linewidth]{Images/PV/GMM/GMM_6Clust_Intraday_24d_13h_idtest98.pdf} 
-		%\caption{10 clusters} 
+		\caption{9 avril 2017 - 13h00} 
 		%\label{fig::HHMM_8HS_Traj_HS2} 
 		%\vspace{4ex}
 	\end{subfigure}
@@ -600,14 +601,14 @@ Afin de combiner des informations provenant de deux indicateurs différents, il 
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering
 		\includegraphics[width=0.9\linewidth]{Images/PV/GMM/GMM_6Clust_Intraday_24d_10h_idtest336.pdf} 
-		%\caption{5 clusters} 
+		\caption{3 décembre 2017 - 10h00} 
 		%\label{fig::HHMM_8HS_Traj_HS1} 
 		%\vspace{4ex}
 	\end{subfigure}%% 
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering
 		\includegraphics[width=0.9\linewidth]{Images/PV/GMM/GMM_6Clust_Intraday_24d_13h_idtest336.pdf}
-		%\caption{10 clusters} 
+		\caption{3 décembre 2017 - 13h00} 
 		%\label{fig::HHMM_8HS_Traj_HS2} 
 		%\vspace{4ex}
 	\end{subfigure}
@@ -621,7 +622,7 @@ Dans la majorité des cas, la probabilité d'émission favorise très grandement
 
 
 
-Les paramètres du modèle obtenus sont présentés graphiquement dans la figure \ref{fig:PV_GMM_MeanVarProp}. Il est possible de constater que les trajectoires moyennes des états sont assez semblables à celles obtenus par la méthode des Kmeans (voir figure \ref{fig:Kmeans_centers}). Enfin, l'information supplémentaire réside dans la connaissance des variances pour chaque clusters. Elles sont relativement faibles et globalement assez similaires les unes des autres pour les groupes allant de 1 à 5. Par contre, le groupe 6, a une variance nettement plus forte. Ce cluster, qui est significativement moins peuplé que les autres, regroupe les individus au comportement inhabituels et/ou chaotiques.
+Les paramètres du modèle obtenus sont présentés graphiquement dans la figure \ref{fig:PV_GMM_MeanVarProp}. Il est possible de constater que les trajectoires moyennes des états sont assez semblables à celles obtenus par la méthode des Kmeans (voir figure \ref{fig:Kmeans_centers}). Enfin, l'information supplémentaire réside dans la connaissance des variances pour chaque clusters. Elles sont relativement faibles et globalement assez similaires les unes des autres pour les groupes allant de 1 à 5. Par contre, le groupe 6, a une variance nettement plus forte. Ce cluster, qui est significativement moins peuplé que les autres, regroupe les individus au comportement inhabituel et/ou chaotique.
 
 
 
@@ -633,13 +634,13 @@ Finalement, l'utilisation de modèle GMM n'a pas permis d'améliorer les résult
 
 \subsection{Détermination du modèle}
 
-En gardant à l'esprit que ce modèle est identifié dans le but de générer des prévisions sur plusieurs journée, il est impératif de donner plus de liberté au HMM qu'au GMM quant à la structure de sa matrice de variance covariance. En effet, si on ne relaxe pas la contrainte d'avoir une valeur unique sur la diagonale de variance covariance alors le modèle ne sera jamais en mesure de capturer les erreurs nulles ou négligeables la nuit. Les scénarios générés n'auraient pas alors cette caractéristique et les performances en termes d'applications seraient grandement réduites. Cependant, ce faisant, le nombre de paramètres passe de chaque modèle devient alors :
+En gardant à l'esprit que ce modèle est identifié dans le but de générer des prévisions sur plusieurs journées, il est impératif de donner plus de liberté au HMM qu'au GMM quant à la structure de sa matrice de variance covariance. En effet, si on ne relaxe pas la contrainte d'avoir une valeur unique sur la diagonale de variance covariance alors le modèle ne sera jamais en mesure de capturer les erreurs nulles ou négligeables la nuit. Les scénarios générés n'auraient pas alors cette caractéristique et les performances en termes d'applications seraient grandement réduites. Cependant, ce faisant, le nombre de paramètres passe de chaque modèle devient alors :
 
 \begin{equation}
 \underbrace{K-1}_\text{Probabilités initiales}  + \underbrace{K \times d}_\text{Centres}  +  \underbrace{K \times d}_\text{Matrices de variance covariance} + \underbrace{K \times K}_\text{Matrice de transition}
 \end{equation}
 
-Par exemple, en prenant le cas d'une observation toutes les heures ($d=24$) et de 6 états cachés ($K=6$) par identification avec le GMM, il faut donc identifier $329$ paramètres. C'est donc plus du double des $155$ paramètres du GMM sélectionné dans la section \ref{sec:PV_GMM}. Pour pallier à ce problème, j'ai procédé à une réduction de dimension de l'espace par la méthode de l'ACP (voir \ref{sec:Model_ACP}). Les résultats obtenus en fonction du nombre de composantes sélectionnées sont présentés dans la figure \ref{fig:PV_HMM_ACP_DimSelect}. J'ai choisi de garder un nombre de composante principales expliquant $99 \%$ de la variance totale, soit 6 composantes principales. 
+Par exemple, en prenant le cas d'une observation toutes les heures ($d=24$) et de 6 états cachés ($m=6$) par identification avec le GMM, il faut donc identifier $329$ paramètres. C'est donc plus du double des $155$ paramètres du GMM sélectionné dans la section \ref{sec:PV_GMM}. Pour pallier ce problème une réduction de dimension de l'espace par la méthode de l'ACP (voir \ref{sec:Model_ACP}) a été mise en œuvre. Les résultats obtenus en fonction du nombre de composantes sélectionnées sont présentés dans la figure \ref{fig:PV_HMM_ACP_DimSelect}. Le nombre de composante principales a été choisi de façon à expliquer $99 \%$ de la variance totale, soit 6 composantes principales. 
 
 \begin{figure}[htbp]
 	\centering
@@ -687,12 +688,22 @@ Dans cet espace réduit, le nombre de paramètres d'un HMM à états cachés ne 
 %	\label{fig:PV_HMM_MeanVarACP}
 %\end{figure}
 
-L'interprétation des régimes sous cette forme n'est pas aisée mais deux éléments sont intéressant à noter. Tout d'abord, les régimes sont caractérisés par des valeurs non négligeables sur la première composante uniquement. D'autre part, la variance diminue en augmentant l'ordre de la composante principale, et ce dans tous les régimes. Ce phénomène est inhérent à l'utilisation de l'ACP qui détermine les composante principales en s'appuyant sur une maximisation de la variance qu'elles expliquent. Les régimes, transformés dans l'espace d'origine, sont présentés dans la figure \ref{fig:PV_HMM_MeanVarOrig}. On retrouve les profils obtenus dans par les modèles utilisés précédemment. Notamment deux modèles de surestimation plus ou moins forte, deux modèles de sous-estimation plus ou moins forte et deux modèles à moyenne nulles mais avec des variances très distinctes. Comme dans le cas du GMM, le régime 6 sert à caractériser les journées aux profils atypiques. 
+L'interprétation des régimes sous cette forme n'est pas aisée mais deux éléments sont intéressants à noter. Tout d'abord, les régimes sont caractérisés par des valeurs non négligeables sur la première composante uniquement. D'autre part, la variance diminue en augmentant l'ordre de la composante principale, et ce dans tous les régimes. Ce phénomène est inhérent à l'utilisation de l'ACP qui détermine les composante principales en s'appuyant sur une maximisation de la variance qu'elles expliquent. Les régimes, transformés dans l'espace d'origine, sont présentés dans la figure \ref{fig:PV_HMM_MeanVarOrig}. On retrouve les profils obtenus dans par les modèles utilisés précédemment. Notamment deux modèles de surestimation plus ou moins forte, deux modèles de sous-estimation plus ou moins forte et deux modèles à moyenne nulles mais avec des variances très distinctes. Comme dans le cas du GMM, le régime 6 sert à caractériser les journées aux profils atypiques.
 
-\todo{Présenter la matrice de transition aussi !}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width = 0.65 \linewidth]{Images/PV/HMM/Transmat.pdf}
+	\caption{Matrice de transition $\Gamma$ du modèle de Markov caché obtenu}
+	\label{fig:PV_HMM_Transmat}
+\end{figure} 
+
+
+La figure \ref{fig:PV_HMM_Transmat} représente graphiquement la matrice de transition du modèle obtenu. Les valeurs sur la diagonale sont systématiquement les plus élevées de la ligne correspondante. C'est-à-dire que les régimes établis sont stables. Cependant ces valeurs sont nettement plus faible que dans le cas de l'éolien (chapitre \ref{chap:ResultatsEolien}). Ceci s'explique par la considération de journées complète dans le cas présent. Les temps de séjours moyen vont de 1 jour 12 heures et 15 minutes pour le régime 4 à 2 jours 17 heures et 45 minutes pour le régime 1. Cette observation est cohérente avec l'hypothèse émise que ces régimes correspondent à des conditions  météorologiques. En effet ces durées moyennes paraissent du même ordre de grandeur que la persistance des conditions météorologiques. Il est intéressant de remarquer que les transitions directes entre les régimes 1 et 6 sont très peu probables et réciproquement. Au vu des caractéristiques de ces régimes --  figures \ref{fig:PV_HMM_MeanVarACP} et \ref{fig:PV_HMM_MeanVarOrig}  -- cela revient à dire qu'il est très peu probable de passer d'un régime avec une très faible variance a un régime avec une très forte variance.  Ceci conforte l'hypothèse que le phénomène sous-jacent déterminant l'établissement de ces régimes est bien d'origine météorologique.
+
+L'accès à des co-variables météorologiques permettrait de faire une analyse beaucoup plis intéressante des régimes établis. Par exemple la couverture nuageuse doit probablement avoir beaucoup d'impact sur la qualité des erreurs de prévision. 
 
 \subsection{Caractérisation statistique du modèle}
-Une particularité des HMM est qu'ils permettent facilement de générer des données synthétiques. En effet, une fois l'initialisation faite, la matrice de transition et les paramètres des états cachés contiennent l'information nécessaire à la production de données synthétiques de la longueur voulue. La figure \ref{fig:PV_HMM_Stat_Zoom} montre une portion de série synthétique dont le profil des journées paraît cohérent avec ce qui est présenté dans la figure \ref{fig:Data_PV_PredErrs}. Il est alors possible de comparer des critères statistiques sur ces données synthétiques et sur la série originale pour évaluer le caractéristiques capturées ou non par le modèle. La figure \ref{fig:PV_HMM_Stat_QQ} montre le diagramme quantile-quantile des séries synthétiques et de la série originale. Pour rappel, ce diagramme cherche à représenter les quantiles d'une série par rapport à ceux de l'autre. Si ces deux séries sont émises par la même distribution, alors les quantiles s'alignent tous sur une droite. Sur cette figure on peut voir que les quantiles s'alignent parfaitement sur l'intervalle $[-0.25,0.25]$ qui, d'après la figure \ref{fig:Data_TenneT_Bayern_BoxHist} représente une grande majorité des observations. Cependant, la figure indique clairement que le modèle ne réussit pas à capturer les queues de la distribution en sous estimant l'occurence de prévision très mauvaises.
+Une particularité des HMM est qu'ils permettent facilement de générer des données synthétiques. En effet, une fois l'initialisation faite, la matrice de transition et les paramètres des états cachés contiennent l'information nécessaire à la production de données synthétiques de la longueur voulue. La figure \ref{fig:PV_HMM_Stat_Zoom} montre une portion de série synthétique dont le profil des journées paraît visuellement cohérent avec ce qui est présenté dans la figure \ref{fig:Data_PV_PredErrs}. Il est alors possible de comparer des critères statistiques sur ces données synthétiques et sur la série originale pour évaluer le caractéristiques capturées ou non par le modèle. La figure \ref{fig:PV_HMM_Stat_QQ} montre le diagramme quantile-quantile des séries synthétiques et de la série originale. Pour rappel, ce diagramme cherche à représenter les quantiles d'une série par rapport à ceux de l'autre. Si ces deux séries sont émises par la même distribution, alors les quantiles s'alignent tous sur une droite. Sur cette figure on peut voir que les quantiles s'alignent parfaitement sur l'intervalle $[-0.25,0.25]$ qui, d'après la figure \ref{fig:Data_TenneT_Bayern_BoxHist} représente une grande majorité des observations. Cependant, la figure indique clairement que le modèle ne réussit pas à capturer les queues de la distribution en sous estimant l'occurence de prévision très mauvaises.
 
 \begin{figure}[htbp] 
 	\begin{subfigure}[b]{0.5\linewidth}
@@ -714,7 +725,7 @@ Une particularité des HMM est qu'ils permettent facilement de générer des don
 	\label{fig:PV_HMM_Stat_ZoomQQ} 
 \end{figure}
 
-La figure \ref{fig:PV_HMM_Stat_MDO} représente le temps de séjour moyen au dessus d'une valeur seuil. Cette valeur caractérise la dynamique globale de la série considérée. On remarque une nette diminution dans le temps de séjour moyen autour de 0. Ceci s'explique par la présence des erreurs nulles la nuit. En effet, en considérant une valeur seuil très légèrement positive, alors le temps de séjour moyen peut encore être assez élevé en présence de journée de sous-estimation (d'erreurs négatives). En considérant maintenant une valeur seuil très légèrement négative, elle sera nécessairement dépassée positivement à la prochaine période nocturne. Ce faisant le temps de séjour moyen au dessus de cette valeur seuil sera, au maximum, égal à la durée de l'ensoleillement à la période considérée. Cette particularité semble être parfaitement capturée par le modèle avec une superposition des temps de séjours des séries synthétiques et de la série originale sur cet intervalle. On retrouve une bonne superposition sur l'intervalle $[-0.25,0.25]$ et même un petit peu au delà. Les sous estimations des événements menant à des prédictions de mauvaises qualités se retrouvent aussi sur ce graphique. Cependant, l'écart de comportement sur les marges entre la série originale et la série synthétique est magnifié par l'échelle logarithmique. La figure \ref{fig:PV_HMM_Stat_NU} montre le nombre de dépassement positifs de valeurs seuils et traduit donc la volatilité des séries. Selon cette métrique il y a superposition presque parfaite entre les séries synthétiques et la série originale, ce qui traduit que le modèle capture avec succès la volatilité de la série temporelle.
+La figure \ref{fig:PV_HMM_Stat_MDO} représente le temps de séjour moyen au dessus d'une valeur seuil. Cette valeur caractérise la dynamique globale de la série considérée. On remarque une nette diminution dans le temps de séjour moyen autour de 0. Ceci s'explique par la présence des erreurs nulles la nuit. En effet, en considérant une valeur seuil très légèrement positive, alors le temps de séjour moyen peut encore être assez élevé en présence de journée de sous-estimation (d'erreurs négatives). En considérant maintenant une valeur seuil très légèrement négative, elle sera nécessairement dépassée positivement à la prochaine période nocturne. Ce faisant le temps de séjour moyen au dessus de cette valeur seuil sera, au maximum, égal à la durée de l'ensoleillement à la période considérée. Cette particularité semble être parfaitement capturée par le modèle avec une superposition des temps de séjours des séries synthétiques et de la série originale sur cet intervalle. On retrouve une bonne superposition sur l'intervalle $[-0.25,0.25]$ et même un petit peu au delà. Les sous estimations des événements menant à des prédictions de mauvaises qualités se retrouvent aussi sur ce graphique. Cependant, l'écart de comportement sur les marges entre la série originale et la série synthétique est sur-représenté par l'échelle logarithmique. La figure \ref{fig:PV_HMM_Stat_NU} montre le nombre de dépassement positifs de valeurs seuils et traduit donc la volatilité des séries. Selon cette métrique il y a superposition presque parfaite entre les séries synthétiques et la série originale, ce qui traduit que le modèle capture avec succès la volatilité de la série temporelle.
 
 \begin{figure}[htbp] 
 	\begin{subfigure}[b]{0.5\linewidth}
@@ -732,11 +743,11 @@ La figure \ref{fig:PV_HMM_Stat_MDO} représente le temps de séjour moyen au des
 		%\vspace{4ex}
 	\end{subfigure}
 	
-	\caption{Caractérisation statistiques par rapport à des valeurs seuils}
+	\caption{Caractérisation statistique par rapport à des valeurs seuils}
 	\label{fig:PV_HMM_Stat_MDONU} 
 \end{figure}
 
-Cependant ces métriques ne parviennent pas à mettre en évidence deux sources de différences entre la série originale et la série synthétique. Tout d'abord, au vu des profils moyens du modèle et matrices de variances covariances, peu ou pas de journée avec une inversion de profil ne sont générées. Ce ne sont pas les profils les plus typiques, mais la méthode des Kmeans les exhibait à partir de 7 ou 8 clusters. D'autre part, il s'agit ici de statistiques réalisées sur l'ensemble de la série et qui ne tiennent donc pas compte de particularismes saisonniers. Il serait donc intéressant de réaliser ces statistiques sur des périodes de l'année et de voir si les résultats diffèrent. Le cas échéant, la prise en compte de la date calendaire par le modèle HMM serait une évolution non négligeable.
+Cependant ces métriques ne parviennent pas à mettre en évidence deux sources de différences entre la série originale et la série synthétique. Tout d'abord, au vu des profils moyens du modèle et matrices de variances covariances, peu ou pas de journées avec une inversion de profil ne sont générées. Ce ne sont pas les profils les plus typiques, mais la méthode des Kmeans les exhibait à partir de 7 ou 8 clusters. D'autre part, il s'agit ici de statistiques réalisées sur l'ensemble de la série et qui ne tiennent donc pas compte de particularismes saisonniers. Il serait donc intéressant de réaliser ces statistiques sur des périodes de l'année et de voir si les résultats diffèrent. Le cas échéant, la prise en compte de la date calendaire par le modèle HMM serait une évolution non négligeable.
 
 
 
@@ -776,7 +787,7 @@ Utiliser ce modèle pour faire de la correction au cours de la journée n'apport
 	\label{fig:PV_HMM_Forward} 
 \end{figure}
 
-On constate que, dans cet exemple, les probabilités d'appartenance mettent en évidence une compétition entre plusieurs états. En effet, comme aucune des trajectoires ne correspond exactement à une trajectoire type, c'est l'information sur les variances de chaque états qui est prépondérante. Par exemple, le profil moyen de la première journée semble, dans l'espace de dimension réduit, être le plus proche du Régime 1. Cependant, comme il a une très faible variance notamment sur les composantes principales d'ordre supérieur à 1, il n'a pas une plus grande probabilité d'avoir émis cette observation que les régimes 2 et 3. La troisième journée se rapproche très fortement de la trajectoire moyenne du régime 4 et il est donc nettement plus probable que ce soit lui qui ait la probabilité d'émission la plus forte. La sixième journée représente un autre cas intéressant. En effet, la première composante principale est assez proche de celle de l'état 5. Mais, au vu de la forte valeur sur la troisième composante principale, une compétition entre le régime 5 (forte erreurs positive) et le régime 6 (caractérisé par sa forte variance) s'installe.
+On constate que, dans cet exemple, les probabilités d'appartenance mettent en évidence une compétition entre plusieurs états. En effet, comme aucune des trajectoires ne correspond exactement à une trajectoire type, c'est l'information sur les variances de chaque états qui est prépondérante. Par exemple, le profil moyen de la première journée semble, dans l'espace de dimension réduit, être le plus proche du Régime 1. Cependant, comme il a une très faible variance notamment sur les composantes principales d'ordre supérieur à 1, il n'a pas une plus grande probabilité d'avoir émis cette observation que les régimes 2 et 3. La troisième journée se rapproche très fortement de la trajectoire moyenne du régime 4 et il est donc nettement plus probable que ce soit lui qui ait la probabilité d'émission la plus forte. La sixième journée représente un autre cas intéressant. En effet, la première composante principale est assez proche de celle de l'état 5. Mais, au vu de la forte valeur sur la troisième composante principale, une compétition entre le régime 5 (forte erreur positive) et le régime 6 (caractérisé par sa forte variance) s'installe.
 
 A partir de ces probabilités d'appartenance, il est possible de faire de la prévision d'ensemble, c'est à dire de la génération de scénarios probables. En effet, en les utilisant pour définir une loi de probabilité multinomiale, il est possible de déterminer pour chaque scénario le régime ayant généré la trajectoire initiale. Le régime suivant est alors déterminé par tirage d'une autre loi binomiale définie cette fois par une ligne de la matrice de transition $\Gamma$. L'observation générée sera donc la moyenne du régime tiré auquel est ajouté un bruit définit par la matrice de variance covariance dudit régime. L'opération est à répéter jusqu'à l'obtention de scénarios de la durée voulue. La figure \ref{fig:PV_HMM_Scenarios} montre des exemples de scénarios générés dans 4 situations différentes.
 
@@ -810,11 +821,11 @@ A partir de ces probabilités d'appartenance, il est possible de faire de la pr�
 		\end{subfigure}
 	\end{center}
 	
-	\caption{Génération de 10 scénarios à partir d'initialisations différentes matérialisées par un fond coloré. Les différents scénarios sont en violet, leur moyenne en rose, leur intervalle de prévision à $90\%$ en vert et enfin la série originale en orange.}
+	\caption{Génération de 100 scénarios à partir d'initialisations différentes matérialisées par un fond coloré. Les différents scénarios sont en violet, leur moyenne en rose, leur intervalle de prévision à $90\%$ en vert et enfin la série originale en orange.}
 	\label{fig:PV_HMM_Scenarios} 
 \end{figure}
 
-Il est intéressant de constater que dans presque tous les cas, la série originale est bien intégrée dans le faisceau de scénarios. Cependant le 10 février illustre comment tous les scénarios prédits sont positifs ou presque alors que l'erreur réellement observée est négative. Par ailleurs, il est important de remarquer comment l'initialisation, traduite par des probabilités d'appartenance, influe le faisceau de scénarios générés. On constate par exemple que l'initialisation du 27 Janvier donne lieu a des scénarios équitablement positifs ou négatifs et de faible amplitude. En effet parmi les 100 scénarios, très peu sortent de l'intervalle des $20\%$ d'erreurs. Le 25 Juin et le 10 février génèrent quant à eux des scénarios de relativement faible amplitude mais en très grosse majorité positifs.
+Il est intéressant de constater que dans presque tous les cas, la série originale est bien intégrée dans le faisceau de scénarios. Cependant le 11 février illustre comment tous les scénarios prédits sont positifs ou presque alors que l'erreur réellement observée est négative. Par ailleurs, il est important de remarquer comment l'initialisation, traduite par des probabilités d'appartenance, influe le faisceau de scénarios générés. On constate par exemple que l'initialisation du 27 Janvier donne lieu a des scénarios équitablement positifs ou négatifs et de faible amplitude. En effet parmi les 100 scénarios, très peu sortent de l'intervalle des $20\%$ d'erreurs. Le 25 Juin et le 10 février génèrent quant à eux des scénarios de relativement faible amplitude mais en très grosse majorité positifs.
 
 Afin de caractériser ces ensembles de prédictions, \cite{madsen_protocol_nodate} préconise l'utilisation d'au moins trois critères, à savoir la MAE (\ref{subsec:Model_Metric_MAE}), l'erreur quadratique (\ref{subsec:Model_Metric_RMSE}) et l'erreur moyenne (\ref{subsec:Model_Metric_BIAS}).
 
@@ -832,11 +843,11 @@ SARIMA	&  &  &
    
 
 \chapter{Conclusion et perspectives}
-Au cours de ce stage, j'ai eu l'occasion d'étudier des séries d'erreurs de prévision de production d'énergie d'origine solaire et photovoltaïque. Côté éolien, leur étude avait déjà montré un potentiel intéressant à travers l'étude réalisée par \cite{haessig_dimensionnement_2014} et la mise en place d'un modèle AR(1). Côté photovoltaïque, \cite{latimier_gestion_2016} avait identifié la présence de profils typiques dans les données et proposé l'idée d'une approche par trajectoire. Dans les deux cas, l'objectif de ce stage était de poursuivre les pistes ouvertes dans ces deux directions afin de voir si des modèles plus complexes pouvaient améliorer les résultats.
+Au cours de ce stage, des séries d'erreurs de prévision de production d'énergie d'origine solaire et photovoltaïque ont été étudiées. Côté éolien, leur étude avait déjà montré un potentiel intéressant à travers l'étude réalisée par \cite{haessig_dimensionnement_2014} et la mise en place d'un modèle AR(1). Côté photovoltaïque, \cite{latimier_gestion_2016} avait identifié la présence de profils typiques dans les données et proposé l'idée d'une approche par trajectoire. Dans les deux cas, l'objectif de ce stage était de poursuivre les pistes ouvertes dans ces deux directions afin de voir si des modèles plus complexes pouvaient améliorer les résultats.
 
-Concernant les erreurs de prévision de production éolienne, un modèle de type Markov Switching Auto-Regressive (MSAR) avec 3 états cachés et des modèles AR(2) à été ajusté sur la série. L'augmentation en terme de complexité du modèle MSAR par rapport au AR(1) précédemment proposé (21 paramètres contre 2) permet de prendre en compte des comportements non linéaires exhibés par a série temporelle. Ces comportements se manifestaient essentiellement sous la forme de période avec des variances faibles, moyennes ou fortes. En s'intéressant aux comportements statistiques de séries synthétiquement générées par les modèles, un très net gain est obtenu par le MSAR. En effet il a été montré que la prise en compte de non linéarité permettait une meilleure représentation de la volatilité -- avec les dépassements positifs de valeurs seuil -- et de la dynamique générale -- avec le temps de séjour moyen au dessus de valeurs seuils --. Cependant, le gain dans un exemple d'application sur une gestion optimale de stockage n'a pas été aussi notable que lors de l'étude des distributions statistiques. Cette amélioration, bien que faible, peut quand même s'avérer non négligeable économiquement si elle est envisagée sur une ferme de production qui, par un facteur d'échelle, multipliera le résultat obtenu sur l'exemple jouet. La saisonnalité annuelle des erreurs de prévisions n'a pas été prise en compte dans l'ajustement des paramètres de ce MSAR. Intégrer des transitions non homogènes en fonction de la date calendaire pourrait permettre de capturer le fait que les périodes à faible volatilité se manifestent surtout dans les saisons hivernales. Cette nouvelle introduction devrait permettre d'améliorer les résultats de manière sensible. Par ailleurs, en s'inspirant des modèles utilisés en économie, la modélisation de cette variance variable par des modèles GARCH a été réalisée mais les résultats n'étaient pas suffisamment probants pour être développés plus avant.
+Concernant les erreurs de prévision de production éolienne, un modèle de type Markov Switching Auto-Regressive (MSAR) avec 3 états cachés et des modèles AR(2) à été ajusté sur la série. L'augmentation en terme de complexité du modèle MSAR par rapport au AR(1) précédemment proposé (21 paramètres contre 2) permet de prendre en compte des comportements non linéaires exhibés par a série temporelle. Ces comportements se manifestaient essentiellement sous la forme de période avec des variances faibles, moyennes ou fortes. En s'intéressant aux comportements statistiques de séries synthétiquement générées par les modèles, un très net gain est obtenu par le MSAR. En effet il a été montré que la prise en compte de non-linéarités permettait une meilleure représentation de la volatilité -- avec les dépassements positifs de valeurs seuil -- et de la dynamique générale -- avec le temps de séjour moyen au dessus de valeurs seuils --. Cependant, le gain dans un exemple d'application sur une gestion optimale de stockage n'a pas été aussi notable que lors de l'étude des distributions statistiques. Cette amélioration, bien que faible, peut quand même s'avérer non négligeable économiquement si elle est envisagée sur une ferme de production qui, par un facteur d'échelle, multipliera le résultat obtenu sur l'exemple << jouet >>. La saisonnalité annuelle des erreurs de prévisions n'a pas été prise en compte dans l'ajustement des paramètres de ce MSAR. Intégrer des transitions non homogènes en fonction de la date calendaire pourrait permettre de capturer le fait que les périodes à faible volatilité se manifestent surtout dans les saisons hivernales. Cette nouvelle introduction devrait permettre d'améliorer les résultats de manière sensible. Par ailleurs, en s'inspirant des modèles utilisés en économie, la modélisation de cette variance variable par des modèles GARCH a été réalisée mais les résultats n'étaient pas suffisamment probants pour être développés plus avant.
 
-Concernant les erreurs de prévision issues de centrales photovoltaïques, plusieurs modèles avec objectifs variés ont été ajustés. Dans un premier temps, la présence d'information valable dans la série temporelle dans un but de correction au cours de la journée a été testée avec la méthode des plus proches voisins. Cette méthode à conduit à une correction d'environ $35 \%$ en identifiant la trajectoire à 10h du jour considéré et l'ensemble des trajectoires déjà connues. Cette information est suffisante en elle-même pour mettre en exergue l'information résiduelle dans les séries d'erreurs de prévisions photovoltaïques et justifier de continuer leur étude. Dans une mesure de simplification, l'identification a ensuite été testée par rapport à un certains nombre de trajectoire types identifiées par la méthode des Kmeans. Ainsi en limitant l'identification parmi un jeu de 20 trajectoires -- au lieu de 2190 précédemment -- permettait une réduction d'erreur de $20 \%$ au cours de la journée dans les même conditions. Un modèle de mélange gaussien à ensuite été ajusté afin d'obtenir de l'information supplémentaire sur les variances des trajectoires caractéristiques. Cette connaissance permet entre autre de pouvoir réaliser l'étude duale de celle qui a été faite pour l'éolien, à savoir une stratégie de gestion optimale de stockage. Toujours dans cette optique, le modèle doit être en mesure de générer des scénarios non pas uniquement sur le restant d'une journée mais sur des temps plus longs. L'intérêt de 
+Concernant les erreurs de prévision issues de centrales photovoltaïques, plusieurs modèles avec objectifs variés ont été ajustés. Dans un premier temps, la présence d'information valable dans la série temporelle dans un but de correction au cours de la journée a été testée avec la méthode des plus proches voisins. Cette méthode a conduit à une correction d'environ $35 \%$ en identifiant la trajectoire à 10h du jour considéré et l'ensemble des trajectoires déjà connues. Cette information est suffisante en elle-même pour mettre en exergue l'information résiduelle dans les séries d'erreurs de prévisions photovoltaïques et justifier de continuer leur étude. Dans une mesure de simplification, l'identification a ensuite été testée par rapport à un certains nombre de trajectoire types identifiées par la méthode des Kmeans. Ainsi en limitant l'identification parmi un jeu de 20 trajectoires -- au lieu de 2190 précédemment -- permettait une réduction d'erreur de $20 \%$ au cours de la journée dans les même conditions. Un modèle de mélange gaussien à ensuite été ajusté afin d'obtenir de l'information supplémentaire sur les variances des trajectoires caractéristiques. Cette connaissance permet entre autre de pouvoir réaliser l'étude duale de celle qui a été faite pour l'éolien, à savoir une stratégie de gestion optimale de stockage. Toujours dans cette optique, le modèle doit être en mesure de générer des scénarios non pas uniquement sur le restant d'une journée mais sur des temps plus longs. L'intérêt de 
 
 
 \chapter{Retour sur expérience}
@@ -865,7 +876,7 @@ Pour toutes ces raisons, j'ai décidé de poursuivre par une thèse de doctorat 
 
 \chapter{Description des algorithmes permettant la résolution des 3 grands problèmes liés aux HMM}
 \label{annex:HMM_Algos}
-section{Probabilité d’observation d’une séquence}
+\section{Probabilité d’observation d’une séquence}
 On se place dans  le cadre ou l'on dispose d'un HMM complet et on souhaite déterminer quelle est la probabilité d'obtenir une séquence d'observation précise. Plus formellement, en notant $\bm{X}$ la séquence observée et $\lambda$ le HMM considéré, on cherche $P(\bm{X}|\lambda)$.
 
 En supposant que l'on connaisse la séquence d'états $\bm{C}$ alors il vient le résultat suivant :
@@ -909,103 +920,103 @@ On obtient donc l'algorithme récursif suivant dont le coût calculatoire n'est 
 \end{figure}
 		
 \section{Recherche de la séquence la plus probable}
-		On se place dans le cadre ou l'on dispose d'un HMM $\lambda$ et d'une série de $T$ observation $\bm{X}$. On cherche alors à déterminer quelle est la séquence d'états cachés $C_1,C_2,...,C_T$ qui a le plus de chance de générer cette séquence d'observation.
-		
-		Encore une fois ce problème n'est pas viable en testant une à une les combinaisons afin de déterminer quelle est la plus probable. Pour y remédier, il est possible d'utiliser l'algorithme de Viterbi, dont la structure est assez similaire au forward algorithm. En effet il repose sur le même treillis mais la valeur en chaque maille représente la probabilité d'observer $X_t$ depuis l'état $C_i$ \textit{en ayant emprunté le chemin le plus probable menant à $C_i$}. A l'itération $t$ le vecteur de probabilités de Viterbi $\bm{v}_t$ se calcule donc de la manière suivante :
-		
-		\begin{align} 
-		\label{eq::HMM:ViterbiAlgo}
-		\bm{v}_1 &= \bm{\pi} \bm{P}(X_1) \\ 
-		\bm{v}_t(j) &= \max\limits_{i=1}^m \left[ \bm{v}_{t-1}(i) \times \gamma_{ij} \times  p_j(X_t) \right] \quad \forall j \in 1,2,...,m
-		\end{align}
-		
-		La séquence recherchée qui maximise la probabilité de réaliser l'observation est donc celle qui mène au $\max\left(\bm{v}_T\right)$. Lors du calcul, il est donc nécessaire de garder en mémoire le parcours effectué.
-		
-		\begin{figure}[ht]
-			\begin{center}
-				\includegraphics[width= 0.8 \textwidth]{Images/Models/HMM/Viterbi.png}
-				\caption{Représentation du parcours du treillis par l'algorithme de Viterbi. Les cercles à fond blanc représentent les probabilités initiales ; les cercles à fond bleu les états et les carrés les observations. Les $v$ sont les probabilitées de Viterbi. Un maximum arbitraire à chaque $t$ est représenté en rouge pour illustrer le cheminement de la séquence la plus probable. Schéma inspiré de \cite{jurafsky_speech_2017}.}
-				\label{fig::HMM:ViterbiAlgo}
-				\end{center}
-				\end{figure}
-				
-				section{Apprentissage}
-				\label{subsubsec:Models_HMM_Apprentissage}
-				On se place dans le cadre ou l'on dispose d'une liste de $m$ états $\bm{E}$ et d'une séquence de $T$ observations $\bm{X}$. On cherche à déterminer la matrice de transition $\bm{\Gamma}$ et les probabilités d'émissions $p_i(x) \quad \forall i\in 1,2,...,m \quad \forall x \in \bm{X}$.
-				
-				Pour ce faire il est possible de faire appel à un algorithme itératif nommé "forward backward". Celui-ci nécessite l'introduction d'une autre entité $\bm{\beta}_t$ qui est défini par l'équation \eqref{eq::HMM:BackwardProb}.
-				
-				\begin{equation}
-				\bm{\beta}_t(i) = P(X_{t+1},X_{t+2},...,X_{T}|C_t=E_i)
-				\label{eq::HMM:BackwardProb}
-				\end{equation}
-				
-				C'est un algorithme itératif qui calcule une estimation initiale des probabilités et qui utilise cette même estimation pour générer de meilleures probabilités. La première étape est de définir une formule pour calculer une estimation de $\gamma_{ij}$ que l'on notera $\hat{\gamma}_{ij}$ :
-				
-				\begin{equation}
-				\hat{\gamma}_{ij} = \frac{\text{Nombre attendu de transitions entre } E_i \text{ et } E_j}{\text{Nombre total attendu de transitions depuis }E_i}
-				\end{equation}
-				
-				En introduisant $\xi_t(i,j) = P(C_{t+1}=j,C_t=i|\bm{X},\lambda)$  On remarque que le numérateur pourrait alors s'écrire comme étant :
-				
-				\begin{equation}
-				\sum\limits_{t=1}^{T-1} \xi_t(i,j) 
-				\end{equation}
-				
-				D'autre part, on remarque qu'il est possible de calculer une quantité similaire à $\xi_t(i,j)$ :
-				
-				\begin{equation}
-				\hat{\xi}_t(i,j) = P(C_{t+1}=j,C_t=i,\bm{X}|\lambda) = \alpha_t(i) \times \gamma_{ij} p_j(X_{t+1}) \times \beta_{t+1}(j)
-				\end{equation}
-				
-				D'après l'identité $P(AB|C)=P(A|BC)P(B|C)$ on a :
-				
-				\begin{equation}
-				\xi_t(i,j) = \frac{\hat{\xi}_t(i,j)}{P(\bm{X}|\lambda)} = \frac{\alpha_t(i) \times \gamma_{ij} p_j(X_{t+1}) \times \beta_{t+1}(j)}{\alpha_T(X_T)}
-				\end{equation}
-				
-				Au final, on obtient :
-				
-				\begin{equation}
-				\hat{\gamma}_{ij} = 
-				\frac{\sum\limits_{t=1}^{T-1} \frac{\alpha_t(i) \times \gamma_{ij} p_j(X_{t+1}) \times \beta_{t+1}(j)}
-					{\alpha_T(X_T)}}
-					{\sum\limits_{k=1}^m \sum\limits_{t=1}^{T-1} \frac{\alpha_t(i) \times \gamma_{ik} p_k(X_{t+1}) \times \beta_{t+1}(k)}	   {\alpha_T(X_T)}}
-					\end{equation}
-					
-					Il reste encore à déterminer les probabilités d'émissions. Pour cela on dérive une formule pour l'estimation de $p_i(x)$ : 
-					
-					\begin{equation}
-					\hat{p}_i(X) = \frac{\text{Nombre attendu d'observations de }X\text{ depuis }i}
-					{\text{Nombre attendu d'occurrences  de }i}
-					\end{equation}
-					
-					On introduit :
-					
-					\begin{equation}
-					\kappa_t(j) = P(C_t=E_j|\bm{X},\lambda) = \frac{P(C_t=E_j,\bm{X}|\lambda)}{P(\bm{X}|\lambda)}
-					\end{equation} 
-					
-					On est dans un cas particulier de la situation précédente avec $i=j$ et on obtient donc le résultat suivant :
-					
-					\begin{equation}
-					\kappa_t(j) = \frac{\alpha_t(j)\beta_t(j)}{\alpha_T(X_T)}
-					\end{equation}
-					
-					Au final :
-					
-					\begin{equation}
-					\hat{p}_i(X) = \frac
-					{\sum\limits_{t=1}^T  \delta \kappa_t(i)}
-					{\sum\limits_{t=1}^T  \kappa_t(i)}
-					\quad \text{avec } \delta=
-					\begin{cases}
-					1\text{ si }X_t=X \\
-					0\text{ sinon}
-					\end{cases}
-					\end{equation}
-					
-					Il est maintenant possible de raffiner l'estimation précédente de $\Gamma$ et des $p_i(x)$ à chaque itération. Cependant cet algorithme converge vers un minimum local. Il peut dont être important de déterminer une "bonne" estimation initiale.
+On se place dans le cadre ou l'on dispose d'un HMM $\lambda$ et d'une série de $T$ observation $\bm{X}$. On cherche alors à déterminer quelle est la séquence d'états cachés $C_1,C_2,...,C_T$ qui a le plus de chance de générer cette séquence d'observation.
+
+Encore une fois ce problème n'est pas viable en testant une à une les combinaisons afin de déterminer quelle est la plus probable. Pour y remédier, il est possible d'utiliser l'algorithme de Viterbi, dont la structure est assez similaire au forward algorithm. En effet il repose sur le même treillis mais la valeur en chaque maille représente la probabilité d'observer $X_t$ depuis l'état $C_i$ \textit{en ayant emprunté le chemin le plus probable menant à $C_i$}. A l'itération $t$ le vecteur de probabilités de Viterbi $\bm{v}_t$ se calcule donc de la manière suivante :
+
+\begin{align} 
+\label{eq::HMM:ViterbiAlgo}
+\bm{v}_1 &= \bm{\pi} \bm{P}(X_1) \\ 
+\bm{v}_t(j) &= \max\limits_{i=1}^m \left[ \bm{v}_{t-1}(i) \times \gamma_{ij} \times  p_j(X_t) \right] \quad \forall j \in 1,2,...,m
+\end{align}
+
+La séquence recherchée qui maximise la probabilité de réaliser l'observation est donc celle qui mène au $\max\left(\bm{v}_T\right)$. Lors du calcul, il est donc nécessaire de garder en mémoire le parcours effectué.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width= 0.8 \textwidth]{Images/Models/HMM/Viterbi.png}
+\caption{Représentation du parcours du treillis par l'algorithme de Viterbi. Les cercles à fond blanc représentent les probabilités initiales ; les cercles à fond bleu les états et les carrés les observations. Les $v$ sont les probabilitées de Viterbi. Un maximum arbitraire à chaque $t$ est représenté en rouge pour illustrer le cheminement de la séquence la plus probable. Schéma inspiré de \cite{jurafsky_speech_2017}.}
+\label{fig::HMM:ViterbiAlgo}
+\end{center}
+\end{figure}
+
+\section{Apprentissage}
+\label{subsubsec:Models_HMM_Apprentissage}
+On se place dans le cadre ou l'on dispose d'une liste de $m$ états $\bm{E}$ et d'une séquence de $T$ observations $\bm{X}$. On cherche à déterminer la matrice de transition $\bm{\Gamma}$ et les probabilités d'émissions $p_i(x) \quad \forall i\in 1,2,...,m \quad \forall x \in \bm{X}$.
+
+Pour ce faire il est possible de faire appel à un algorithme itératif nommé "forward backward". Celui-ci nécessite l'introduction d'une autre entité $\bm{\beta}_t$ qui est défini par l'équation \eqref{eq::HMM:BackwardProb}.
+
+\begin{equation}
+\bm{\beta}_t(i) = P(X_{t+1},X_{t+2},...,X_{T}|C_t=E_i)
+\label{eq::HMM:BackwardProb}
+\end{equation}
+
+C'est un algorithme itératif qui calcule une estimation initiale des probabilités et qui utilise cette même estimation pour générer de meilleures probabilités. La première étape est de définir une formule pour calculer une estimation de $\gamma_{ij}$ que l'on notera $\hat{\gamma}_{ij}$ :
+
+\begin{equation}
+\hat{\gamma}_{ij} = \frac{\text{Nombre attendu de transitions entre } E_i \text{ et } E_j}{\text{Nombre total attendu de transitions depuis }E_i}
+\end{equation}
+
+En introduisant $\xi_t(i,j) = P(C_{t+1}=j,C_t=i|\bm{X},\lambda)$  On remarque que le numérateur pourrait alors s'écrire comme étant :
+
+\begin{equation}
+\sum\limits_{t=1}^{T-1} \xi_t(i,j) 
+\end{equation}
+
+D'autre part, on remarque qu'il est possible de calculer une quantité similaire à $\xi_t(i,j)$ :
+
+\begin{equation}
+\hat{\xi}_t(i,j) = P(C_{t+1}=j,C_t=i,\bm{X}|\lambda) = \alpha_t(i) \times \gamma_{ij} p_j(X_{t+1}) \times \beta_{t+1}(j)
+\end{equation}
+
+D'après l'identité $P(AB|C)=P(A|BC)P(B|C)$ on a :
+
+\begin{equation}
+\xi_t(i,j) = \frac{\hat{\xi}_t(i,j)}{P(\bm{X}|\lambda)} = \frac{\alpha_t(i) \times \gamma_{ij} p_j(X_{t+1}) \times \beta_{t+1}(j)}{\alpha_T(X_T)}
+\end{equation}
+
+Au final, on obtient :
+
+\begin{equation}
+\hat{\gamma}_{ij} = 
+\frac{\sum\limits_{t=1}^{T-1} \frac{\alpha_t(i) \times \gamma_{ij} p_j(X_{t+1}) \times \beta_{t+1}(j)}
+{\alpha_T(X_T)}}
+{\sum\limits_{k=1}^m \sum\limits_{t=1}^{T-1} \frac{\alpha_t(i) \times \gamma_{ik} p_k(X_{t+1}) \times \beta_{t+1}(k)}	   {\alpha_T(X_T)}}
+\end{equation}
+
+Il reste encore à déterminer les probabilités d'émissions. Pour cela on dérive une formule pour l'estimation de $p_i(x)$ : 
+
+\begin{equation}
+\hat{p}_i(X) = \frac{\text{Nombre attendu d'observations de }X\text{ depuis }i}
+{\text{Nombre attendu d'occurrences  de }i}
+\end{equation}
+
+On introduit :
+
+\begin{equation}
+\kappa_t(j) = P(C_t=E_j|\bm{X},\lambda) = \frac{P(C_t=E_j,\bm{X}|\lambda)}{P(\bm{X}|\lambda)}
+\end{equation} 
+
+On est dans un cas particulier de la situation précédente avec $i=j$ et on obtient donc le résultat suivant :
+
+\begin{equation}
+\kappa_t(j) = \frac{\alpha_t(j)\beta_t(j)}{\alpha_T(X_T)}
+\end{equation}
+
+Au final :
+
+\begin{equation}
+\hat{p}_i(X) = \frac
+{\sum\limits_{t=1}^T  \delta \kappa_t(i)}
+{\sum\limits_{t=1}^T  \kappa_t(i)}
+\quad \text{avec } \delta=
+\begin{cases}
+1\text{ si }X_t=X \\
+0\text{ sinon}
+\end{cases}
+\end{equation}
+
+Il est maintenant possible de raffiner l'estimation précédente de $\Gamma$ et des $p_i(x)$ à chaque itération. Cependant cet algorithme converge vers un minimum local. Il peut dont être important de déterminer une "bonne" estimation initiale.
 
 
 \bibliographystyle{IEEEtran}

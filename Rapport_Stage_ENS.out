@@ -30,4 +30,6 @@
 \BOOKMARK [0][-]{chapter.7}{Retour sur exp\351rience}{}% 30
 \BOOKMARK [0][-]{appendix.A}{Premi\350re version de la publication concernant les erreurs de pr\351visions \351oliennes}{}% 31
 \BOOKMARK [0][-]{appendix.B}{Description des algorithmes permettant la r\351solution des 3 grands probl\350mes li\351s aux HMM}{}% 32
-\BOOKMARK [1][-]{section.B.1}{Recherche de la s\351quence la plus probable}{appendix.B}% 33
+\BOOKMARK [1][-]{section.B.1}{Probabilit\351 d\220observation d\220une s\351quence}{appendix.B}% 33
+\BOOKMARK [1][-]{section.B.2}{Recherche de la s\351quence la plus probable}{appendix.B}% 34
+\BOOKMARK [1][-]{section.B.3}{Apprentissage}{appendix.B}% 35

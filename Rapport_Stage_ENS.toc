@@ -23,12 +23,14 @@
 \contentsline {chapter}{\numberline {5}Erreurs de pr\IeC {\'e}vision photovolta\IeC {\"\i }que}{18}{chapter.5}
 \contentsline {section}{\numberline {5.1}M\IeC {\'e}thode des plus proches voisins}{18}{section.5.1}
 \contentsline {section}{\numberline {5.2}R\IeC {\'e}sulats avec un GMM}{20}{section.5.2}
-\contentsline {section}{\numberline {5.3}R\IeC {\'e}sultats avec un HMM}{24}{section.5.3}
+\contentsline {section}{\numberline {5.3}R\IeC {\'e}sultats avec un HMM}{25}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1}D\IeC {\'e}termination du mod\IeC {\`e}le}{25}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Caract\IeC {\'e}risation statistique du mod\IeC {\`e}le}{27}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Applications du mod\IeC {\`e}le}{28}{subsection.5.3.3}
-\contentsline {chapter}{\numberline {6}Conclusion et perspectives}{32}{chapter.6}
-\contentsline {chapter}{\numberline {7}Retour sur exp\IeC {\'e}rience}{34}{chapter.7}
-\contentsline {chapter}{\numberline {A}Premi\IeC {\`e}re version de la publication concernant les erreurs de pr\IeC {\'e}visions \IeC {\'e}oliennes}{35}{appendix.A}
-\contentsline {chapter}{\numberline {B}Description des algorithmes permettant la r\IeC {\'e}solution des 3 grands probl\IeC {\`e}mes li\IeC {\'e}s aux HMM}{47}{appendix.B}
-\contentsline {section}{\numberline {B.1}Recherche de la s\IeC {\'e}quence la plus probable}{48}{section.B.1}
+\contentsline {subsection}{\numberline {5.3.2}Caract\IeC {\'e}risation statistique du mod\IeC {\`e}le}{28}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Applications du mod\IeC {\`e}le}{29}{subsection.5.3.3}
+\contentsline {chapter}{\numberline {6}Conclusion et perspectives}{33}{chapter.6}
+\contentsline {chapter}{\numberline {7}Retour sur exp\IeC {\'e}rience}{35}{chapter.7}
+\contentsline {chapter}{\numberline {A}Premi\IeC {\`e}re version de la publication concernant les erreurs de pr\IeC {\'e}visions \IeC {\'e}oliennes}{36}{appendix.A}
+\contentsline {chapter}{\numberline {B}Description des algorithmes permettant la r\IeC {\'e}solution des 3 grands probl\IeC {\`e}mes li\IeC {\'e}s aux HMM}{48}{appendix.B}
+\contentsline {section}{\numberline {B.1}Probabilit\IeC {\'e} d\IeC {\textquoteright }observation d\IeC {\textquoteright }une s\IeC {\'e}quence}{48}{section.B.1}
+\contentsline {section}{\numberline {B.2}Recherche de la s\IeC {\'e}quence la plus probable}{49}{section.B.2}
+\contentsline {section}{\numberline {B.3}Apprentissage}{50}{section.B.3}
