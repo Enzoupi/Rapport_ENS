@@ -7,8 +7,8 @@ Scanning style file /home/enzo/.miktex/texmfs/install/makeindex/nomencl/nomencl.
 ** Input style error (file = /home/enzo/.miktex/texmfs/install/makeindex/nomencl/nomencl.ist, line = 72):
    -- Unknown specifier lethead_flag.
 ...done (10 attributes redefined, 3 ignored).
-Scanning input file Rapport_Stage_ENS.nlo....done (17 entries accepted, 0 rejected).
-Sorting entries....done (80 comparisons).
-Generating output file Rapport_Stage_ENS.nls....done (40 lines written, 0 warnings).
+Scanning input file Rapport_Stage_ENS.nlo....done (26 entries accepted, 0 rejected).
+Sorting entries....done (122 comparisons).
+Generating output file Rapport_Stage_ENS.nls....done (58 lines written, 0 warnings).
 Output written in Rapport_Stage_ENS.nls.
 Transcript written in Rapport_Stage_ENS.nlg.

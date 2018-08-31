@@ -2,39 +2,57 @@
 
  \nomgroup{A}
 
-  \item [{$\bm{\pi}$}]\begingroup Probabilités initiales d'appartenance à l'un ou l'autre des états cachés (HMM et MSAR)\nomeqref {3.0}
-		\nompageref{11}
-  \item [{$\Gamma$}]\begingroup Matrice de transition entre les états cachés (HMM et MSAR)\nomeqref {3.0}
-		\nompageref{11}
-  \item [{$\sigma$}]\begingroup Variance des densités de probabilités Gaussiennes de dimension $d \times d$ (HMM et MSAR)\nomeqref {3.2}
-		\nompageref{12}
+  \item [{$\bm{\pi}$}]\begingroup Probabilités initiales d'appartenance à l'un ou l'autre des états cachés (HMM et MSAR)\nomeqref {3.4}
+		\nompageref{13}
+  \item [{$\bm{X}^e$}]\begingroup Jeu de données d'entraînement\nomeqref {2.0}
+		\nompageref{9}
+  \item [{$\bm{X}^t$}]\begingroup Jeu de données de test\nomeqref {2.0}
+		\nompageref{9}
+  \item [{$\Gamma$}]\begingroup Matrice de transition entre les états cachés (HMM et MSAR)\nomeqref {3.4}
+		\nompageref{13}
+  \item [{$\sigma$}]\begingroup Variance des densités de probabilités Gaussiennes de dimension $d \times d$ (HMM et MSAR)\nomeqref {3.6}
+		\nompageref{14}
   \item [{$\widehat{d}$}]\begingroup Indice de la journée indiquant l'heure de la correction\nomeqref {5.0}
-		\nompageref{18}
-  \item [{$a_0$}]\begingroup Moyenne des densités de probabilités (HMM) ou coefficient constant du processus auto-regréssif (MSAR)\nomeqref {3.2}
-		\nompageref{12}
-  \item [{$d$}]\begingroup Dimension de l'espace\nomeqref {3.2}
-		\nompageref{12}
-  \item [{$m$}]\begingroup Nombre d'états cachés (HMM et MSAR)\nomeqref {3.0}
+		\nompageref{20}
+  \item [{$a_0$}]\begingroup Moyenne des densités de probabilités (HMM) ou coefficient constant du processus auto-regréssif (MSAR)\nomeqref {3.6}
+		\nompageref{14}
+  \item [{$A_1,\cdots,A_p$}]\begingroup $P$ paramètre(s) d'un processus auto-régressif saisonnier\nomeqref {3.0}
 		\nompageref{11}
-  \item [{ACP}]\begingroup Analyse par Composante Principale\nomeqref {3.6}
-		\nompageref{15}
+  \item [{$a_1,\cdots,a_p$}]\begingroup $p$ paramètre(s) d'un processus auto-régressif\nomeqref {3.0}
+		\nompageref{11}
+  \item [{$B_1,\cdots,B_p$}]\begingroup $Q$ paramètre(s) d'un processus moyenne mobile saisonnier\nomeqref {3.0}
+		\nompageref{11}
+  \item [{$b_1,\cdots,b_p$}]\begingroup $q$ paramètre(s) d'un processus moyenne mobile\nomeqref {3.0}
+		\nompageref{11}
+  \item [{$d$}]\begingroup Dimension de l'espace\nomeqref {3.6}
+		\nompageref{14}
+  \item [{$m$}]\begingroup Nombre d'états cachés (HMM et MSAR)\nomeqref {3.4}
+		\nompageref{13}
+  \item [{ACP}]\begingroup Analyse par Composante Principale\nomeqref {3.11}
+		\nompageref{16}
+  \item [{AR}]\begingroup Processus auto-régressif\nomeqref {3.0}
+		\nompageref{11}
   \item [{ARMA}]\begingroup Processus auto-régressifs et moyenne mobile\nomeqref {1.0}
 		\nompageref{6}
-  \item [{BIAS}]\begingroup Erreur moyenne\nomeqref {3.9}
+  \item [{BIAS}]\begingroup Erreur moyenne\nomeqref {3.14}
+		\nompageref{17}
+  \item [{BIC}]\begingroup Bayesian Information Criterion\nomeqref {3.11}
 		\nompageref{16}
-  \item [{BIC}]\begingroup Bayesian Information Criterion\nomeqref {3.6}
-		\nompageref{16}
-  \item [{GMM}]\begingroup Modèle de mélange gaussien\nomeqref {3.5}
-		\nompageref{15}
-  \item [{HMM}]\begingroup Modèle de Markov Caché ( \ref{subsec:Modeles_HMM} )\nomeqref {3.0}
+  \item [{GMM}]\begingroup Modèle de mélange gaussien\nomeqref {3.3}
+		\nompageref{12}
+  \item [{HMM}]\begingroup Modèle de Markov Caché ( \ref{subsec:Modeles_HMM} )\nomeqref {3.4}
+		\nompageref{13}
+  \item [{Kmeans}]\begingroup Méthode de partitionnement K-moyennes\nomeqref {3.3}
+		\nompageref{12}
+  \item [{MA}]\begingroup Processus moyenne mobile\nomeqref {3.0}
 		\nompageref{11}
-  \item [{Kmeans}]\begingroup Méthode de partitionnement K-moyennes\nomeqref {3.5}
-		\nompageref{14}
-  \item [{MAE}]\begingroup Erreur moyenne absolue\nomeqref {3.7}
+  \item [{MAE}]\begingroup Erreur moyenne absolue\nomeqref {3.12}
 		\nompageref{16}
-  \item [{MS-AR}]\begingroup Modèle Markov Switching Auto Regressive (\ref{subsec:Modeles_MSAR})\nomeqref {3.0}
+  \item [{MS-AR}]\begingroup Modèle Markov Switching Auto Regressive (\ref{subsec:Modeles_MSAR})\nomeqref {3.4}
+		\nompageref{13}
+  \item [{RMSE}]\begingroup Erreur quadratique moyenne\nomeqref {3.13}
+		\nompageref{16}
+  \item [{SARMA}]\begingroup ARMA saisonnier\nomeqref {3.0}
 		\nompageref{11}
-  \item [{RMSE}]\begingroup Erreur quadratique moyenne\nomeqref {3.8}
-		\nompageref{16}
 
 \end{thenomenclature}

@@ -13,8 +13,28 @@
 \pagestyle{corpus}
 \begin{document}
 
+\makeatletter
+\begin{titlepage}
+	\begin{center}
+		\Huge\@title \\ \vfill
+		
+		\hrulefill \\
+		
+		\Large \textsc{\@author} \\ Stage de master 2 Calcul Scientifique et Modélisation \\
+		Laboratoire SATIE \\ \@date \\ \hrulefill \vfill
+		
+		\includegraphics[height=5cm]{Images/logos/ENS_Rennes.png}  \includegraphics[height=5cm]{Images/logos/logo_ur1.jpg} 
+		\\ \vspace{1cm}
+		\includegraphics[height=3cm]{Images/logos/logo_SATIE.jpg} \hfill %\includegraphics[height=2cm]{Imageslogos/logo_ur1.jpg} \hfill ~
+		\\ \vfill
+		
+		\large \textsc{Encadrant universitaire} : Valérie MONBET  \\
+		\textsc{Encadrant au SATIE} : Roman LE GOFF LATIMIER 
+	\end{center}
+\end{titlepage}
+\makeatother
 
-\maketitle
+
 \tableofcontents
 
 \printnomenclature
@@ -178,13 +198,43 @@ En fin de chapitre certaines métriques et critères utilisés pour choisir et c
 
 Cette section peut donc être lue telle quelle mais il sera sûrement plus agréable pour le lecteur d'y revenir quand le besoin se fera sentir. Dans cette optique, un lien se référant à la section théorique correspondante sera inséré dans le texte quand les notions seront rencontrées pour la première fois.
 
+\section{Seasonal Auto-Regressive Moving Average (SARMA)}
+\label{sec:Model_SARMA}
+\nomenclature{AR}{Processus auto-régressif}
+\nomenclature{MA}{Processus moyenne mobile}
+%\nomenclature{ARMA}{Modèles autorégressifs et moyenne mobile}
+\nomenclature{SARMA}{ARMA saisonnier}
+\nomenclature{$a_1,\cdots,a_p$}{$p$ paramètre(s) d'un processus auto-régressif}
+\nomenclature{$b_1,\cdots,b_p$}{$q$ paramètre(s) d'un processus moyenne mobile}
+\nomenclature{$A_1,\cdots,A_p$}{$P$ paramètre(s) d'un processus auto-régressif saisonnier}
+\nomenclature{$B_1,\cdots,B_p$}{$Q$ paramètre(s) d'un processus moyenne mobile saisonnier}
+
+Le modèle ARMA est un modèle classique dans le traitement des séries temporelles. Il combine  notamment deux processus différents : les processus auto-régressifs -- AR -- et les processus moyenne mobile -- MA --. Soit $X_1,X_2,\cdots,X_T$ une suite d'observations indexées issue d'un processus $\bm{X}$ et indexée par le temps. On note $X_t$ un élément de cette série temporelle. Alors $\bm{X}$ est dit processus ARMA(p,q) s'il est définit tel que : 
+
+\begin{equation}
+	X_t = \epsilon_t + \sum_{i = 1}^{p} a_i X_{t-i} + \sum_{j = 1}^{q} b_i \times \epsilon_{t-i}
+\end{equation}
+
+avec les $a_i$ qui correspondent aux paramètres du modèle auto-régressif, les $b_i$ aux paramètres du modèle de moyenne mobile et les $\epsilon_i$ qui sont les termes d'erreurs. Ces termes d'erreurs sont supposés être des bruits blancs centrés (dont l'espérance est nulle) et de variance $\sigma^2$.
+
+Ces modèles intègrent parfois la saisonnalité de manière paramétrique. On parle alors de modèle ARMA saisonnier (SARMA). Il s'agit de combiner les processus AR et MA aux instants précédents avec ces mêmes processus mais appliqués une période plus tôt. On les note SARMA(p,q)(P,Q)[s] --  $s$ représente ici la période de la saisonnalité considérée -- et ils s'écrivent donc :
+
+\begin{equation}
+X_t = \epsilon_t + \sum_{i = 1}^{p} a_i X_{t-i} + \sum_{j = 1}^{q} b_i \times \epsilon_{t-i} + \sum_{k = 1}^{P} A_i X_{t-i-s} + \sum_{l = 1}^{Q} B_i \times \epsilon_{t-i-s}
+\end{equation}
+
+Il est possible de généraliser ce modèle en introduisant la différenciation d'ordre 1. Auquel cas le modèle se note SARMA(p,d,q)(P,D,Q)[s] avec $\{ d,D\} \in \{0,1\}$ et s'écrit :
+
+\begin{equation}
+X_t = \epsilon_t + \sum_{i = 1}^{p} a_i X_{t-i} + \sum_{j = 1}^{q} b_i \times \epsilon_{t-i} + d X_{t-1} +  \sum_{k = 1}^{P} A_i X_{t-i-s} + \sum_{l = 1}^{Q} B_i \times \epsilon_{t-i-s} + D X_{t-s}
+\end{equation}
+
+
 \section{K-moyennes (Kmeans)}
 \label{sec:Kmeans}
 \nomenclature{Kmeans}{Méthode de partitionnement K-moyennes}
 
 Le modèle des K moyennes est un est un modèle de partitionnement de données (ou souvent dit de \textit{"clustering"} d'après la dénomination anglaise). Le problème consiste donc à diviser un ensemble de points en un certains nombre de groupe $m$ de façon à ce qu'ils minimisent une certaine fonction.
-
-\todo{Préciser la complexité}
 
 Dans le cas présent, j'ai fait appel à la routine R \texttt{Kmeans}, qui cherche à minimiser la somme des erreurs quadratiques au sein de chaque groupe grâce à l'algorithme heuristique décrit dans \cite{hartigan_algorithm_1979}. Il fonctionne de la façon suivante : soit une partition de l'ensemble des points $C$. Alors, un point aléatoire $x$ est choisi et le centre du cluster auquel il appartenait est mis à jour comme si ce point ne lui appartenait plus. Le point choisi aléatoirement est ensuite réassigné au cluster qui permet de minimiser le plus possible la fonction de coût total, c'est à dire la somme des erreurs quadratiques au sein des clusters. Par construction, cet algorithme permet de ne jamais accroître la fonction de coût. Ainsi, il donne assurance qu'une partition dont les points sont fixés sera atteinte après un nombre fini d'itérations.
 
@@ -362,8 +412,8 @@ $ \sigma_t^2 = \alpha_0 + \alpha_1  \epsilon_{t-1}^2 + ... + \alpha_p  \epsilon_
 
 
 
-\section{Analyse par Composante Principale}
-\label{sec:Model_ACP}
+%\section{Analyse par Composante Principale}
+%\label{sec:Model_ACP}
 \nomenclature{ACP}{Analyse par Composante Principale}
 
 \section{Métriques}
@@ -637,7 +687,7 @@ Finalement, l'utilisation de modèle GMM n'a pas permis d'améliorer les résult
 En gardant à l'esprit que ce modèle est identifié dans le but de générer des prévisions sur plusieurs journées, il est impératif de donner plus de liberté au HMM qu'au GMM quant à la structure de sa matrice de variance covariance. En effet, si on ne relaxe pas la contrainte d'avoir une valeur unique sur la diagonale de variance covariance alors le modèle ne sera jamais en mesure de capturer les erreurs nulles ou négligeables la nuit. Les scénarios générés n'auraient pas alors cette caractéristique et les performances en termes d'applications seraient grandement réduites. Cependant, ce faisant, le nombre de paramètres passe de chaque modèle devient alors :
 
 \begin{equation}
-\underbrace{K-1}_\text{Probabilités initiales}  + \underbrace{K \times d}_\text{Centres}  +  \underbrace{K \times d}_\text{Matrices de variance covariance} + \underbrace{K \times K}_\text{Matrice de transition}
+\underbrace{m-1}_\text{Probabilités initiales}  + \underbrace{m \times d}_\text{Centres}  +  \underbrace{m \times d}_\text{Matrices de variance covariance} + \underbrace{m \times (m-1)}_\text{Matrice de transition}
 \end{equation}
 
 Par exemple, en prenant le cas d'une observation toutes les heures ($d=24$) et de 6 états cachés ($m=6$) par identification avec le GMM, il faut donc identifier $329$ paramètres. C'est donc plus du double des $155$ paramètres du GMM sélectionné dans la section \ref{sec:PV_GMM}. Pour pallier ce problème une réduction de dimension de l'espace par la méthode de l'ACP (voir \ref{sec:Model_ACP}) a été mise en œuvre. Les résultats obtenus en fonction du nombre de composantes sélectionnées sont présentés dans la figure \ref{fig:PV_HMM_ACP_DimSelect}. Le nombre de composantes principales a été choisi de façon à expliquer $99 \%$ de la variance totale, soit 6 composantes principales. 
@@ -887,53 +937,63 @@ A partir de ces probabilités d'appartenance, il est possible de faire de la pr�
 
 Il est intéressant de constater que dans presque tous les cas, la série originale est bien intégrée dans le faisceau de scénarios. Cependant le 11 février illustre comment tous les scénarios prédits sont positifs ou presque alors que l'erreur réellement observée est négative. Par ailleurs, il est important de remarquer comment l'initialisation, traduite par des probabilités d'appartenance, influe le faisceau de scénarios générés. On constate par exemple que l'initialisation du 27 Janvier donne lieu a des scénarios équitablement positifs ou négatifs et de faible amplitude. En effet parmi les 100 scénarios, très peu sortent de l'intervalle des $20\%$ d'erreurs. Le 25 Juin et le 10 février génèrent quant à eux des scénarios de relativement faible amplitude mais en très grosse majorité positifs.
 
-Afin de caractériser ces ensembles de prédictions, \cite{madsen_protocol_nodate} préconise l'utilisation d'au moins trois critères, à savoir la MAE (\ref{subsec:Model_Metric_MAE}), l'erreur quadratique (\ref{subsec:Model_Metric_RMSE}) et l'erreur moyenne (\ref{subsec:Model_Metric_BIAS}). Les résultats obtenus sur ces métriques et par scénario sont présentés dans le tableau \ref{tab:PV_Metrics}. Comme ces valeurs ne sont pas très explicites en elles mêmes, il est plus simple de les comparer. Il a été choisi ici de les comparer aux résultats obtenus par un modèle classique de traitement de série temporelle : un Seasonal Auto Regressive Integrated Moving Average (SARIMA). Le choix des paramètres du modèle -- l'ordre auto régressif, l'ordre de différenciation et l'ordre de la moyenne mobile ainsi que leurs homologues correspondant aux termes saisonniers -- sont choisis par le critère BIC. Les coefficients du modèle SARIMA obtenu sont présentés dans le tableau
+Afin de caractériser ces ensembles de prédictions, \cite{madsen_protocol_nodate} préconise l'utilisation d'au moins trois critères, à savoir la MAE (\ref{subsec:Model_Metric_MAE}), l'erreur quadratique (\ref{subsec:Model_Metric_RMSE}) et l'erreur moyenne (\ref{subsec:Model_Metric_BIAS}). Les résultats obtenus sur ces métriques et par scénario sont présentés dans le tableau \ref{tab:PV_Metrics}. Comme les valeurs ne sont pas très explicites en elles mêmes, il est plus simple de les comparer.
 
-
-\begin{table}[h]
-\centering
-\caption{Score obtenus par différents modèles pour la simulation de 100 scénarios}
-\label{tab:PV_Metrics}
-\begin{tabular}{lccc}
-	& MAE  & RMSE & BIAS \\
-HMM	& $2.049374 \times 10^{-2}$ & $4.680091\times 10^{-2}$ & $1.05063 \times 10^{-2}$	    \\
-SARIMA	& $2.998845 \times 10^{-2}$ & $4.994762 \times 10^{-2}$ & $-2.412651 \times 10^{-5}$
-\end{tabular}
+\begin{table}[htbp]
+	\centering
+	\caption{Score obtenus par différents modèles pour la simulation de 100 scénarios}
+	\label{tab:PV_Metrics}
+	\begin{tabular}{lccc}
+		& MAE  & RMSE & BIAS \\
+		HMM	& $2.049374 \times 10^{-2}$ & $4.680091\times 10^{-2}$ & $1.05063 \times 10^{-2}$	    \\
+		SARIMA	& $2.998845 \times 10^{-2}$ & $4.994762 \times 10^{-2}$ & $-2.412651 \times 10^{-5}$
+	\end{tabular}
 \end{table}
+
+Il a été choisi ici de les comparer aux résultats obtenus par un modèle classique de traitement de série temporelle : un Seasonal Auto Regressive Moving Average (voir section \ref{sec:Model_SARMA}). Le choix des paramètres du modèle -- l'ordre auto régressif, l'ordre de différenciation et l'ordre de la moyenne mobile ainsi que leurs homologues correspondant aux termes saisonniers -- est déterminé via le critère BIC. Le modèle retenu est est un SARMA(1,0,1)(1,1,0)[24] avec $a_1 = 0.85$ , $b_1 = 0.60$ et $A_1 = -0.44$. Des exemples de scénarios générés par ce modèle -- pour les mêmes journées que celle de la figure \ref{fig:PV_HMM_Scenarios} -- sont présentés dans la figure \ref{fig:PV_SARIMA_Scenarios}. Il est possible de constater que la différenciation tenant compte de la saisonnalité quotidienne pilote l'allure moyenne des scénarios générés. Ce modèle se rapproche donc d'une persistance sur les $d$ dernières observations auxquelles un bruit est ajouté. Ce modèle ne contient pas de paramètre permettant de prendre en compte la nullité des erreurs la nuit et il génère donc des scénarios qui ne possèdent pas cette caractéristique.
 
 \begin{figure}[htbp]
  	\begin{center}
  		
  		\begin{subfigure}[b]{0.5\linewidth}
  			\centering
- 			\includegraphics[width = 0.95 \linewidth]{Images/PV/SARIMA/175.pdf}
+ 			\includegraphics[width = 0.9 \linewidth]{Images/PV/SARIMA/175.pdf}
  			\caption{25-27 Juin 2017}
  			%\vspace{4ex}
  		\end{subfigure}%%
  		\begin{subfigure}[b]{0.5\linewidth}
  			\centering
- 			\includegraphics[width = 0.95 \linewidth]{Images/PV/SARIMA/187.pdf}
+ 			\includegraphics[width = 0.9 \linewidth]{Images/PV/SARIMA/187.pdf}
  			\caption{7-9 Juillet 2017}
  			%\vspace{4ex}
  		\end{subfigure}
  		
  		\begin{subfigure}[b]{0.5\linewidth}
  			\centering
- 			\includegraphics[width = 0.95 \linewidth]{Images/PV/SARIMA/27.pdf}
+ 			\includegraphics[width = 0.9 \linewidth]{Images/PV/SARIMA/27.pdf}
  			\caption{27-29 Janvier 2017}
  			%\vspace{4ex}
  		\end{subfigure}%%
  		\begin{subfigure}[b]{0.5\linewidth}
  			\centering
- 			\includegraphics[width = 0.95 \linewidth]{Images/PV/SARIMA/41.pdf}
+ 			\includegraphics[width = 0.9 \linewidth]{Images/PV/SARIMA/41.pdf}
  			\caption{10-12 février 2017}
  			%\vspace{4ex}
  		\end{subfigure}
  	\end{center}
  	
- 	\caption{Génération de 100 scénarios à partir d'initialisations différentes matérialisées par un fond coloré. Les différents scénarios sont en violet, leur moyenne en rose, leur intervalle de prévision à $90\%$ en vert et enfin la série originale en orange.}
+ 	\caption{Génération de 100 scénarios à partir d'initialisations différentes. Les différents scénarios sont en violet, leur moyenne en rose, leur intervalle de prévision à $90\%$ en vert et enfin la série originale en orange.}
  	\label{fig:PV_SARIMA_Scenarios} 
 \end{figure}
+
+Le tableau \ref{tab:PV_Metrics} montre que le HMM parvient à obtenir une erreur quadratique et une erreur absolue plus faible que le SARIMA. Cependant le modèle SARIMA a un biais par rapport à la moyenne qui est nettement plus faible. Il semble assez surprenant que les écarts de scores par rapport aux différentes métriques ne soient pas plus important au vu de la grande différence dans les scénarios générés. Pour avoir une description plus fine des erreurs, il faudrait les calculer pour chaque horizon de prévision et en visualiser l'évolution. Cette méthode serait plus susceptible d'exhiber des différences notables entre les deux modèles. 
+
+
+
+
+
+
+
 
 
 
@@ -942,7 +1002,7 @@ Au cours de ce stage, des séries d'erreurs de prévision de production d'énerg
 
 Concernant les erreurs de prévision de production éolienne, un modèle de type Markov Switching Auto-Regressive (MSAR) avec 3 états cachés et des modèles AR(2) a été ajusté sur la série. L'augmentation en terme de complexité du modèle MSAR par rapport au AR(1) précédemment proposé (21 paramètres contre 2) permet de prendre en compte des comportements non linéaires exhibés par la série temporelle. Ces comportements se manifestaient essentiellement sous la forme de période avec des variances faibles, moyennes ou fortes. En s'intéressant aux comportements statistiques de séries synthétiquement générées par les modèles, un très net gain est obtenu par le MSAR. En effet il a été montré que la prise en compte de non-linéarités permettait une meilleure représentation de la volatilité -- avec les dépassements positifs de valeurs seuil -- et de la dynamique générale -- avec le temps de séjour moyen au dessus de valeurs seuils --. Cependant, le gain dans un exemple d'application sur une gestion optimale de stockage n'a pas été aussi notable que lors de l'étude des distributions statistiques. Cette amélioration, bien que faible, peut quand même s'avérer non négligeable économiquement si elle est envisagée sur une ferme de production qui, par un facteur d'échelle, multipliera le résultat obtenu sur l'exemple << jouet >>. La saisonnalité annuelle des erreurs de prévisions n'a pas été prise en compte dans l'ajustement des paramètres de ce MSAR. Intégrer des transitions non homogènes en fonction de la date calendaire pourrait permettre de capturer le fait que les périodes à faible volatilité se manifestent surtout dans les saisons hivernales. Cette nouvelle introduction devrait permettre d'améliorer les résultats de manière sensible. Par ailleurs, en s'inspirant des modèles utilisés en économie, la modélisation de cette variance variable par des modèles GARCH a été réalisée mais les résultats n'étaient pas suffisamment probants pour être développés plus avant.
 
-Concernant les erreurs de prévision issues de centrales photovoltaïques, plusieurs modèles avec objectifs variés ont été ajustés. Dans un premier temps, la présence d'information valable dans la série temporelle dans un but de correction au cours de la journée a été testée avec la méthode des plus proches voisins. Cette méthode a conduit à une correction d'environ $35 \%$ en identifiant la trajectoire à 10h du jour considéré et l'ensemble des trajectoires déjà connues. Cette information est suffisante en elle-même pour mettre en exergue l'information résiduelle dans les séries d'erreurs de prévisions photovoltaïques et justifier de continuer leur étude. Dans une mesure de simplification, l'identification a ensuite été testée par rapport à un certains nombre de trajectoires types identifiées par la méthode des Kmeans. Ainsi en limitant l'identification parmi un jeu de 20 trajectoires -- au lieu de 2190 précédemment -- permettait une réduction d'erreur de $20 \%$ au cours de la journée dans les même conditions. Un modèle de mélange gaussien à ensuite été ajusté afin d'obtenir de l'information supplémentaire sur les variances des trajectoires caractéristiques. Cette connaissance permet entre autre de pouvoir réaliser l'étude duale de celle qui a été faite pour l'éolien, à savoir une stratégie de gestion optimale de stockage. Toujours dans cette optique, le modèle doit être en mesure de générer des scénarios non pas uniquement sur le restant d'une journée mais sur des temps plus longs. L'intérêt de 
+Concernant les erreurs de prévision issues de centrales photovoltaïques, plusieurs modèles avec des objectifs variés ont été ajustés. Dans un premier temps, la présence d'information valable dans la série temporelle dans un but de correction au cours de la journée a été testée avec la méthode des plus proches voisins. Cette méthode a conduit à une correction d'environ $35 \%$ en identifiant la trajectoire à 10h du jour considéré à l'ensemble des trajectoires déjà connues. Cette information est suffisante en elle-même pour mettre en exergue l'information résiduelle dans les séries d'erreurs de prévisions photovoltaïques et justifier de continuer leur étude. Dans une mesure de simplification, l'identification a ensuite été testée par rapport à un certains nombre de trajectoires types identifiées par la méthode des Kmeans. Ainsi en limitant l'identification parmi un jeu de 20 trajectoires -- au lieu de 2190 précédemment -- permettait une réduction d'erreur de $20 \%$ au cours de la journée dans les même conditions. Un modèle de mélange gaussien à ensuite été ajusté afin d'obtenir de l'information supplémentaire sur les variances des trajectoires moyennes. Cette connaissance permet entre autre de pouvoir réaliser l'étude duale de celle qui a été faite pour l'éolien, à savoir une stratégie de gestion optimale de stockage. Toujours dans cette optique, le modèle doit être en mesure de générer des scénarios non pas uniquement sur le restant d'une journée mais sur des temps plus longs. Le modèle de mélange gaussien n'étant pas destiné à faire de la prévision, il ne pourrait que donner un profil moyen identique à toutes les journées futures qu'il aurait à anticiper. C'est pourquoi un modèle de Markov caché a été introduit. Les paramètres qui le définissent sont essentiellement les même que le modèle de mélange Gaussien mais avec une matrice de transition en plus. Elle permet de décrire la dynamique de succession entre les différents états et donc de faire de la prévision. Cependant l'introduction de cette matrice engendre de nombreux paramètres supplémentaires à estimer. Pour en réduire leur nombre, un analyse par composante principale à permis de déterminer un sous-espace de dimension inférieure permettant d'avoir une description fiable de l'espace de départ. Les critères statistiques étudiés ont montré une bonne adéquation entre des séries synthétiques générées par le modèle HMM et la série originale. Afin d'illustrer les améliorations apportées par ce modèle, il a été comparé a un modèle classique de traitement de série temporelle dans un contexte de prévision à 48 heures. Le HMM a obtenu de meilleurs scores en termes d'erreur absolue et d'erreur quadratique mais un moins bon score pour l'erreur moyenne. Ces résultats permettent de penser que l'utilisation du modèle HMM peut permettre d'améliorer les résultats en termes de stratégie optimale de gestion.  Par ailleurs, bien qu'ayant déjà fait part de bons résultats, ce modèle pourrait encore être grandement amélioré. Par exemple l'utilisation de co-variables météorologiques pourrait amener deux contributions. Tout d'abord cela permettrait de gagner beaucoup en matière d'interprétabilité du modèle. Enfin ces co-variables pourraient être utilisées pour définir des probabilités de transitions non-homogènes, ce qui permettrait de raffiner les prévisions produites.
 
 
 \chapter{Retour sur expérience}
