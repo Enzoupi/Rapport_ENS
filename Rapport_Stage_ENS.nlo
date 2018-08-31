@@ -1,4 +1,6 @@
 \nomenclatureentry{aARMA@[{ARMA}]\begingroup Processus auto-régressifs et moyenne mobile\nomeqref {1.0}|nompageref}{6}
+\nomenclatureentry{a$\bm{X}^e$@[{$\bm{X}^e$}]\begingroup Jeu de données d'entraînement\nomeqref {2.0}|nompageref}{9}
+\nomenclatureentry{a$\bm{X}^t$@[{$\bm{X}^t$}]\begingroup Jeu de données de test\nomeqref {2.0}|nompageref}{9}
 \nomenclatureentry{aKmeans@[{Kmeans}]\begingroup Méthode de partitionnement K-moyennes\nomeqref {3.0}|nompageref}{11}
 \nomenclatureentry{aGMM@[{GMM}]\begingroup Modèle de mélange gaussien\nomeqref {3.0}|nompageref}{12}
 \nomenclatureentry{aHMM@[{HMM}]\begingroup Modèle de Markov Caché ( \ref{subsec:Modeles_HMM} )\nomeqref {3.1}|nompageref}{12}

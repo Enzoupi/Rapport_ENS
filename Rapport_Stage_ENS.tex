@@ -114,7 +114,7 @@ La figure \ref{fig::Data_Eolien_BPA_NormWindErrs_1Month} représente quand à el
 \section{Production Photovoltaïque}
 \label{sec:Data_PV}
 %\subsection{Données Bavière (TenneT)}
-Des données agrégées de production d'énergie photovoltaïque ainsi que les prévisions $J-1$ correspondantes sont mises à disposition par TenneT sur leur \href{https://www.tennet.eu/electricity-market/transparency-pages/transparency-germany/}{site web} \footnote{\url{https://www.tennet.eu/electricity-market/transparency-pages/transparency-germany/}}. Les données fournies sur la Bavière ont été utilisées pour cette étude. Ces données sont libres d'accès et ouvertes à la publication scientifique. Elles vont du $1^{er}$ décembre 2010 jusqu'à aujourd'hui avec un pas d'échantillonnage de 15 minutes (voir figure \ref{fig::Donnees_TenneT_Bayern_WHole}). Aucune covariable n'est mise à disposition. N'ayant pas eu accès à la capacité de production installée en Bavière sur cette période, ces données sont normalisées par des maxima de prévisions/productions sur certaines périodes. Cette capacité de production installée estimée est aussi représentée sur la figure \ref{fig::Donnees_TenneT_Bayern_WHole}. Les données manquantes (190 pour les prévisions et 69 pour les réalisations) sont remplacées par la dernière valeur observée temporellement parlant. 
+Des données agrégées de production d'énergie photovoltaïque ainsi que les prévisions $J-1$ correspondantes sont mises à disposition par TenneT sur leur \href{https://www.tennet.eu/electricity-market/transparency-pages/transparency-germany/}{site web} \footnote{\url{https://www.tennet.eu/electricity-market/transparency-pages/transparency-germany/}}. Les données fournies sur la Bavière ont été utilisées pour cette étude. Ces données sont libres d'accès et ouvertes à la publication scientifique. Elles vont du $1^{er}$ décembre 2010 jusqu'à aujourd'hui avec un pas d'échantillonnage de 15 minutes (voir figure \ref{fig::Donnees_TenneT_Bayern_WHole}). Aucune co-variable n'est mise à disposition. N'ayant pas eu accès à la capacité de production installée en Bavière sur cette période, ces données sont normalisées par des maxima de prévisions/productions sur certaines périodes. Cette capacité de production installée estimée est aussi représentée sur la figure \ref{fig::Donnees_TenneT_Bayern_WHole}. Les données manquantes (190 pour les prévisions et 69 pour les réalisations) sont remplacées par la dernière valeur observée temporellement parlant. 
 
 \begin{figure}[htbp]
 	\begin{center}
@@ -135,7 +135,7 @@ Des données agrégées de production d'énergie photovoltaïque ainsi que les p
 
 La série temporelle des erreurs de prévisions alors obtenue est présentée sur la figure \ref{fig:Data_PV_PredErrs}. Comme l'illustre la partie zoomée, la structure de ces données est particulière avec une alternance de plages a valeurs négligeables et non négligeables.
 
-\begin{figure}	
+\begin{figure}[htb]
 	\begin{center}
 		\includegraphics[width = 0.8 \textwidth]{Images/Data/PV/Tennet/TennetPrdErrors_WholeZoom_Mod.pdf}
 		\caption{Erreur de prévision de production d'énergie solaire sur la Bavière}
@@ -162,6 +162,11 @@ Cette structure correspond en fait à une saisonnalité quotidienne comme le mon
 	\end{center}
 \end{figure}
 
+\nomenclature{$\bm{X}^e$}{Jeu de données d'entraînement}
+\nomenclature{$\bm{X}^t$}{Jeu de données de test}
+
+\newpage
+Dans la section concernant le photovoltaïque, $\bm{X}$ représentera l'ensemble des journées observées. Tout élément $X$ de $\bm{X}$ sera donc représentatif d'une journée observée et donc constitué de $d$ observations. Ce jeu de données a été scindé en deux. Une première partie avec les années allant de $2010$ à $2016$ -- notée $\bm{X}^e$ -- constitue le jeu de données d'entraînement. L'année $2017$ -- notée $\bm{X}^t$ -- constitue elle le jeu de données test.  
 
 
 \pagestyle{corpus}
@@ -392,6 +397,13 @@ L'erreur quadratique moyenne est définie comme étant :
 \subsection{Erreur moyenne (BIAS)}
 \nomenclature{BIAS}{Erreur moyenne}
 \label{subsec:Model_Metric_BIAS}
+L'erreur moyenne permet d'identifier les erreurs systématiques commises par le modèle. Elle correspond à l'estimateur du biais du modèle vis-à-vis de la moyenne. Elle se calcule de la façon suivante :
+
+\begin{equation}
+BIAS = \frac{1}{N} \sum_{i=1}^{T} {\left( \widetilde{P} - P \right) }
+\end{equation}
+
+
 %
 %\subsection{Energy Score}
 %On présente ici une métrique, l'Energy Score, qui cherche à qualifier la qualité d'un ensemble de scénarios générés dans un contexte de prédiction. Cette métrique est introduite dans \cite{tilmann_gneiting_probabilistic_2007} et son caractère discriminant a été discuté dans \cite{pinson_discrimination_2013}.Il pondère l'écart entre la réalité avec la moyenne des scénarios et la largeur du spectre des scénarios. En notant $J$ le nombre total de scénarios, $z_t$ la série réalisée et $\hat{z}_t^{j}$ le $j^{eme}$ scénario, l'\textit{Energy Score} est définit dans l'équation \ref{eq::EnergyScore}. C'est un score orienté négativement : le meilleur ensemble de scénarios obtiendra donc le score le plus faible.
@@ -419,7 +431,7 @@ Les poursuites d'études, notamment celles concernant les transitions non homog�
 
 \chapter{Erreurs de prévision photovoltaïque}
 \label{chap:PV}
-Les erreurs de prévision de production photovoltaïques diffèrent par nature de celles de production éolienne. Alors que le vent peut être d'intensité non négligeable à tout instant, l'irradiance sera quant à elle complètement nulle la nuit. Comme l'alternance jour/nuit est un phénomène purement déterministe les prévisionniste ne commettent pas d'erreurs la nuit. Ceci modifie la structure des erreurs de prévisions en introduisant régulièrement des plages de prévisions nulles. Dans une approche classique de série temporelle il faudrait désaisonnaliser la série ou utiliser un modèle capable de prendre en compte explicitement la saisonnalité. Or à la partie déterministe -- alternance jour/nuit -- il faut ajouter les changements de conditions météorologiques. En effet, en fonction de la saison, des conditions climatiques particulières seront plus ou moins probables. Ces types de temps, sauf à avoir de multiples co-variables météorologiques à disposition, relèvent du domaine stochastique. Désaisonnaliser la série correctement paraît donc être une tâche très difficile dans ces conditions.
+Les erreurs de prévision de production photovoltaïques diffèrent par nature de celles de production éolienne. Alors que le vent peut être d'intensité non négligeable à tout instant, l'irradiance sera quant à elle complètement nulle la nuit. Comme l'alternance jour/nuit est un phénomène purement déterministe les prévisionnistes ne commettent pas d'erreurs la nuit. Ceci modifie la structure des erreurs de prévisions en introduisant régulièrement des plages de prévisions nulles. Dans une approche classique de série temporelle il faudrait désaisonnaliser la série ou utiliser un modèle capable de prendre en compte explicitement la saisonnalité. Or à la partie déterministe -- alternance jour/nuit -- il faut ajouter les changements de conditions météorologiques. En effet, en fonction de la saison, des conditions climatiques particulières seront plus ou moins probables. Ces types de temps, sauf à avoir de multiples co-variables météorologiques à disposition, relèvent du domaine stochastique. Désaisonnaliser la série correctement paraît donc être une tâche très difficile dans ces conditions.
 
 %Les erreurs de prédiction de production photovoltaïques diffèrent par nature de celles de production éolienne. Alors que le vent peut être d'intensité non négligeable à tout instant, l'irradiance sera quant à elle complètement nulle la nuit. Comme l'alternance jour/nuit est un phénomène purement déterministe les prévisionniste ne commettent pas d'erreurs de prévisions la nuit. Ceci modifie la structure des erreurs de prévisions en introduisant régulièrement des plages de prévisions nulles. Or les outils utilisés dans la section \ref{chap:ResultatsEolien} se heurtent à des problèmes de convergence numérique s'ils sont utilisés tels quels sur la série d'erreur de prédiction de production photovoltaïque.
 
@@ -433,9 +445,9 @@ Dans ce chapitre, le traitement par différents modèles de la série introduite
 Dans un premier temps, je me suis attaché à voir s'il était possible de corriger la prédiction fournie un jour à l'avance en fonction de l'allure des erreurs déjà observées dans la journée courante.
 
 \nomenclature{$\widehat{d}$}{Indice de la journée indiquant l'heure de la correction}
-On note $\widehat{d}$ l'indice de dimension indiquant quand la correction doit être réalisée. Alors nécessairement $\widehat{d} < d$. Pour le contexte applicatif, afin de se placer dans un cadre qui pourrait être réaliste au sens opérationnel, la correction doit être effectuer à 10h.
+On note $\widehat{d}$ l'indice de dimension indiquant quand la correction doit être réalisée. Alors nécessairement $\widehat{d} < d$. Pour le contexte applicatif, afin de se placer dans un cadre qui pourrait être réaliste au sens opérationnel, la correction doit être effectuée à 10h.
 
-L'identification des journées les plus proches à été réalisé en sélectionnant celles qui minimisaient \eqref{eq:NN_identification} où $z$ représente la trajectoire de la journée courante et $\widetilde{z}$ une des trajectoires passées. 
+L'identification des journées les plus proches a été réalisé en sélectionnant celles qui minimisaient \eqref{eq:NN_identification} où $z$ représente la trajectoire de la journée courante ($z \in \bm{X}^t$) et $\widetilde{z}$ une des trajectoires passées ($\widetilde{z} \in \bm{X}^e$). 
 
 \begin{equation}
 	\sum_{i=1}^{\widehat{d}} \abs{z_i - \widetilde{z_i}}
@@ -451,29 +463,29 @@ La première étape dans l'utilisation de la méthode des plus proches voisins c
 	\label{eq:KNN_identification}
 \end{equation}
 
-La Figure \ref{fig:KNN_Intraday_scenarios} montre des exemples ou cette méthode de correction d'erreur fonctionne plus ou moins bien. Il est quand même intéressant de constater que même dans le cas où elle amplifierait l'erreur commise, plusieurs trajectoires parmi les voisins identifiés avaient capturées le bon comportement.
+La Figure \ref{fig:KNN_Intraday_scenarios} montre des exemples où cette méthode de correction d'erreur fonctionne bien -- \ref{fig:KNN_Intraday_scenarios_110117} et \ref{fig:KNN_Intraday_scenarios_100417} -- et un autre où elle amplifie l'erreur : \ref{fig:KNN_Intraday_scenarios_110117}. Il est quand même intéressant de constater que même dans le cas où elle amplifierait l'erreur commise en moyenne, plusieurs trajectoires parmi les voisins identifiés avaient capturées le bon comportement.
 
-\begin{figure}[htbp] 
+\begin{figure}[htb] 
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering
 		\includegraphics[width=1\linewidth]{Images/PV/KNN/NN_intraday_testdata_11.pdf} 
-		%\caption{AR 1} 
-		%\label{fig::HHMM_8HS_Traj_HS1} 
+		\caption{11 Janvier 2017} 
+		\label{fig:KNN_Intraday_scenarios_110117} 
 		%\vspace{4ex}
 	\end{subfigure}%% 
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering
 		\includegraphics[width=1\linewidth]{Images/PV/KNN/NN_intraday_testdata_48.pdf} 
-		%\caption{AR 2} 
-		%\label{fig::HHMM_8HS_Traj_HS2} 
+		\caption{17 Février 2017} 
+		\label{fig:KNN_Intraday_scenarios_170217}
 		%\vspace{4ex}
 	\end{subfigure}
 	\centering
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering
 		\includegraphics[width=1\linewidth]{Images/PV/KNN/NN_intraday_testdata_99.pdf} 
-		%\caption{AR 3} 
-		%\label{fig::HHMM_8HS_Traj_HS3} 
+		\caption{10 Avril 2017} 
+		\label{fig:KNN_Intraday_scenarios_100417}
 	\end{subfigure}%%
 	
 	\caption{Exemples de trajectoires d'erreurs de prévisions ainsi que les 10 trajectoires les plus proches identifiés via \eqref{eq:NN_identification} et leur moyenne}
@@ -483,16 +495,18 @@ La Figure \ref{fig:KNN_Intraday_scenarios} montre des exemples ou cette méthode
 
 La comparaison des performances en fonction du nombre de plus proches voisins est présentée dans la Figure \ref{fig:KNN_Comp}, avec le label \textit{all}. On remarque que, dans la limite des cas testés, l'augmentation du nombre de plus proches voisins ne dégrade pas les résultats obtenus. Cependant, en se limitant aux 5 premiers voisins on obtient une réduction de l'erreur sur le reste de la journée de l'ordre de $30\%$.
 
-Cependant, comme cette méthode requiert d'identifier la trajectoire courante parmi toutes les trajectoires connues, elle peut s'avérer très coûteuse en temps de calcul au fil du temps. Par ailleurs, son comportement va par définition évoluer au cours du temps, ce qui peut amener à des déconvenues. Une option pour limiter cet effet négatif réside dans la détermination de trajectoires types. En effet, en regardant la figure \ref{fig:KNN_Intraday_scenarios}, on peut observer des trajectoires d'erreurs typique en forme de paraboles positive ou négative centrée autour de 14h. D'où l'idée d'identifier les plus proches voisins non plus parmi l'ensemble des trajectoires disponibles mais depuis des trajectoires représentatives.
-
-L'identification de ces trajectoires à été réalisée grâce à la méthode des Kmeans (voir \ref{sec:Kmeans}). La figure \ref{fig:Kmeans_centers} présente les trajectoires types obtenues pour différents nombres de classes. Au vu du contexte, le nombre optimal de classe a été choisi en comparant les résultats obtenus pour de la correction d'erreur. Ces résultats sont présentés dans la figure \ref{fig:KNN_Comp}. Tout d'abord, l'identification des plus proches voisins parmi ces groupes détériore systématiquement les résultats par rapport à l'identification sur tout le passé connu. Cependant en identifiant la moyenne d'environ 5 trajectoires types parmi 20, une correction d'erreur de l'ordre de $25 \%$ peut être atteinte.
-
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.75\linewidth]{Images/PV/KNN/KNN_compare.pdf}
 	\caption{Comparaison des corrections de prévisions en fonction du nombre de plus proches voisins. La série \textit{all} présente les résultats quand les plus proches voisins sont identifiés parmi toutes les trajectoires du jeu de données d'entraînement. Les autres, quand ils sont identifiés parmi un certain de clusters obtenus par la méthode des Kmeans (voir section \ref{sec:Kmeans})}
 	\label{fig:KNN_Comp}
 \end{figure}
+
+Cependant, comme cette méthode requiert d'identifier la trajectoire courante parmi toutes les trajectoires connues, elle peut s'avérer très coûteuse en temps de calcul au fil du temps. Par ailleurs, son comportement va par définition évoluer au cours du temps, ce qui peut amener à des déconvenues. Une option pour limiter cet effet négatif réside dans la détermination de trajectoires types. En effet, en regardant la figure \ref{fig:KNN_Intraday_scenarios}, on peut observer des trajectoires d'erreurs typique en forme de paraboles positive ou négative centrée autour de 14h. D'où l'idée d'identifier les plus proches voisins non plus parmi l'ensemble des trajectoires disponibles mais depuis des trajectoires représentatives.
+
+L'identification de ces trajectoires à été réalisée grâce à la méthode des Kmeans (voir \ref{sec:Kmeans}). La figure \ref{fig:Kmeans_centers} présente les trajectoires types obtenues pour différents nombres de classes. Au vu du contexte, le nombre optimal de classes a été choisi en comparant les résultats obtenus pour de la correction d'erreur. Ces résultats sont présentés dans la figure \ref{fig:KNN_Comp}. Tout d'abord, l'identification des plus proches voisins parmi ces groupes détériore systématiquement les résultats par rapport à l'identification sur tout le passé connu. Cependant en identifiant la moyenne d'environ 5 trajectoires types parmi 20, une correction d'erreur de l'ordre de $25 \%$ peut être atteinte.
+
+
 
 \begin{figure}[htbp] 
 	\begin{subfigure}[b]{0.5\linewidth}
@@ -528,14 +542,23 @@ L'identification de ces trajectoires à été réalisée grâce à la méthode d
 	\label{fig:Kmeans_centers} 
 \end{figure}
 
-Dans cette section, une première approche a été mise en œuvre pour étudier le potentiel de la notion de trajectoires à l'échelle d'une journée. Une méthode aussi simple que la méthode des plus proche voisins a permis d'atteindre des corrections des prévisions au cour de la journée qui permettant de réduire les erreurs de prévisions entre $25$ et $35\%$. De meilleurs résultats auraient probablement pu être obtenus en affinant la méthode. En effet, il aurait pu être intéressant de pondérer certaines heures dans l'identification des plus proches voisins afin de donner plus de poids aux dernières heures connues. Ou encore de regarder si la prise en compte du jour précédent pouvait amener de l'information supplémentaire ? Finalement, combiner l'utilisation de l'erreur absolue avec l'erreur quadratique aurait aussi pu amener plus d'informations. Cependant, le potentiel de cette méthode m'a conduit à explorer une autre piste. En effet, plutôt que de n'identifier que les trajectoires types via la méthode des Kmeans, de l'information supplémentaire sur les variances associées pouvaient se révéler utile en utilisant la méthode de mélange Gaussien.
+Dans cette section, une première approche a été mise en œuvre pour étudier le potentiel de la notion de trajectoires à l'échelle d'une journée. Une méthode aussi simple que celle des plus proche voisins a permis d'atteindre des corrections de prévisions au cours de la journée amenant à une réduction des erreurs de prévision entre $25$ et $35\%$. De meilleurs résultats auraient probablement pu être obtenus en affinant la méthode. En effet, il aurait pu être intéressant de pondérer certaines heures dans l'identification des plus proches voisins afin de donner plus de poids aux dernières heures connues. Ou encore de regarder si la prise en compte du jour précédent pouvait amener de l'information supplémentaire ? Finalement, combiner l'utilisation de l'erreur absolue avec l'erreur quadratique aurait aussi pu amener plus d'informations. Cependant, le potentiel de cette méthode m'a conduit à explorer une autre piste. En effet, plutôt que de n'identifier que les trajectoires types via la méthode des Kmeans, de l'information supplémentaire sur les variances associées pouvaient se révéler utile en utilisant la méthode de mélange Gaussien.
 
 
 \section{Résulats avec un GMM}
 \label{sec:PV_GMM}
-Le modèle de mélange Gaussien (GMM) possède toute l'information contenue dans les Kmeans, à savoir des trajectoires moyennes dans chaque état. Cependant, comme ce modèle est identifié par rapport à des combinaisons de Gaussiennes -- voir \ref{sec:Model_GMM} -- il existe donc un cadre théorique pour identifier les probabilités d'appartenance. De surcroît, cette connaissance sur les variances permet de gagner en interprétabilité. Enfin, cette information peut s'avérer nécessaire dans le cadre de certaines applications. Par exemple afin d'utiliser ce modèle pour générer une stratégie optimale de gestion de stockage de la même manière que dans \ref{annex:ModelingWindPower}.
+Le modèle de mélange Gaussien (GMM) est entièrement déterminé par des moyennes et variances -- celles des Gaussiennes -- auxquelles il faut ajouter de l'information sur les proportions respectives des clusters (voir \ref{sec:Model_GMM}). Un exemple de modèle GMM ajusté sur le jeu de données d'entraînement $\bm{X}^e$ est présenté dans la figure \ref{fig:PV_GMM_MeanVarProp}.
 
-Le modèle de mélange Gaussien a été ajusté sur la série temporelle des erreurs de prédiction photovoltaïques. Comme pour les Kmeans, il est nécessaire d'identifier le nombre optimal de clusters $K$. Pour ce faire, le critère BIC est à nouveau utilisé comme premier indicateur. On peut constater sur la figure \ref{fig:PV_GMM_BIC} que le modèle de type VII (matrice de variance covariance diagonale et à valeur unique par cluster) semble surpasser le modèle de type EII (matrice de variance covariance diagonale et à valeur unique commune pour tous les cluster). Cette figure ne présente pas les résultats obtenus par les autres modèles car ils n'ont pas convergé, probablement à cause d'un manque de données. En effet, même si le jeu d'entraînement se compose de 6 années complètes, cela ne représente qu'un total de $2190$ journées. Ce nombre est assez vite relativement faible face aux nombres de paramètres à estimer des GMM plus évolués (voir \ref{sec:Model_GMM}). Par exemple, si chaque valeur sur la diagonale est distincte alors on passe de $(K-1) + K\times d + K$ à $(K-1) + K\times d + K \times d$ paramètres et il est donc nécessaire d'avoir nettement plus de données pour les estimer. Dans ce contexte précis, il aurait pu être intéressant de pouvoir décrire la diagonale de la matrice de variance covariance par deux valeurs. Cela aurait pu permettre à l'algorithme de dissocier les variances pour les heures diurnes et nocturnes tout en restreignant le nombre de paramètres. Mais cette option n'est pas offerte par le package \texttt{Mclust} et n'a pas fait l'objet d'une implémentation de ma part par manque de temps.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width = 0.75 \linewidth]{Images/PV/GMM/GMM_MeansVars_6_dim24.pdf}
+	\caption{Représentation graphique des paramètres du modèle GMM à 6 clusters obtenu sur la série des erreurs prévisions photovoltaïques. Les lignes continues représentent les moyennes, les fonds colorés leur intervalles de confiance de $68 \%$ respectifs. Les proportions respectives sont intégrées dans la légende.}
+	\label{fig:PV_GMM_MeanVarProp}
+\end{figure}
+
+Comme ce modèle est identifié par rapport à des mélanges de Gaussiennes il existe donc un cadre théorique pour identifier les probabilités d'appartenance. Par ailleurs, cette connaissance sur les variances permet de gagner en interprétabilité. Enfin, cette information peut s'avérer nécessaire dans le cadre de certaines applications. Par exemple afin d'utiliser ce modèle pour générer une stratégie optimale de gestion de stockage de la même manière que dans \ref{annex:ModelingWindPower}.
+
+De la même manière que pour les Kmeans, il est nécessaire d'identifier le nombre optimal de clusters $K$. Pour ce faire, le critère BIC est à nouveau utilisé comme premier indicateur. On peut constater sur la figure \ref{fig:PV_GMM_BIC} que le modèle de type VII (matrice de variance covariance diagonale et à valeur unique par cluster) semble surpasser le modèle de type EII (matrice de variance covariance diagonale et à valeur unique commune pour tous les clusters). Cette figure ne présente pas les résultats obtenus par les autres modèles car ils n'ont pas convergé, probablement à cause d'un manque de données. En effet, même si le jeu d'entraînement $\bm{X}^e$ se compose de 6 années complètes, cela ne représente qu'un total de $2190$ journées. Ce nombre est relativement faible en comparaison aux nombres de paramètres à estimer des GMM plus évolués (voir \ref{sec:Model_GMM}). Par exemple, si chaque valeur sur la diagonale est distincte alors on passe de $(K-1) + K\times d + K$ à $(K-1) + K\times d + K \times d$ paramètres et il est donc nécessaire d'avoir nettement plus de données pour les estimer. Dans ce contexte précis, il aurait pu être intéressant de décrire la diagonale de la matrice de variance covariance par deux valeurs. Cela aurait pu permettre à l'algorithme de dissocier les variances pour les heures diurnes et nocturnes tout en restreignant le nombre de paramètres. Mais cette option n'est pas offerte par le package \texttt{Mclust} et n'a pas fait l'objet d'une implémentation de ma part par manque de temps.
 
 \begin{figure}[htbp]
 	\begin{subfigure}{0.5\linewidth}
@@ -554,7 +577,9 @@ Le modèle de mélange Gaussien a été ajusté sur la série temporelle des err
 	\caption{Représentation de deux critères sur lesquels se sont basés le choix du nombre de groupes}
 \end{figure}
 
-Le critère BIC ne favorise pas un nombre spécifique de cluster mais donne plutôt une tendance générale favorisant systématiquement l'augmentation du nombre de clusters. Une explication plausible réside dans le fait que le phénomène sous-jacent, l'évolution du temps au sens météorologique du terme, est par définition un phénomène continu et non discret. Plus on discrétiserait son espace de représentation, plus on se rapprocherait d'une représentation continue et ainsi meilleurs sont les résultats. Afin de garder l'interprétabilité du modèle obtenu, et d'en limiter sa complexité, il est impératif de choisir un nombre de cluster relativement restreint. La figure \ref{fig:PV_GMM_BIC} montre une croissance plus faible en terme de critère BIC à partir du sixième cluster. Afin de combiner des informations provenant de deux indicateurs différents, il est possible de voir comment le GMM répond à une application spécifique en fonction de $K$. J'ai donc choisi de les comparer sur la base de leur potentiel à réaliser de la correction au cours de la journée. Des exemples de ces corrections sont présentées dans la figure \ref{fig:PV_GMM_IntraDay}. Dans la majorité des cas, la probabilité d'émission favorise très grandement un seul cluster en délaissant les autres. Cependant la figure présente un des cas pour lesquels la probabilité d'émission est partagée entre plusieurs clusters. Au fur et à mesure que la journée avance, il est possible de constater que ces probabilités évoluent en fonction des événements observés. La comparaison des différents GMM en fonction de leur capacité de correction au cours de la journée est présentée sur la figure \ref{fig:PV_GMM_IntradayComp}. Un net gain, d'environ $5\%$, est constaté en passant de 4 clusters à 6. Ensuite les gains sont relativement plus faible et pour ré-obtenir un gain similaire il faudrait prendre 12 clusters. En comparant ces deux indicateurs, il semble que le modèle à 6 clusters soit un bon compromis entre complexité et précision.
+Le critère BIC ne favorise pas un nombre spécifique de clusters mais donne plutôt une tendance générale favorisant systématiquement l'augmentation du nombre de clusters. Une explication plausible réside dans le fait que le phénomène sous-jacent, l'évolution du temps au sens météorologique du terme, est par définition un phénomène continu et non discret. Plus on discrétiserait son espace de représentation, plus on se rapprocherait d'une représentation continue et ainsi meilleurs sont les résultats. Afin de garder l'interprétabilité du modèle obtenu, et d'en limiter sa complexité, il est impératif de choisir un nombre de clusters relativement restreint. La figure \ref{fig:PV_GMM_BIC} montre une croissance plus faible en terme de critère BIC à partir du sixième cluster.
+
+Afin de combiner des informations provenant de deux indicateurs différents, il est possible de voir comment le GMM répond à une application spécifique en fonction du nombre de clusters $m$. Il a été choisi de les comparer sur la base de leur potentiel à réaliser de la correction au cours de la journée. Ce choix peut être discutable dans le sens où les GMM ne sont pas par essence des modèles de prévision. Cependant, chercher à garder la même approche qu'avec les Kmeans tout en ayant de la connaissance supplémentaire sur les variances s'approche grandement d'un modèle GMM. Les paramètres seraient similaires mais la manière de les déterminer différente. C'est dans cet esprit de continuité que les modèles GMM ajustés ont été utilisés, de manière non-conformiste, pour faire de la prévision. Des exemples de ces corrections sont présentées dans la figure \ref{fig:PV_GMM_IntraDay}.
 
 \begin{figure}[htbp] 
 	\begin{subfigure}[b]{0.5\linewidth}
@@ -586,20 +611,19 @@ Le critère BIC ne favorise pas un nombre spécifique de cluster mais donne plut
 		%\label{fig::HHMM_8HS_Traj_HS2} 
 		%\vspace{4ex}
 	\end{subfigure}
-		
+	
 	\caption{Corrections au cours de la journée, à 10h à gauche et à 13h à droite, avec le GMM de la figure \ref{fig:PV_GMM_MeanVarProp}. Les clusters du GMM sont représentés en fonction de leur probabilité d'émission à l'heure considérée. }
 	\label{fig:PV_GMM_IntraDay} 
 \end{figure}
 
+Dans la majorité des cas, la probabilité d'émission favorise très grandement un seul cluster en délaissant les autres. Cependant la figure présente un des cas pour lesquels la probabilité d'émission est partagée entre plusieurs clusters. Au fur et à mesure que la journée avance, il est possible de constater que ces probabilités évoluent en fonction des événements observés. La comparaison des différents GMM en fonction de leur capacité de correction au cours de la journée est présentée sur la figure \ref{fig:PV_GMM_IntradayComp}. Un net gain, d'environ $5\%$, est constaté en passant de 4 clusters à 6. Ensuite les gains sont relativement plus faibles et pour ré-obtenir un gain similaire il faudrait prendre 12 clusters. En comparant ces deux indicateurs, il semble que le modèle à 6 clusters soit un bon compromis entre complexité et précision.
 
-Les paramètres du modèle obtenus sont présentés graphiquement dans la figure \ref{fig:PV_GMM_MeanVarProp}. Il est possible de constater que les trajectoires moyennes des états sont assez semblables à celles obtenus par la méthode des Kmeans (voir figure \ref{fig:Kmeans_centers}). Enfin, l'information supplémentaire réside dans la connaissance des variances pour chaque clusters. Elle sont relativement faible et globalement assez similaires les unes des autres pour les groupes allant de 1 à 5. Par contre, le groupe 6, a une variance nettement plus forte. Ce cluster, qui est significativement moins peuplé que les autres, regroupe les individus au comportement inhabituels et/ou chaotiques.
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width = 0.75 \linewidth]{Images/PV/GMM/GMM_MeansVars_6_dim24.pdf}
-	\caption{Représentation graphique des paramètres du modèle GMM à 6 clusters obtenu sur la série des erreurs prévisions photovoltaïques. Les lignes continues représentent les moyennes, les fonds colorés leur intervalles de confiance de $68 \%$ respectifs. Les proportions respectives sont intégrées dans la légende.}
-	\label{fig:PV_GMM_MeanVarProp}
-\end{figure}
+
+
+Les paramètres du modèle obtenus sont présentés graphiquement dans la figure \ref{fig:PV_GMM_MeanVarProp}. Il est possible de constater que les trajectoires moyennes des états sont assez semblables à celles obtenus par la méthode des Kmeans (voir figure \ref{fig:Kmeans_centers}). Enfin, l'information supplémentaire réside dans la connaissance des variances pour chaque clusters. Elles sont relativement faibles et globalement assez similaires les unes des autres pour les groupes allant de 1 à 5. Par contre, le groupe 6, a une variance nettement plus forte. Ce cluster, qui est significativement moins peuplé que les autres, regroupe les individus au comportement inhabituels et/ou chaotiques.
+
+
 
 
 Finalement, l'utilisation de modèle GMM n'a pas permis d'améliorer les résultats obtenus en terme de corrections de prévisions au cours de la journée par rapport aux plus proches voisins. En effet, le modèle GMM retenu parvient à réduire de $20 \%$ les erreurs pour une correction à 10 heures alors que les plus proches voisins permettaient une réduction de l'ordre de $35 \%$. La variante en utilisant une identification de clusters type déterminés par la méthode des Kmeans conduisait à une réduction de l'odre de $25 \%$ dans les mêmes conditions. Cependant, le modèle GMM apporte quand même de l'information supplémentaire non négligeable avec les précisions sur les variances de chaque clusters. Ceci permet par exemple d'identifier les probabilités d'appartenance au cours de la journée via les densités de probabilités, ce qui est plus fiable que d'utiliser l'erreur absolue ou l'erreur quadratique. Par ailleurs, une fois les probabilités d'appartenance, cela permet de générer des scénarios de comportements sur le reste de la journée et ainsi de réaliser une prédiction stochastique sur le reste de la journée par opposition aux Kmeans qui proposaient une prévision déterministe. Mais, mis à part donner un comportement moyen, ce modèle ne permet toujours pas d'anticiper l'avenir au delà de la journée en cours. C'est pourquoi il pourrait être intéressant d'identifier un HMM dont la structure est similaire si ce n'est que la matrice de transition permette de prévoir des scénarios sur plusieurs journées.  
